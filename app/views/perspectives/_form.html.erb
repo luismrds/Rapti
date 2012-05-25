@@ -1,0 +1,29 @@
+<%= form_for(@perspective) do |f| %>
+  <% if @perspective.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@perspective.errors.count, "error") %> prohibited this perspective from being saved:</h2>
+
+      <ul>
+      <% @perspective.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :weight %><br />
+    <%= f.text_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :score %><br />
+    <%= f.text_field :score %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

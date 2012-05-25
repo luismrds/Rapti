@@ -1,0 +1,27 @@
+<h1>Listing perspectives</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Weight</th>
+    <th>Score</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @perspectives.each do |perspective| %>
+  <tr>
+    <td><%= perspective.name %></td>
+    <td><%= perspective.weight %></td>
+    <td><%= perspective.score %></td>
+    <td><%= link_to 'Show', perspective %></td>
+    <td><%= link_to 'Edit', edit_perspective_path(perspective) %></td>
+    <td><%= link_to 'Destroy', perspective, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Perspective', new_perspective_path %>

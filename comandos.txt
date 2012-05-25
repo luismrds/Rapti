@@ -1,0 +1,2 @@
+rails generate scaffold Perspective name:string weight:float score:float
+rails generate scaffold Objective name:string weight:float score:float perspective_id:integer

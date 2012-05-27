@@ -1,0 +1,30 @@
+<%= form_for(@indicator_score) do |f| %>
+  <% if @indicator_score.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@indicator_score.errors.count, "error") %> prohibited this indicator_score from being saved:</h2>
+
+      <ul>
+      <% @indicator_score.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :indicator_id %><br />
+    <%= f.collection_select :indicator_id, Indicator.all, :id, :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :scoredate_id %><br />
+    <%= f.collection_select :scoredate_id, ScoreDate.all, :id, :month %>
+  </div>
+  <div class="field">
+    <%= f.label :score %><br />
+    <%= f.text_field :score %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

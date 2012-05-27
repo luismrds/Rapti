@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Perspective:</b>
+  <%= @perspective_score.perspective_id %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @perspective_score.date_id %>
+</p>
+
+<p>
+  <b>Score:</b>
+  <%= @perspective_score.score %>
+</p>
+
+
+<%= link_to 'Edit', edit_perspective_score_path(@perspective_score) %> |
+<%= link_to 'Back', perspective_scores_path %>

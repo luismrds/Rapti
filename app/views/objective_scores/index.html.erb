@@ -1,0 +1,27 @@
+<h1>Listing objective_scores</h1>
+
+<table>
+  <tr>
+    <th>Objective</th>
+    <th>Date</th>
+    <th>Score</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @objective_scores.each do |objective_score| %>
+  <tr>
+    <td><%= objective_score.objective_id %></td>
+    <td><%= objective_score.date_id %></td>
+    <td><%= objective_score.score %></td>
+    <td><%= link_to 'Show', objective_score %></td>
+    <td><%= link_to 'Edit', edit_objective_score_path(objective_score) %></td>
+    <td><%= link_to 'Destroy', objective_score, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Objective score', new_objective_score_path %>

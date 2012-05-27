@@ -1,2 +1,11 @@
-rails generate scaffold Perspective name:string weight:float score:float
-rails generate scaffold Objective name:string weight:float score:float perspective_id:integer
+rails generate scaffold Perspective name:string weight:float 
+rails generate scaffold Objective name:string weight:float perspective_id:integer
+rails generate scaffold Indicator name:string weight:float objective_id:integer
+rails generate migration CleanPerspectivesAndObjectives
+
+rails generate scaffold ScoreDate month:integer year:integer
+rails generate scaffold PerspectiveScore perspective_id:integer date_id:integer score:float
+rails generate scaffold ObjectiveScore objective_id:integer date_id:integer score:float
+rails generate scaffold IndicatorScore indicator_id:integer date_id:integer score:float
+
+

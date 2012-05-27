@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @indicator.name %>
+</p>
+
+<p>
+  <b>Weight:</b>
+  <%= @indicator.weight %>
+</p>
+
+<p>
+  <b>Objective:</b>
+  <%= @indicator.objective_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_indicator_path(@indicator) %> |
+<%= link_to 'Back', indicators_path %>

@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Month:</b>
+  <%= @score_date.month %>
+</p>
+
+<p>
+  <b>Year:</b>
+  <%= @score_date.year %>
+</p>
+
+
+<%= link_to 'Edit', edit_score_date_path(@score_date) %> |
+<%= link_to 'Back', score_dates_path %>

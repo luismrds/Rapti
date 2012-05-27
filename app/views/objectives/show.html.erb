@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @objective.name %>
+</p>
+
+<p>
+  <b>Weight:</b>
+  <%= @objective.weight %>
+</p>
+
+<p>
+  <b>Perspective:</b>
+  <%= @objective.perspective_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_objective_path(@objective) %> |
+<%= link_to 'Back', objectives_path %>

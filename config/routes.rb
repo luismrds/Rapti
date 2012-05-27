@@ -1,4 +1,16 @@
 Rails3BootstrapDeviseCancan::Application.routes.draw do
+  resources :indicators
+
+  resources :indicator_scores
+
+  resources :objective_scores
+
+  resources :perspective_scores
+
+  resources :score_dates
+
+  resources :objectives
+
   resources :perspectives
 
   authenticated :user do

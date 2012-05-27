@@ -4,7 +4,6 @@
   <tr>
     <th>Name</th>
     <th>Weight</th>
-    <th>Score</th>
     <th></th>
     <th></th>
     <th></th>
@@ -14,13 +13,38 @@
   <tr>
     <td><%= perspective.name %></td>
     <td><%= perspective.weight %></td>
-    <td><%= perspective.score %></td>
     <td><%= link_to 'Show', perspective %></td>
     <td><%= link_to 'Edit', edit_perspective_path(perspective) %></td>
     <td><%= link_to 'Destroy', perspective, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
+
+<table>
+  <tr>
+    <th>Perspectivas</th>
+    <th></th>
+  </tr>
+
+<% @charts.each do |ch| %>
+  <tr>
+    <td><div id='chart'></div>
+        <%= render_chart @charts[0], 'chart' %>
+        <%= link_to 'Explorar', @perspectives[0] %></td>
+    <td><div id='chart1'></div>
+        <%= render_chart @charts[1], 'chart1' %></td>
+  </tr>
+  <tr>
+    <td><div id='chart2'></div>
+        <%= render_chart @charts[2], 'chart2' %></td>
+    <td><div id='chart3'></div>
+        <%= render_chart @charts[3], 'chart3' %></td>
+  </tr>
+<% end %>
+</table>
+
+<div id='chart'></div>
+<%= render_chart @charts[0], 'chart' %>
 
 <br />
 

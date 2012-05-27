@@ -20,3 +20,4 @@ gem "rolify", ">= 3.1.0"
 gem 'execjs'
 gem 'therubyracer'
 gem "bootstrap-sass", ">= 2.0.3"
+gem "google_visualr"

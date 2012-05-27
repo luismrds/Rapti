@@ -11,12 +11,51 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120525214806) do
+ActiveRecord::Schema.define(:version => 20120526163152) do
+
+  create_table "indicator_scores", :force => true do |t|
+    t.integer  "indicator_id"
+    t.integer  "scoredate_id"
+    t.float    "score"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "indicators", :force => true do |t|
+    t.string   "name"
+    t.float    "weight"
+    t.integer  "objective_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "objective_scores", :force => true do |t|
+    t.integer  "objective_id"
+    t.integer  "scoredate_id"
+    t.float    "score"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "objectives", :force => true do |t|
+    t.string   "name"
+    t.float    "weight"
+    t.integer  "perspective_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
+
+  create_table "perspective_scores", :force => true do |t|
+    t.integer  "perspective_id"
+    t.integer  "scoredate_id"
+    t.float    "score"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
+  end
 
   create_table "perspectives", :force => true do |t|
     t.string   "name"
     t.float    "weight"
-    t.float    "score"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -31,6 +70,13 @@ ActiveRecord::Schema.define(:version => 20120525214806) do
 
   add_index "roles", ["name", "resource_type", "resource_id"], :name => "index_roles_on_name_and_resource_type_and_resource_id"
   add_index "roles", ["name"], :name => "index_roles_on_name"
+
+  create_table "score_dates", :force => true do |t|
+    t.integer  "month"
+    t.integer  "year"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

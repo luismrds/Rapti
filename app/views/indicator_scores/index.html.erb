@@ -1,0 +1,27 @@
+<h1>Listing indicator_scores</h1>
+
+<table>
+  <tr>
+    <th>Indicator</th>
+    <th>Scoredate</th>
+    <th>Score</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @indicator_scores.each do |indicator_score| %>
+  <tr>
+    <td><%= Indicator.find(indicator_score.indicator_id).name %></td>
+    <td><%= indicator_score.scoredate_id %></td>
+    <td><%= indicator_score.score %></td>
+    <td><%= link_to 'Show', indicator_score %></td>
+    <td><%= link_to 'Edit', edit_indicator_score_path(indicator_score) %></td>
+    <td><%= link_to 'Destroy', indicator_score, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Indicator score', new_indicator_score_path %>

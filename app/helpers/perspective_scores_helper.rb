@@ -1,0 +1,2 @@
+module PerspectiveScoresHelper
+end

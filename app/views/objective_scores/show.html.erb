@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Objective:</b>
+  <%= @objective_score.objective_id %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @objective_score.date_id %>
+</p>
+
+<p>
+  <b>Score:</b>
+  <%= @objective_score.score %>
+</p>
+
+
+<%= link_to 'Edit', edit_objective_score_path(@objective_score) %> |
+<%= link_to 'Back', objective_scores_path %>

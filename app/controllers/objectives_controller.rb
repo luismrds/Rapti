@@ -15,6 +15,24 @@ class ObjectivesController < ApplicationController
   def show
     @objective = Objective.find(params[:id])
 
+    data_table = GoogleVisualr::DataTable.new
+
+    data_table.new_column('string', 'Year' ) 
+    data_table.new_column('number', 'Sales') 
+    data_table.new_column('number', 'Expenses') 
+
+    # Add Rows and Values 
+    data_table.add_rows([ 
+      ['Dic', 1000, 400], 
+      ['Ene', 1170, 460], 
+      ['Feb', 660, 1120], 
+      ['Mar', 1030, 540], 
+      ['Abr', 710, 1410], 
+      ['May', 960, 980] 
+    ])
+    option = { width: 400, height: 240, title: 'Ultimos 6 meses' }
+    @chart = GoogleVisualr::Interactive::AreaChart.new(data_table, option)
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @objective }

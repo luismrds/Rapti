@@ -28577,3 +28577,1143 @@ Served asset /users.js - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-27 09:11:27 -0430
 Served asset /application.js - 304 Not Modified (34ms)
+
+
+Started GET "/perspectives" for 127.0.0.1 at 2012-05-27 10:11:25 -0430
+Processing by PerspectivesController#index as HTML
+  [1m[35mPerspective Load (0.4ms)[0m  SELECT "perspectives".* FROM "perspectives" 
+  Rendered perspectives/index.html.erb within layouts/application (5.4ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 27ms (Views: 24.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-27 10:11:25 -0430
+Served asset /application.css - 304 Not Modified (50ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-05-27 10:11:25 -0430
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-05-27 10:11:25 -0430
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (18ms)
+
+
+Started GET "/assets/indicators.css?body=1" for 127.0.0.1 at 2012-05-27 10:11:25 -0430
+Served asset /indicators.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/objective_scores.css?body=1" for 127.0.0.1 at 2012-05-27 10:11:25 -0430
+Served asset /objective_scores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/indicator_scores.css?body=1" for 127.0.0.1 at 2012-05-27 10:11:25 -0430
+Served asset /indicator_scores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/objectives.css?body=1" for 127.0.0.1 at 2012-05-27 10:11:25 -0430
+Served asset /objectives.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/perspective_scores.css?body=1" for 127.0.0.1 at 2012-05-27 10:11:25 -0430
+Served asset /perspective_scores.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/perspectives.css?body=1" for 127.0.0.1 at 2012-05-27 10:11:25 -0430
+Served asset /perspectives.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-05-27 10:11:25 -0430
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/score_dates.css?body=1" for 127.0.0.1 at 2012-05-27 10:11:25 -0430
+Served asset /score_dates.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-05-27 10:11:25 -0430
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/perspectives/1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Processing by PerspectivesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerspective Load (0.1ms)[0m  [1mSELECT "perspectives".* FROM "perspectives" WHERE "perspectives"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered perspectives/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 37ms (Views: 35.6ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/indicator_scores.css?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /indicator_scores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/indicators.css?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /indicators.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/objective_scores.css?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /objective_scores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (14ms)
+
+
+Started GET "/assets/objectives.css?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /objectives.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/perspective_scores.css?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /perspective_scores.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/perspectives.css?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /perspectives.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/score_dates.css?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /score_dates.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /jquery.js - 304 Not Modified (15ms)
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /bootstrap-transition.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /bootstrap-alert.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /bootstrap-button.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /bootstrap-carousel.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /bootstrap-collapse.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /bootstrap-dropdown.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /bootstrap-modal.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /bootstrap-tab.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /bootstrap-scrollspy.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /bootstrap-tooltip.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /bootstrap-popover.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /bootstrap-typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /bootstrap.js - 304 Not Modified (14ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /home.js - 304 Not Modified (26ms)
+
+
+Started GET "/assets/indicator_scores.js?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /indicator_scores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/indicators.js?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /indicators.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/objective_scores.js?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /objective_scores.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/objectives.js?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /objectives.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/perspective_scores.js?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /perspective_scores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/perspectives.js?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /perspectives.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/score_dates.js?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /score_dates.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-27 10:11:40 -0430
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/perspectives/1" for 127.0.0.1 at 2012-05-27 10:15:13 -0430
+Processing by PerspectivesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mPerspective Load (0.1ms)[0m  SELECT "perspectives".* FROM "perspectives" WHERE "perspectives"."id" = ? LIMIT 1  [["id", "1"]]
+Completed 500 Internal Server Error in 6ms
+
+NoMethodError (undefined method `indicators' for #<Perspective:0x0000000327faf8>):
+  app/controllers/perspectives_controller.rb:32:in `show'
+
+
+  Rendered /home/luis/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /home/luis/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.7ms)
+  Rendered /home/luis/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.9ms)
+
+
+Started GET "/perspectives/1" for 127.0.0.1 at 2012-05-27 10:16:42 -0430
+Processing by PerspectivesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerspective Load (0.1ms)[0m  [1mSELECT "perspectives".* FROM "perspectives" WHERE "perspectives"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."perspective_id" = 1
+Completed 500 Internal Server Error in 104ms
+
+NoMethodError (undefined method `<<' for nil:NilClass):
+  app/controllers/perspectives_controller.rb:41:in `block in show'
+  app/controllers/perspectives_controller.rb:32:in `show'
+
+
+  Rendered /home/luis/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /home/luis/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /home/luis/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.1ms)
+
+
+Started GET "/perspectives/1" for 127.0.0.1 at 2012-05-27 10:19:53 -0430
+Processing by PerspectivesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerspective Load (0.1ms)[0m  [1mSELECT "perspectives".* FROM "perspectives" WHERE "perspectives"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."perspective_id" = 1
+Completed 500 Internal Server Error in 13ms
+
+NoMethodError (undefined method `<<' for nil:NilClass):
+  app/controllers/perspectives_controller.rb:41:in `block in show'
+  app/controllers/perspectives_controller.rb:32:in `show'
+
+
+  Rendered /home/luis/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.1ms)
+  Rendered /home/luis/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /home/luis/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.4ms)
+
+
+Started GET "/perspectives/1" for 127.0.0.1 at 2012-05-27 10:19:55 -0430
+Processing by PerspectivesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerspective Load (0.1ms)[0m  [1mSELECT "perspectives".* FROM "perspectives" WHERE "perspectives"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."perspective_id" = 1
+Completed 500 Internal Server Error in 2ms
+
+NoMethodError (undefined method `<<' for nil:NilClass):
+  app/controllers/perspectives_controller.rb:41:in `block in show'
+  app/controllers/perspectives_controller.rb:32:in `show'
+
+
+  Rendered /home/luis/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.0ms)
+  Rendered /home/luis/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /home/luis/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.1ms)
+
+
+Started GET "/perspectives/1" for 127.0.0.1 at 2012-05-27 10:25:56 -0430
+Processing by PerspectivesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerspective Load (0.1ms)[0m  [1mSELECT "perspectives".* FROM "perspectives" WHERE "perspectives"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."perspective_id" = 1
+Completed 500 Internal Server Error in 14ms
+
+NoMethodError (undefined method `<<' for nil:NilClass):
+  app/controllers/perspectives_controller.rb:42:in `block in show'
+  app/controllers/perspectives_controller.rb:32:in `show'
+
+
+  Rendered /home/luis/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.2ms)
+  Rendered /home/luis/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /home/luis/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.4ms)
+
+
+Started GET "/perspectives/1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Processing by PerspectivesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerspective Load (0.1ms)[0m  [1mSELECT "perspectives".* FROM "perspectives" WHERE "perspectives"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."perspective_id" = 1
+  Rendered perspectives/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_navigation.html.erb (29.7ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 60ms (Views: 45.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /application.css - 304 Not Modified (23ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/indicator_scores.css?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /indicator_scores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/objective_scores.css?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /objective_scores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/indicators.css?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /indicators.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/objectives.css?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /objectives.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/perspective_scores.css?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /perspective_scores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/perspectives.css?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /perspectives.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /scaffolds.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/score_dates.css?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /score_dates.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /jquery.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /bootstrap-transition.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /bootstrap-alert.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /bootstrap-button.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /bootstrap-carousel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /bootstrap-collapse.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /bootstrap-dropdown.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /bootstrap-modal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /bootstrap-tab.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /bootstrap-scrollspy.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /bootstrap-tooltip.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /bootstrap-popover.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /bootstrap.js - 304 Not Modified (11ms)
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /bootstrap-typeahead.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/indicator_scores.js?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /indicator_scores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/indicators.js?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /indicators.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/objective_scores.js?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /objective_scores.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/perspective_scores.js?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /perspective_scores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/objectives.js?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /objectives.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/perspectives.js?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /perspectives.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/score_dates.js?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /score_dates.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-27 10:26:42 -0430
+Served asset /application.js - 304 Not Modified (11ms)
+
+
+Started GET "/perspectives/1" for 127.0.0.1 at 2012-05-27 10:27:57 -0430
+Processing by PerspectivesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerspective Load (0.1ms)[0m  [1mSELECT "perspectives".* FROM "perspectives" WHERE "perspectives"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."perspective_id" = 1
+  Rendered perspectives/show.html.erb within layouts/application (1.0ms)
+Completed 500 Internal Server Error in 4ms
+
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    19:   <tr>
+    20:     <td><div id='chart'></div>
+    21:         <%= render_chart @charts[0], 'chart' %>
+    22:         <%= link_to 'Explorar', @perspectives[0] %></td>
+    23:     <td><div id='chart1'></div>
+    24:         <%= render_chart @charts[1], 'chart1' %></td>
+    25:   </tr>
+  app/views/perspectives/show.html.erb:22:in `_app_views_perspectives_show_html_erb___1293002578191363060_70116750528100'
+  app/controllers/perspectives_controller.rb:46:in `show'
+
+
+  Rendered /home/luis/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+  Rendered /home/luis/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /home/luis/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.4ms)
+
+
+Started GET "/perspectives/1" for 127.0.0.1 at 2012-05-27 10:28:24 -0430
+Processing by PerspectivesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerspective Load (0.1ms)[0m  [1mSELECT "perspectives".* FROM "perspectives" WHERE "perspectives"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."perspective_id" = 1
+  Rendered perspectives/show.html.erb within layouts/application (0.5ms)
+Completed 500 Internal Server Error in 50ms
+
+ActionView::Template::Error (undefined method `[]' for nil:NilClass):
+    19:   <tr>
+    20:     <td><div id='chart'></div>
+    21:         <%= render_chart @charts[0], 'chart' %>
+    22:         <%= link_to 'Explorar', @perspectives[0] %></td>
+    23:     <td><div id='chart1'></div>
+    24:         <%= render_chart @charts[1], 'chart1' %></td>
+    25:   </tr>
+  app/views/perspectives/show.html.erb:22:in `_app_views_perspectives_show_html_erb___1293002578191363060_70116750528100'
+  app/controllers/perspectives_controller.rb:46:in `show'
+
+
+  Rendered /home/luis/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.7ms)
+  Rendered /home/luis/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /home/luis/.rvm/gems/ruby-1.9.3-p194/gems/actionpack-3.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (8.0ms)
+
+
+Started GET "/perspectives/1" for 127.0.0.1 at 2012-05-27 10:29:07 -0430
+Processing by PerspectivesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPerspective Load (0.1ms)[0m  [1mSELECT "perspectives".* FROM "perspectives" WHERE "perspectives"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."perspective_id" = 1
+  Rendered perspectives/show.html.erb within layouts/application (1.9ms)
+  Rendered layouts/_navigation.html.erb (9.5ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 60ms (Views: 46.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (37ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/indicator_scores.css?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /indicator_scores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/indicators.css?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /indicators.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/objective_scores.css?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /objective_scores.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/objectives.css?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /objectives.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/perspective_scores.css?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /perspective_scores.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/perspectives.css?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /perspectives.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/score_dates.css?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /score_dates.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /jquery.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /jquery_ujs.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /bootstrap-transition.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /bootstrap-alert.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /bootstrap-button.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /bootstrap-carousel.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /bootstrap-collapse.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /bootstrap-dropdown.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /bootstrap-modal.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /bootstrap-scrollspy.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /bootstrap-tab.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /bootstrap-tooltip.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /bootstrap-popover.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /bootstrap-typeahead.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /bootstrap.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/indicator_scores.js?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /indicator_scores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/indicators.js?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /indicators.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/objective_scores.js?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /objective_scores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/objectives.js?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /objectives.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/perspectives.js?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /perspectives.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/score_dates.js?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /score_dates.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/perspective_scores.js?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /perspective_scores.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-27 10:29:08 -0430
+Served asset /application.js - 304 Not Modified (9ms)
+
+
+Started GET "/objectives/1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Processing by ObjectivesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mObjective Load (0.2ms)[0m  [1mSELECT "objectives".* FROM "objectives" WHERE "objectives"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered objectives/show.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_navigation.html.erb (0.7ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 18ms (Views: 17.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /application.css - 304 Not Modified (18ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (41ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/indicators.css?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /indicators.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/indicator_scores.css?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /indicator_scores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/objective_scores.css?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /objective_scores.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/objectives.css?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /objectives.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/perspective_scores.css?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /perspective_scores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/perspectives.css?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /perspectives.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/score_dates.css?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /score_dates.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /jquery.js - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /bootstrap-transition.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /bootstrap-alert.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /bootstrap-button.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /bootstrap-carousel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /bootstrap-collapse.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /bootstrap-dropdown.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /bootstrap-modal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /bootstrap-scrollspy.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /bootstrap-tab.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /bootstrap-tooltip.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /bootstrap.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /bootstrap-popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /bootstrap-typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/indicator_scores.js?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /indicator_scores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/indicators.js?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /indicators.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/objective_scores.js?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /objective_scores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/objectives.js?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /objectives.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/perspective_scores.js?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /perspective_scores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/perspectives.js?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /perspectives.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/score_dates.js?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /score_dates.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-27 11:26:48 -0430
+Served asset /application.js - 304 Not Modified (4ms)
+
+
+Started GET "/objectives/1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Processing by ObjectivesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mObjective Load (0.1ms)[0m  SELECT "objectives".* FROM "objectives" WHERE "objectives"."id" = ? LIMIT 1  [["id", "1"]]
+  Rendered objectives/show.html.erb within layouts/application (1.1ms)
+  Rendered layouts/_navigation.html.erb (9.2ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 33ms (Views: 26.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /application.css - 304 Not Modified (47ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (13ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/indicator_scores.css?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /indicator_scores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/indicators.css?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /indicators.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/objective_scores.css?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /objective_scores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/objectives.css?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /objectives.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/perspective_scores.css?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /perspective_scores.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/perspectives.css?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /perspectives.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/score_dates.css?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /score_dates.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /scaffolds.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /jquery.js - 304 Not Modified (16ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /bootstrap-transition.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /bootstrap-alert.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /bootstrap-button.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /bootstrap-carousel.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /bootstrap-collapse.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /bootstrap-dropdown.js - 304 Not Modified (7ms)
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /bootstrap-modal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /bootstrap-scrollspy.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /bootstrap-tab.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /bootstrap-tooltip.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /bootstrap-popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /bootstrap-typeahead.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /bootstrap.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/indicator_scores.js?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /indicator_scores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/indicators.js?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /indicators.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/objective_scores.js?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /objective_scores.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/objectives.js?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /objectives.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/perspective_scores.js?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /perspective_scores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/perspectives.js?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /perspectives.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/score_dates.js?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /score_dates.js - 304 Not Modified (25ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-27 11:29:16 -0430
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/objectives/1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Processing by ObjectivesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mObjective Load (0.1ms)[0m  [1mSELECT "objectives".* FROM "objectives" WHERE "objectives"."id" = ? LIMIT 1[0m  [["id", "1"]]
+  Rendered objectives/show.html.erb within layouts/application (0.7ms)
+  Rendered layouts/_navigation.html.erb (9.3ms)
+  Rendered layouts/_messages.html.erb (0.0ms)
+Completed 200 OK in 53ms (Views: 45.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /application.css - 304 Not Modified (30ms)
+
+
+Started GET "/assets/bootstrap_and_overrides.css?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /bootstrap_and_overrides.css - 304 Not Modified (17ms)
+
+
+Started GET "/assets/home.css?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /home.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/objective_scores.css?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /objective_scores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/indicator_scores.css?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /indicator_scores.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/indicators.css?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /indicators.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/objectives.css?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /objectives.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/perspective_scores.css?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /perspective_scores.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/perspectives.css?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /perspectives.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/scaffolds.css?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /scaffolds.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/score_dates.css?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /score_dates.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /users.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-transition.js?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /bootstrap-transition.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-alert.js?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /bootstrap-alert.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-button.js?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /bootstrap-button.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bootstrap-dropdown.js?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /bootstrap-dropdown.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-carousel.js?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /bootstrap-carousel.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-collapse.js?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /bootstrap-collapse.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/bootstrap-modal.js?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /bootstrap-modal.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-scrollspy.js?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /bootstrap-scrollspy.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap-tab.js?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /bootstrap-tab.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-tooltip.js?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /bootstrap-tooltip.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-typeahead.js?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /bootstrap-typeahead.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap-popover.js?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /bootstrap-popover.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap.js?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /bootstrap.js - 304 Not Modified (8ms)
+
+
+Started GET "/assets/indicator_scores.js?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /indicator_scores.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/home.js?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /home.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/indicators.js?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /indicators.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/objective_scores.js?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /objective_scores.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/objectives.js?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /objectives.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/perspective_scores.js?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /perspective_scores.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/perspectives.js?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /perspectives.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/score_dates.js?body=1" for 127.0.0.1 at 2012-05-27 11:30:44 -0430
+Served asset /score_dates.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2012-05-27 11:30:45 -0430
+Served asset /application.js - 304 Not Modified (11ms)

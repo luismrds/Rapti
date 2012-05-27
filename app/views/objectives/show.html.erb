@@ -15,6 +15,9 @@
   <%= @objective.perspective_id %>
 </p>
 
+<div id='chart'></div>
+<%= render_chart(@chart, 'chart') %>
+
 
 <%= link_to 'Edit', edit_objective_path(@objective) %> |
 <%= link_to 'Back', objectives_path %>

@@ -26,7 +26,6 @@
     <th></th>
   </tr>
 
-<% @charts.each do |ch| %>
   <tr>
     <td><div id='chart'></div>
         <%= render_chart @charts[0], 'chart' %>
@@ -40,7 +39,7 @@
     <td><div id='chart3'></div>
         <%= render_chart @charts[3], 'chart3' %></td>
   </tr>
-<% end %>
+
 </table>
 
 <div id='chart'></div>

@@ -5,8 +5,6 @@ class PerspectivesController < ApplicationController
 	@perspectives = Perspective.all
 	@charts = []
 
-
-
     for p in @perspectives
         data_table = GoogleVisualr::DataTable.new
 	    data_table.new_column('string'  , 'Label')
@@ -29,7 +27,22 @@ class PerspectivesController < ApplicationController
   # GET /perspectives/1.json
   def show
     @perspective = Perspective.find(params[:id])
-      
+    @objs = @perspective.objectives  
+    @charts = []
+
+    for p in @objs
+        data_table = GoogleVisualr::DataTable.new
+	    data_table.new_column('string'  , 'Label')
+	    data_table.new_column('number'  , 'Value')
+        data_table.add_rows(1)
+       	data_table.set_cell(0, 0, p.name )
+    	data_table.set_cell(0, 1, 80)
+        opts   = { :width => 400, :height => 120, :redFrom => 90, :redTo => 100, :yellowFrom => 75, :yellowTo => 90, :minorTicks => 5 }
+    	ch = GoogleVisualr::Interactive::Gauge.new(data_table, opts)
+        @charts << ch
+    end
+
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @perspective }

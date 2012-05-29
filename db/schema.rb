@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120526163152) do
+ActiveRecord::Schema.define(:version => 20120528200632) do
 
   create_table "indicator_scores", :force => true do |t|
     t.integer  "indicator_id"
@@ -27,6 +27,11 @@ ActiveRecord::Schema.define(:version => 20120526163152) do
     t.integer  "objective_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "indicators_objectives", :id => false, :force => true do |t|
+    t.integer "indicator_id"
+    t.integer "objective_id"
   end
 
   create_table "objective_scores", :force => true do |t|

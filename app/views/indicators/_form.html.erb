@@ -19,10 +19,15 @@
     <%= f.label :weight %><br />
     <%= f.text_field :weight %>
   </div>
-  <div class="field">
-    <%= f.label :objective_id %><br />
-    <%= f.collection_select :objective_id, Objective.all, :id, :name %>
-  </div>
+
+  <% for objective in Objective.all %>  
+        <div>  
+          <%= check_box_tag "indicator[objective_ids][]", objective.id, @indicator.objectives.include?(objective) %>  
+          <%= objective.name %>  
+        </div>  
+  <% end %>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

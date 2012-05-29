@@ -1,5 +1,5 @@
 class Indicator < ActiveRecord::Base
-  attr_accessible :name, :objective_id, :weight
+  attr_accessible :name, :objective_ids, :weight
 
-  belongs_to :perspective
+  has_and_belongs_to_many :objectives
 end

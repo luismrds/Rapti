@@ -15,6 +15,15 @@
   <%= @objective.perspective_id %>
 </p>
 
+<h2>Indicadores</h2>
+  <% @objective.indicators.size.times{|i| %>  
+        <div class="span4" id='chart<%= i%>'>
+            <%tag = "chart"+i.to_s%>
+            <%= render_chart @charts[i], tag %>            
+        </div>
+  <% } %>
+
+
 <div id='chart'></div>
 <%= render_chart(@chart, 'chart') %>
 

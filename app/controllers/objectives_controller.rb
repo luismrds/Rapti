@@ -14,6 +14,21 @@ class ObjectivesController < ApplicationController
   # GET /objectives/1.json
   def show
     @objective = Objective.find(params[:id])
+    @indicators = @objective.indicators
+    @charts = []
+
+    for i in @indicators
+        data_table = GoogleVisualr::DataTable.new
+	    data_table.new_column('string'  , 'Label')
+	    data_table.new_column('number'  , 'Value')
+        data_table.add_rows(1)
+       	data_table.set_cell(0, 0, i.name )
+    	data_table.set_cell(0, 1, 80)
+        opts   = { :width => 400, :height => 120, :redFrom => 90, :redTo => 100, :yellowFrom => 75, :yellowTo => 90, :minorTicks => 5 }
+    	ch = GoogleVisualr::Interactive::Gauge.new(data_table, opts)
+        @charts << ch
+    end
+
 
     data_table = GoogleVisualr::DataTable.new
 

@@ -27,6 +27,26 @@
         </div>  
   <% end %>
 
+<p>
+  <h3>Indicadores que lo influencian</h3>
+</p>
+<table>
+  <tr>
+    <th>Name</th>
+  </tr>
+
+<% @indicator.sons.each do |indicator| %>
+  <tr>
+    <td><%= indicator.name %></td>
+  </tr>
+<% end %>
+</table>
+    
+<p>
+  <h3>Seleccione otro indicador que influencie al actual: </h3>
+</p>
+
+<%=h collection_select(:son, :id, Indicator.all, :id, :name, :prompt => true) %>
 
   <div class="actions">
     <%= f.submit %>

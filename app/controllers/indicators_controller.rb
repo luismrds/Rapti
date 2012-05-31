@@ -1,4 +1,5 @@
 class IndicatorsController < ApplicationController
+include ApplicationHelper
   # GET /indicators
   # GET /indicators.json
   def index
@@ -14,6 +15,7 @@ class IndicatorsController < ApplicationController
   # GET /indicators/1.json
   def show
     @indicator = Indicator.find(params[:id])
+    @chart = produceGauge(@indicator.name, @indicator.today_score, 625, 187.5, 90, 100, 75, 90, 5)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -57,16 +59,19 @@ class IndicatorsController < ApplicationController
   # PUT /indicators/1.json
   def update
     @indicator = Indicator.find(params[:id])
-
-    respond_to do |format|
-      if @indicator.update_attributes(params[:indicator])
-        format.html { redirect_to @indicator, notice: 'Indicator was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @indicator.errors, status: :unprocessable_entity }
-      end
+    son = params[:son]
+    if son[:id] != ""
+        @indicator.sons << Indicator.find(son[:id])
     end
+        respond_to do |format|
+          if @indicator.update_attributes(params[:indicator])
+            format.html { redirect_to @indicator, notice: 'Indicator was successfully updated.' }
+            format.json { head :no_content }
+          else
+            format.html { render action: "edit" }
+            format.json { render json: @indicator.errors, status: :unprocessable_entity }
+          end
+        end
   end
 
   # DELETE /indicators/1
@@ -80,4 +85,24 @@ class IndicatorsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+#Releases a Indicator that does not influenciate it's "Father"
+  def emancipate
+      father = Indicator.find(params[:father])
+      son = Indicator.find(params[:son])
+      
+      sons = father.sons
+      sons.each{|s|
+          if s == son
+              father.sons.delete(s)
+              break
+          end
+      }
+      father.save
+      respond_to do |format|
+        format.html { redirect_to father }
+        format.json { head :no_content }
+      end
+   end
 end
+

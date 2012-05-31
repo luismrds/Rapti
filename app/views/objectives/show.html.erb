@@ -18,14 +18,20 @@
 <h2>Indicadores</h2>
   <% @objective.indicators.size.times{|i| %>  
         <div class="span4" id='chart<%= i%>'>
-            <%tag = "chart"+i.to_s%>
-            <%= render_chart @charts[i], tag %>            
+            <div class="row" id='thechart<%= i%>'>
+                <%tag = "chart"+i.to_s%>
+                <%= render_chart @charts[i][0], tag %>
+            </div>
+            <div class="row" id=thelink<%= i%>'>
+                <p>Explorar</p>
+            </div>
         </div>
   <% } %>
 
-
-<div id='chart'></div>
-<%= render_chart(@chart, 'chart') %>
+<div class="row">
+    <div id='chart'></div>
+    <%= render_chart(@chart, 'chart') %>
+</div>
 
 
 <%= link_to 'Edit', edit_objective_path(@objective) %> |

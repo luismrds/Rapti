@@ -1,4 +1,8 @@
 Rails3BootstrapDeviseCancan::Application.routes.draw do
+  
+  match "indicators/emancipate/:father/:son" => "indicators#emancipate", :as => :emancipate
+  match "indicators/fill" => "indicators#fill", :as => :fill
+
   resources :indicators
 
   resources :indicator_scores

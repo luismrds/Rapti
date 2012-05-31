@@ -9,3 +9,11 @@ rails generate scaffold ObjectiveScore objective_id:integer date_id:integer scor
 rails generate scaffold IndicatorScore indicator_id:integer date_id:integer score:float
 
 rails generate migration ObjectivesIndicatorsBridgeTable
+rails generate migration IndicatorHabtmRecursive
+
+
+PruebaRaw
+
+rails generate scaffold RawData name:string value:float operation_id:integer 
+rails generate scaffold Operation name:string operator:char firstoperator:integer secondoperator:integer
+rails generate scaffold Indicator name:string operation_id:integer value:float

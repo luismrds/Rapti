@@ -1,19 +1,50 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
+<h2>
   <%= @indicator.name %>
+</h2>
+
+<p>
+  <b>Ponderacion:</b>
+  <%= @indicator.weight %>%
 </p>
 
 <p>
-  <b>Weight:</b>
-  <%= @indicator.weight %>
+  <p>Listado de Indicadores que lo influencian</td></p>
 </p>
 
-<p>
-  <b>Objective:</b>
-  <%= @indicator.objective_id %>
-</p>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Weight</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @indicator.sons.each do |son| %>
+  <tr>
+    <td><%= son.name %></td>
+    <td><%= son.weight %></td>
+    <% if son.today_score <= 25 %>
+        <td><span class="label label-important"><%= link_to 'Mostrar', son %></span></td>
+    <% end %>
+    <% if son.today_score > 25 && son.today_score < 75 %>
+        <td><span class="label label-warning"><%= link_to 'Mostrar', son %></span></td>
+    <% end %>
+    <% if son.today_score >= 75 %>
+        <td><span class="label label-success"><%= link_to 'Mostrar', son %></span></td>
+    <% end %>
+    <td><%= link_to 'Desligar', emancipate_path(@indicator, son) %></td>
+  </tr>
+<% end %>
+</table>
+
+<div class="row">
+    <div id='chart'></div>
+    <%= render_chart(@chart, 'chart') %>
+</div>
 
 
 <%= link_to 'Edit', edit_indicator_path(@indicator) %> |

@@ -11,7 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120528200632) do
+ActiveRecord::Schema.define(:version => 20120529183452) do
+
+  create_table "indicator_father_son", :id => false, :force => true do |t|
+    t.integer "indicatorfather_id"
+    t.integer "indicatorson_id"
+  end
 
   create_table "indicator_scores", :force => true do |t|
     t.integer  "indicator_id"

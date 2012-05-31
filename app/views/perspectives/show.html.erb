@@ -1,13 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @perspective.name %>
-</p>
+<h2>
+  Perspectiva <%= @perspective.name %>
+</h2>
 
 <p>
-  <b>Weight:</b>
-  <%= @perspective.weight %>
+  <b>Ponderacion:</b>
+  <%= @perspective.weight %>%
 </p>
 
 <table>
@@ -21,13 +20,16 @@
         <%= render_chart @charts[0], 'chart' %>
         <%= link_to 'Explorar', @objs[0] %></td>
     <td><div id='chart1'></div>
-        <%= render_chart @charts[1], 'chart1' %></td>
+        <%= render_chart @charts[1], 'chart1' %>
+        <%= link_to 'Explorar', @objs[1] %></td>
   </tr>
   <tr>
     <td><div id='chart2'></div>
-        <%= render_chart @charts[2], 'chart2' %></td>
+        <%= render_chart @charts[2], 'chart2' %>
+        <%= link_to 'Explorar', @objs[2] %></td>
     <td><div id='chart3'></div>
-        <%= render_chart @charts[3], 'chart3' %></td>
+        <%= render_chart @charts[3], 'chart3' %>
+        <%= link_to 'Explorar', @objs[3] %></td>
   </tr>
 
 </table>

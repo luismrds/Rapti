@@ -1,37 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
+<h2>
   <%= @objective.name %>
-</p>
+</h2>
 
 <p>
-  <b>Weight:</b>
-  <%= @objective.weight %>
+  <b>Perspectiva:</b>
+  <%= Perspective.find(@objective.perspective_id).name %>
 </p>
-
-<p>
-  <b>Perspective:</b>
-  <%= @objective.perspective_id %>
-</p>
-
+<div class="row">
 <h2>Indicadores</h2>
   <% @objective.indicators.size.times{|i| %>  
-        <div class="span4" id='chart<%= i%>'>
+        <div class="span5" id='chart<%= i%>'>
             <div class="row" id='thechart<%= i%>'>
-                <%tag = "chart"+i.to_s%>
+                <%tag = "thechart"+i.to_s%>
                 <%= render_chart @charts[i][0], tag %>
             </div>
             <div class="row" id=thelink<%= i%>'>
-                <p>Explorar</p>
+                <%= link_to 'Explorar', @charts[i][1] %>
             </div>
         </div>
   <% } %>
-
-<div class="row">
-    <div id='chart'></div>
-    <%= render_chart(@chart, 'chart') %>
 </div>
+<!--<div class="row">
+    <div class="span10" id='chart'></div>
+    <%= render_chart(@chart, 'chart') %>
+</div-->
 
 
 <%= link_to 'Edit', edit_objective_path(@objective) %> |

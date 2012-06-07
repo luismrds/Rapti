@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120529183452) do
+ActiveRecord::Schema.define(:version => 20120606143854) do
 
   create_table "indicator_father_son", :id => false, :force => true do |t|
     t.integer "indicatorfather_id"
@@ -22,8 +22,9 @@ ActiveRecord::Schema.define(:version => 20120529183452) do
     t.integer  "indicator_id"
     t.integer  "scoredate_id"
     t.float    "score"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.float    "goal",         :default => 0.0
   end
 
   create_table "indicators", :force => true do |t|
@@ -32,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20120529183452) do
     t.integer  "objective_id"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.integer  "operation_id"
   end
 
   create_table "indicators_objectives", :id => false, :force => true do |t|
@@ -55,6 +57,15 @@ ActiveRecord::Schema.define(:version => 20120529183452) do
     t.datetime "updated_at",     :null => false
   end
 
+  create_table "operations", :force => true do |t|
+    t.string   "name"
+    t.string   "operator",      :limit => 1
+    t.integer  "firstoperand"
+    t.integer  "secondoperand"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
   create_table "perspective_scores", :force => true do |t|
     t.integer  "perspective_id"
     t.integer  "scoredate_id"
@@ -68,6 +79,22 @@ ActiveRecord::Schema.define(:version => 20120529183452) do
     t.float    "weight"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
+  end
+
+  create_table "raw_data", :force => true do |t|
+    t.string   "name"
+    t.integer  "operation_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+    t.float    "default_value"
+  end
+
+  create_table "raw_data_scores", :force => true do |t|
+    t.integer  "scoredate_id"
+    t.float    "value"
+    t.integer  "rawdata_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "roles", :force => true do |t|

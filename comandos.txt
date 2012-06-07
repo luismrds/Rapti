@@ -14,6 +14,18 @@ rails generate migration IndicatorHabtmRecursive
 
 PruebaRaw
 
-rails generate scaffold RawData name:string value:float operation_id:integer 
-rails generate scaffold Operation name:string operator:char firstoperator:integer secondoperator:integer
+
+rails generate scaffold RawData name:string value:float operation_id:integer
+rails generate scaffold Operation name:string operator:char firstoperand:integer secondoperand:integer
 rails generate scaffold Indicator name:string operation_id:integer value:float
+
+Para diferenciar fechas
+rails generate scaffold ScoreDate month:integer year:integer
+rails generate scaffold RawDataScore scoredate_id:integer value:float rawdata_id:integer
+rails generate scaffold IndicatorScore indicator_id:integer scoredate_id:integer score:float
+
+
+rails generate scaffold IndicatorScore indicator_id:integer date_id:integer score:float
+
+rails generate scaffold ScoreDate month:integer year:integer
+rails generate migration AddGoalToIndicatorsScore

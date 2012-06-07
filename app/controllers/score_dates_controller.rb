@@ -35,6 +35,12 @@ class ScoreDatesController < ApplicationController
   # GET /score_dates/1/edit
   def edit
     @score_date = ScoreDate.find(params[:id])
+    #List all de Raw data names that are about to be edited
+    rawdatascores = @score_date.rawdatascores
+    @names = []
+    rawdatascores.each{|r|
+        @names << r.rawdata.name
+    }
   end
 
   # POST /score_dates
@@ -79,5 +85,25 @@ class ScoreDatesController < ApplicationController
       format.html { redirect_to score_dates_url }
       format.json { head :no_content }
     end
+  end
+
+  def setgoals
+    @score_date = ScoreDate.find(params[:id])
+    #List all de indicators names that are about to be edited
+    indicatorscores = @score_date.indicatorscores
+    @names = []
+    indicatorscores.each{|i|
+        @names << i.indicator.name
+    }
+  end
+
+  def filloperators
+    @score_date = ScoreDate.find(params[:id])
+    #List all de Raw data names that are about to be edited
+    rawdatascores = @score_date.rawdatascores
+    @names = []
+    rawdatascores.each{|r|
+        @names << r.rawdata.name
+    }
   end
 end

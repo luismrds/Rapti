@@ -17,10 +17,10 @@ include ApplicationHelper
     @objective = Objective.find(params[:id])
     @indicators = @objective.indicators
     @charts = []
-    ch = []
     for i in @indicators
+        ch = []
         #Should change array for a Hash whith "chart" and "indicator_id"
-    	ch[0] = produceGauge(i.name, 80, 400, 120, 90, 100, 75, 90, 5)
+    	ch[0] = produceGauge(i.name, i.today_score, 800, 240, 90, 100, 75, 90, 5)
         ch[1] = i      
         @charts << ch
     end

@@ -11,5 +11,16 @@ module ApplicationHelper
     	return GoogleVisualr::Interactive::Gauge.new(data_table, opts)
     end
 
-    
+    def produceLineChart(title, scores, indicador)
+        data_table = GoogleVisualr::DataTable.new
+        data_table.new_column('string', 'Mes' ) 
+        data_table.new_column('number', indicador.name) 
+        data_table.new_column('number', 'Meta')  
+        # Add Rows and Values 
+        scores.each{|s|
+            data_table.add_rows([[ScoreDate.find(s.scoredate_id).month.to_s, s.score, s.goal]])
+        }
+        option = { width: 400, height: 240, title: title }
+        return GoogleVisualr::Interactive::AreaChart.new(data_table, option)
+    end
 end

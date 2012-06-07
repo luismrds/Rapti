@@ -5,6 +5,7 @@
     <th>Indicator</th>
     <th>Scoredate</th>
     <th>Score</th>
+    <th>Meta</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,6 +16,7 @@
     <td><%= Indicator.find(indicator_score.indicator_id).name %></td>
     <td><%= indicator_score.scoredate_id %></td>
     <td><%= indicator_score.score %></td>
+    <td><%= indicator_score.goal %></td>
     <td><%= link_to 'Show', indicator_score %></td>
     <td><%= link_to 'Edit', edit_indicator_score_path(indicator_score) %></td>
     <td><%= link_to 'Destroy', indicator_score, confirm: 'Are you sure?', method: :delete %></td>

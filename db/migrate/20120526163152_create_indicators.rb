@@ -4,6 +4,7 @@ class CreateIndicators < ActiveRecord::Migration
       t.string :name
       t.float :weight
       t.integer :objective_id
+      t.integer :operation_id
 
       t.timestamps
     end

@@ -11,4 +11,5 @@ module IndicatorScoresHelper
             }
         }
     end
+
 end

@@ -1,0 +1,27 @@
+<h1>Listing raw_data_scores</h1>
+
+<table>
+  <tr>
+    <th>Scoredate</th>
+    <th>Value</th>
+    <th>Rawdata</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @raw_data_scores.each do |raw_data_score| %>
+  <tr>
+    <td><%= raw_data_score.scoredate_id %></td>
+    <td><%= raw_data_score.value %></td>
+    <td><%= raw_data_score.rawdata.name %></td>
+    <td><%= link_to 'Show', raw_data_score %></td>
+    <td><%= link_to 'Edit', edit_raw_data_score_path(raw_data_score) %></td>
+    <td><%= link_to 'Destroy', raw_data_score, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Raw data score', new_raw_data_score_path %>

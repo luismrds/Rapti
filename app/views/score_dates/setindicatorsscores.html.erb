@@ -1,0 +1,54 @@
+<%= form_for(@score_date) do |f| %>
+  <% if @score_date.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@score_date.errors.count, "error") %> prohibited this score_date from being saved:</h2>
+
+      <ul>
+      <% @score_date.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<h1>Para cada indicador indique su valor para el mes <%=h @score_date.month %> del anho <%=h @score_date.year %></h1>
+
+    <% i=0 %>
+
+  <%= f.fields_for :indicatorscores do |builder| %>
+   <% if i%3 == 0 %>
+        <div class="row-fluid">
+    <% end %>
+
+    <div class="span4">    
+    <%= builder.label :indicatorscores_id, @names[i] %>
+    <% i = i+1 %>
+    <%= builder.number_field :score %>
+   </div><!-- fin span -->
+    <% if i%3 == 0 %>
+        </div> <!--fin row-->
+<div class="row-fluid">
+    <% end %>
+  <% end %>
+</div>
+  <div class="actions">
+    <%= f.submit "Establecer Desempeno"%>
+  </div>
+<% end %>
+
+<h2>Elija el mes del anho 2012</h2>
+
+<div class="row-fluid" align="center">
+    <%= link_to "Enero", setindicatorsscores_path(2)%>
+    <%= link_to "Febrero", setindicatorsscores_path(3)%>
+    <%= link_to "Marzo", setindicatorsscores_path(4)%>
+    <%= link_to "Abril", setindicatorsscores_path(5)%>
+    <%= link_to "Mayo", setindicatorsscores_path(1)%>
+    <%= link_to "Junio", setindicatorsscores_path(6)%>
+    <%= link_to "Julio", setindicatorsscores_path(7)%>
+    <%= link_to "Agosto", setindicatorsscores_path(8)%>
+    <%= link_to "Septiembre", setindicatorsscores_path(9)%>
+    <%= link_to "Octubre", setindicatorsscores_path(10)%>
+    <%= link_to "Noviembre", setindicatorsscores_path(11)%>
+    <%= link_to "Diciembre", setindicatorsscores_path(12)%>
+</div>

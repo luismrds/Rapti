@@ -1,0 +1,29 @@
+<%= form_for(@raw_data_score) do |f| %>
+  <% if @raw_data_score.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@raw_data_score.errors.count, "error") %> prohibited this raw_data_score from being saved:</h2>
+
+      <ul>
+      <% @raw_data_score.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :scoredate_id %><br />
+    <%= f.number_field :scoredate_id %>
+  </div>
+  <div class="field">
+    <%= f.label :value %><br />
+    <%= f.text_field :value %>
+  </div>
+  <div class="field">
+    <%= f.label :rawdata_id %><br />
+    <%= f.number_field :rawdata_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

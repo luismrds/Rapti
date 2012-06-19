@@ -1,0 +1,54 @@
+<%= form_for(@score_date) do |f| %>
+  <% if @score_date.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@score_date.errors.count, "error") %> prohibited this score_date from being saved:</h2>
+
+      <ul>
+      <% @score_date.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<h1>Para cada Objetivo indique su desempeno para el mes <%=h @score_date.month %> del anho <%=h @score_date.year %></h1>
+
+    <% i=0 %>
+
+  <%= f.fields_for :objectivescores do |builder| %>
+   <% if i%3 == 0 %>
+        <div class="row-fluid">
+    <% end %>
+
+    <div class="span4" align="center" >    
+    <%= builder.label :objectiverscores_id, @names[i] %>
+    <% i = i+1 %>
+    <%= builder.number_field :score %>
+   </div><!-- fin span -->
+    <% if i%3 == 0 %>
+        </div> <!--fin row-->
+<div class="row-fluid">
+    <% end %>
+  <% end %>
+</div>
+  <div class="actions">
+    <%= f.submit "Establecer desempeno"%>
+  </div>
+
+<% end %>
+
+
+<div class="row-fluid" align="center">
+    <%= link_to "Enero", setobjectivesscores_path(2)%>
+    <%= link_to "Febrero", setobjectivesscores_path(3)%>
+    <%= link_to "Marzo", setobjectivesscores_path(4)%>
+    <%= link_to "Abril", setobjectivesscores_path(5)%>
+    <%= link_to "Mayo", setobjectivesscores_path(1)%>
+    <%= link_to "Junio", setobjectivesscores_path(6)%>
+    <%= link_to "Julio", setobjectivesscores_path(7)%>
+    <%= link_to "Agosto", setobjectivesscores_path(8)%>
+    <%= link_to "Septiembre", setobjectivesscores_path(9)%>
+    <%= link_to "Octubre", setobjectivesscores_path(10)%>
+    <%= link_to "Noviembre", setobjectivesscores_path(11)%>
+    <%= link_to "Diciembre", setobjectivesscores_path(12)%>
+</div>

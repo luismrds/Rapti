@@ -1,0 +1,123 @@
+<script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['gauge']});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['EVA', 80],
+        ]);
+
+        var options = {
+          width: 400, height:300,
+          redFrom: 0, redTo: 25,
+          yellowFrom:25, yellowTo: 75,
+          greenFrom:75, greenTo: 100,
+          minorTicks: 5
+        };
+
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+
+<script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Mes', 'EVA', 'Meta'],
+          ['1',  100,      120],
+          ['2',  110,      125],
+          ['3',  120,       130],
+          ['4',  125,      135],
+          ['5',  135,      140],
+          ['6',  145,      145]
+        ]);
+
+        var options = {
+          title: 'EVA vs Metas'
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('linechart_div'));
+        chart.draw(data, options);
+      }
+</script>    
+<script type='text/javascript'>
+      google.load('visualization', '1', {packages:['gauge']});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['EVA', 80],
+        ]);
+
+        var options = {
+          width: 400, height:300,
+          redFrom: 0, redTo: 25,
+          yellowFrom:25, yellowTo: 75,
+          greenFrom:75, greenTo: 100,
+          minorTicks: 5
+        };
+
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div2'));
+        chart.draw(data, options);
+      }
+    </script>
+
+<script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Mes', 'EVA', 'Meta'],
+          ['1',  100,      120],
+          ['2',  110,      125],
+          ['3',  120,       130],
+          ['4',  125,      135],
+          ['5',  135,      140],
+          ['6',  145,      145]
+        ]);
+
+        var options = {
+          title: 'EVA vs Metas'
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('linechart_div2'));
+        chart.draw(data, options);
+      }
+</script>
+
+
+<h1>Maximizar el Valor del Grupo ALC</h1>
+<h2>Medido en: Porcentaje</h2>
+
+<ul class="breadcrumb">
+  <li>
+    <h2>EVA</h2>
+  </li>
+</ul>
+
+<div class="row">
+    <div class="span6" align="center">
+        <div id='chart_div'></div>
+    </div>
+    <div class="span6" align="center">
+        <div id="linechart_div"></div>
+    </div>
+</div>
+
+<ul class="breadcrumb">
+  <li>
+    <h2>Otro KPI</h2>
+  </li>
+</ul>
+
+<div class="row">
+    <div class="span6" align="center">
+        <div id='chart_div2'></div>
+    </div>
+    <div class="span6" align="center">
+        <div id="linechart_div2"></div>
+    </div>
+</div>

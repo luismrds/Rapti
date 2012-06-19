@@ -1,0 +1,46 @@
+<%= form_for(@score_date) do |f| %>
+  <% if @score_date.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@score_date.errors.count, "error") %> prohibited this score_date from being saved:</h2>
+
+      <ul>
+      <% @score_date.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<h1>Establezca los valores para el mes <%=h @score_date.month %> del anho <%=h @score_date.year %></h1>
+
+    <% i=0 %>
+
+  <%= f.fields_for :rawdatascores do |builder| %>
+   <% if i%3 == 0 %>
+        <div class="row-fluid">
+    <% end %>
+
+    <div class="span4" align="center" >  
+    <%= builder.label :rawdata_id, @names[i] %>
+    <% i = i+1 %>
+    <%= builder.number_field :value %><br />
+   </div><!-- fin span -->
+    <% if i%3 == 0 %>
+        </div> <!--fin row-->
+      <div class="row-fluid">
+    <% end %>
+
+  <% end %>
+</div>
+  <div class="actions">
+    <%= f.submit "Establecer valores" %>
+  </div>
+
+<% end %>
+
+
+
+
+
+
+

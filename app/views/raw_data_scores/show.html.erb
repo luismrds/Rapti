@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Scoredate:</b>
+  <%= @raw_data_score.scoredate_id %>
+</p>
+
+<p>
+  <b>Value:</b>
+  <%= @raw_data_score.value %>
+</p>
+
+<p>
+  <b>Rawdata:</b>
+  <%= @raw_data_score.rawdata_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_raw_data_score_path(@raw_data_score) %> |
+<%= link_to 'Back', raw_data_scores_path %>

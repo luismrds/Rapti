@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @raw_datum.name %>
+</p>
+
+<p>
+  <b>Operation:</b>
+  <%= @raw_datum.operation_id %>
+</p>
+
+
+<%= link_to 'Editar', edit_raw_datum_path(@raw_datum) %> |
+<%= link_to 'Volver', raw_data_path %>

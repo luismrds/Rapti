@@ -1,0 +1,55 @@
+<%= form_for(@score_date) do |f| %>
+  <% if @score_date.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@score_date.errors.count, "error") %> prohibited this score_date from being saved:</h2>
+
+      <ul>
+      <% @score_date.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<h1>Establezca las metas para el mes <%=h @score_date.month %> del anho <%=h @score_date.year %></h1>
+
+    <% i=0 %>
+
+  <%= f.fields_for :indicatorscores do |builder| %>
+   <% if i%3 == 0 %>
+        <div class="row-fluid">
+    <% end %>
+
+    <div class="span4">    
+    <%= builder.label :indicatorscores_id, @names[i] %>
+    <% i = i+1 %>
+    <%= builder.number_field :goal %>
+   </div><!-- fin span -->
+    <% if i%3 == 0 %>
+        </div> <!--fin row-->
+<div class="row-fluid">
+    <% end %>
+  <% end %>
+</div>
+  <div class="actions">
+    <%= f.submit "Establecer metas"%>
+  </div>
+
+<% end %>
+
+<h2>Elija el mes del anho 2012</h2>
+
+<div class="row-fluid" align="center">
+    <%= link_to "Enero", setindicatorsgoals_path(2)%>
+    <%= link_to "Febrero", setindicatorsgoals_path(3)%>
+    <%= link_to "Marzo", setindicatorsgoals_path(4)%>
+    <%= link_to "Abril", setindicatorsgoals_path(5)%>
+    <%= link_to "Mayo", setindicatorsgoals_path(1)%>
+    <%= link_to "Junio", setindicatorsgoals_path(6)%>
+    <%= link_to "Julio", setindicatorsgoals_path(7)%>
+    <%= link_to "Agosto", setindicatorsgoals_path(8)%>
+    <%= link_to "Septiembre", setindicatorsgoals_path(9)%>
+    <%= link_to "Octubre", setindicatorsgoals_path(10)%>
+    <%= link_to "Noviembre", setindicatorsgoals_path(11)%>
+    <%= link_to "Diciembre", setindicatorsgoals_path(12)%>
+</div>

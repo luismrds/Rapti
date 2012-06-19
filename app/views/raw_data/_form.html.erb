@@ -1,0 +1,29 @@
+<%= form_for(@raw_datum) do |f| %>
+  <% if @raw_datum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@raw_datum.errors.count, "error") %> prohibited this raw_datum from being saved:</h2>
+
+      <ul>
+      <% @raw_datum.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :default_value %><br />
+    <%= f.text_field :default_value %>
+  </div>
+  <div class="field">
+        <%= f.label "Operacion" %><br />
+        <%=h collection_select(:raw_datum, :operation_id, Operation.all, :id, :name, :prompt => true) %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

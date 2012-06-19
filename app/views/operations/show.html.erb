@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @operation.name %>
+</p>
+
+<p>
+  <b>Operator:</b>
+  <%= @operation.operator %>
+</p>
+
+<p>
+  <b>Firstoperand:</b>
+  <%= @operation.firstoperand %>
+</p>
+
+<p>
+  <b>Secondoperand:</b>
+  <%= @operation.secondoperand %>
+</p>
+
+
+<%= link_to 'Editar', edit_operation_path(@operation) %> |
+<%= link_to 'Volver', operations_path %>

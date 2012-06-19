@@ -1,0 +1,77 @@
+ <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      function drawTable() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('number', 'Actual');
+        data.addColumn('number', 'Meta');
+        data.addColumn('number', 'Progreso');
+        data.addColumn('number', 'Baseline');
+        data.addColumn('number', 'Crecimiento');
+        data.addRows([
+          [{v: 60, f: '60%'}, {v:100, f:'100%'}, {v:65, f:'65%'}, {v:25, f:'25%'}, {v:35, f:'35%'} ]
+        ]);
+
+        var table = new google.visualization.Table(document.getElementById('table_div'));
+        table.draw(data, {showRowNumber: true});
+      }
+    </script>
+
+
+<script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Mes', 'Objetivo', 'Meta'],
+          ['1',  100,      120],
+          ['2',  110,      125],
+          ['3',  120,       130],
+          ['4',  125,      135],
+          ['5',  135,      140],
+          ['6',  145,      145]
+        ]);
+
+        var options = {
+          title: 'Maximizar el Valor del Grupo ALC'
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('linechart_div2'));
+        chart.draw(data, options);
+      }
+</script>
+
+
+<h1>Maximizar el Valor del Grupo ALC</h1>
+<h2>Medido en: Porcentaje</h2>
+
+<div class="row">
+    <div class="span4" align="center">
+        <div id='chart'></div>
+        <%= render_chart(@chart, 'chart') %>
+    </div>
+
+    <div class="span8" align="center">
+        <div class="row">        
+            <div id='table_div'></div>
+        </div>
+        </br>
+        <div class="row" align="left">        
+            <h3>Indicadores: (<%= link_to "Ver juntos", exploreobjectives_path() %> )</h3>
+                <OL TYPE="1">
+                    <LI><p><%= link_to "EVA", demoshowobjectives_path(), :class => 'btn btn-success'%></p>
+                    <LI><p><%= link_to "Ejemplo de KPI", demoshowobjectives_path(), :class => 'btn btn-warning'%></p>
+                    <LI><p><%= link_to "Otro Kpi para este Obj", demoshowobjectives_path(), :class => 'btn btn-danger'%></p>
+                </OL>
+        </div>
+    </div>
+</div>
+</br>
+<h2>Tendencia de los ultimos 6 meses</h2>
+
+<div class="row">
+    <div class="span12" align="center">
+        <div id="linechart_div2"></div>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<h1>Listado operations</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Operator</th>
+    <th>Firstoperand</th>
+    <th>Secondoperand</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @operations.each do |operation| %>
+  <tr>
+    <td><%= operation.name %></td>
+    <td><%= operation.operator %></td>
+    <td><%= operation.firstoperand %></td>
+    <td><%= operation.secondoperand %></td>
+    <td><%= link_to 'Show', operation %></td>
+    <td><%= link_to 'Edit', edit_operation_path(operation) %></td>
+    <td><%= link_to 'Destroy', operation, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Crear operacion', new_operation_path %>

@@ -1,6 +1,6 @@
 module IndicatorsHelper
 
-  include OperationsHelper
+include OperationsHelper
 
     def calculateIndicatorValue(dateid)
         return self.operation.calculateOperationValue(dateid) 

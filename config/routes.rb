@@ -18,18 +18,24 @@ Rails3BootstrapDeviseCancan::Application.routes.draw do
 
   resources :perspective_scores
 
-  match "score_dates/setgoals/:id" => "score_dates#setgoals", :as => :setgoals
-  match "score_dates/filloperators/:id" => "score_dates#filloperators", :as => :filloperators
+  match "score_dates/setindicatorsgoals/:id" => "score_dates#setindicatorsgoals", :as => :setindicatorsgoals
+  match "score_dates/filloperands/:id" => "score_dates#filloperands", :as => :filloperands
+  match "score_dates/setindicatorsscores/:id" => "score_dates#setindicatorsscores", :as => :setindicatorsscores
+  match "score_dates/setperspectivesscores/:id" => "score_dates#setperspectivesscores", :as => :setperspectivesscores
+  match "score_dates/setobjectivesscores/:id" => "score_dates#setobjectivesscores", :as => :setobjectivesscores
   resources :score_dates
 
+  match "objectives/demoshow" => "objectives#demoshow", :as => :demoshowobjectives 
+  match "objectives/explore" => "objectives#explore", :as => :exploreobjectives
   resources :objectives
 
+  match "perspectives/strategyMap" => "perspectives#strategyMap", :as => :strategyMap
   resources :perspectives
 
   authenticated :user do
-    root :to => 'perspectives#index'
+    root :to => 'perspectives#strategyMap'
   end
-  root :to => "perspectives#index"
+  root :to => "perspectives#strategyMap"
   devise_for :users
   resources :users, :only => [:show, :index]
 end

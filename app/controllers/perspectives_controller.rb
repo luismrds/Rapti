@@ -108,4 +108,7 @@ class PerspectivesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def strategyMap
+  end
 end

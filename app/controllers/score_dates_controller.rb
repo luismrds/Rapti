@@ -87,7 +87,7 @@ class ScoreDatesController < ApplicationController
     end
   end
 
-  def setgoals
+  def setindicatorsgoals
     @score_date = ScoreDate.find(params[:id])
     #List all de indicators names that are about to be edited
     indicatorscores = @score_date.indicatorscores
@@ -97,7 +97,37 @@ class ScoreDatesController < ApplicationController
     }
   end
 
-  def filloperators
+  def setindicatorsscores
+    @score_date = ScoreDate.find(params[:id])
+    #List all de indicators names that are about to be edited
+    indicatorscores = @score_date.indicatorscores
+    @names = []
+    indicatorscores.each{|i|
+        @names << i.indicator.name
+    }
+  end
+
+  def setperspectivesscores
+    @score_date = ScoreDate.find(params[:id])
+    #List all de indicators names that are about to be edited
+    perspectivescores = @score_date.perspectivescores
+    @names = []
+    perspectivescores.each{|i|
+        @names << i.perspective.name
+    }
+  end
+
+  def setobjectivesscores
+    @score_date = ScoreDate.find(params[:id])
+    #List all de indicators names that are about to be edited
+    objectivescores = @score_date.objectivescores
+    @names = []
+    objectivescores.each{|i|
+        @names << i.objective.name
+    }
+  end
+
+  def filloperands
     @score_date = ScoreDate.find(params[:id])
     #List all de Raw data names that are about to be edited
     rawdatascores = @score_date.rawdatascores

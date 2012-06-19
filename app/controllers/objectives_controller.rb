@@ -109,4 +109,11 @@ include ApplicationHelper
       format.json { head :no_content }
     end
   end
+
+  def demoshow
+    @chart = produceGauge('', 60, 625, 250, 0, 25, 25, 75, 5)
+  end
+
+  def explore
+  end
 end

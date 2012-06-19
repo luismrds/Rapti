@@ -38,19 +38,20 @@
 
     <div class="container-fluid">
       <div class="row-fluid">
-        <div class="span3">
+        <!--<div class="span3">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Perspectivas</li>
-              <li><a href="#"><%= link_to "Establecer metas", setgoals_path(1)%></a></li>
-              <li><a href="#"><%= link_to "Definir valores", filloperators_path(1)%></a></li>
+              <li><a href="#"><%= link_to "Definir valores", filloperands_path(1)%></a></li>
+              <li><a href="#"><%= link_to "Operaciones", operations_path%></a></li>
+              <li><a href="#"><%= link_to "Datos", raw_data_path%></a></li>
               <li class="nav-header">Objetivos</li>
               <li><a href="#">Un Link para cada uno</a></li>
 
             </ul>
           </div><!--/.well -->
-        </div><!--/span-->
-        <div class="span9">
+        <!--</div><!--/span-->
+        
           <div class="hero-unit">
 
                           <%= render 'layouts/messages' %>
@@ -74,7 +75,7 @@
               <p><a class="btn" href="#">View details &raquo;</a></p>
             </div><!--/span
           </div><!--/row-->
-        </div><!--/span-->
+        
       </div><!--/row-->
 
       <hr>

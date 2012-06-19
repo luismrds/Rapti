@@ -7,7 +7,7 @@ module ApplicationHelper
         data_table.add_rows(1)
        	data_table.set_cell(0, 0, name )
     	data_table.set_cell(0, 1, value)
-        opts   = { :width => width, :height => height, :redFrom => redFrom, :redTo => redTo, :yellowFrom => yellowFrom, :yellowTo => yellowTo, :minorTicks => minorTicks }
+        opts   = { :width => width, :height => height, :redFrom => redFrom, :redTo => redTo, :yellowFrom => yellowFrom, :yellowTo => yellowTo, :greenFrom => 75, :greenTo => 100, :minorTicks => minorTicks }
     	return GoogleVisualr::Interactive::Gauge.new(data_table, opts)
     end
 
@@ -21,6 +21,6 @@ module ApplicationHelper
             data_table.add_rows([[ScoreDate.find(s.scoredate_id).month.to_s, s.score, s.goal]])
         }
         option = { width: 400, height: 240, title: title }
-        return GoogleVisualr::Interactive::AreaChart.new(data_table, option)
+        return GoogleVisualr::Interactive::LineChart.new(data_table, option)
     end
 end

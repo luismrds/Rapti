@@ -1,5 +1,57 @@
 <%= link_to "BMO", root_path, :class => 'brand' %>
 <ul class="nav">
+  <li>
+    <%= link_to "Mapa Estrategico", strategyMap_path%>      
+  </li>
+
+  <li class="dropdown">
+    <a href="#"
+          class="dropdown-toggle"
+          data-toggle="dropdown">
+          Perspectivas
+          <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+       <%= link_to "Establecer desempeno", setperspectivesscores_path(1)%> 
+    </ul>
+  </li>
+
+  <li class="dropdown">
+    <a href="#"
+          class="dropdown-toggle"
+          data-toggle="dropdown">
+          Objetivos
+          <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+       <%= link_to "Establecer desempeno", setobjectivesscores_path(1)%> 
+    </ul>
+  </li>
+
+  <li class="dropdown">
+    <a href="#"
+          class="dropdown-toggle"
+          data-toggle="dropdown">
+          Indicadores
+          <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+       <%= link_to "Establecer desempe&ntilde;o", setindicatorsscores_path(1)%>
+       <%= link_to "Establecer metas", setindicatorsgoals_path(1)%>  
+    </ul>
+  </li>
+
+  <li>
+    <%= link_to "Definir valores", filloperands_path(1)%>
+  </li>
+  <li>
+    <%= link_to "Operaciones", operations_path%>
+  </li>
+  <li>
+    <%= link_to "Datos", raw_data_path%>
+  </li>
+
+
   <% if user_signed_in? %>
     <li>
     <%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %>        

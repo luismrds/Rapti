@@ -4,7 +4,7 @@ class PerspectivesController < ApplicationController
   def index
 	@perspectives = Perspective.all
 	@charts = []
-
+=begin
     for p in @perspectives
         data_table = GoogleVisualr::DataTable.new
 	    data_table.new_column('string'  , 'Label')
@@ -16,7 +16,7 @@ class PerspectivesController < ApplicationController
     	ch = GoogleVisualr::Interactive::Gauge.new(data_table, opts)
         @charts << ch
     end
-
+=end
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @perspectives }

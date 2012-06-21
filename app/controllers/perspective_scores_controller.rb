@@ -1,4 +1,5 @@
 class PerspectiveScoresController < ApplicationController
+  include ScoreDatesHelper
   # GET /perspective_scores
   # GET /perspective_scores.json
   def index
@@ -80,4 +81,10 @@ class PerspectiveScoresController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def strategymap
+    params[:date_id] ||= currentScoreDate.id
+    @date = ScoreDate.find(params[:date_id])
+    @perspectives = Perspective.all
+  end 
 end

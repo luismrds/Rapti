@@ -1,0 +1,36 @@
+<h2><%=h @objective.name%></h2>
+<h3>Medido en: Porcentaje</h3>
+
+<div class="row">
+    <div class="span4" align="center">
+        <div id='chart'></div>
+        <%= render_chart(@chart, 'chart') %>
+    </div>
+
+    <div class="span8" align="center">
+
+
+          <div id='tablechart'></div>
+          <%= render_chart @tablechart, 'tablechart' %>
+
+
+    </br>
+    <div class="row" align="left">        
+      <h3>Indicadores: (<%= link_to "Ver juntos", exploreobjectives_path() %> )</h3>
+        <OL TYPE="1">
+          <% @currentindicators.each do |ci|%>
+            <LI><p><%= link_to ci.indicator.name, indicatoratdate_path(ci.indicator_id,ci.scoredate_id), :class => indicatorscorestate(ci)%></p>
+          <% end %>
+        </OL>
+    </div>
+</div>
+</div>
+</br>
+<h2>Tendencia de los ultimos 6 meses</h2>
+
+<div class="row">
+  <div id='linechart'></div>
+  <%= render_chart @linechart, 'linechart' %>
+</div>
+
+

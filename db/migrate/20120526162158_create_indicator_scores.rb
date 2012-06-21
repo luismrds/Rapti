@@ -4,6 +4,13 @@ class CreateIndicatorScores < ActiveRecord::Migration
       t.integer :indicator_id
       t.integer :scoredate_id
       t.float :score
+      t.float :goal, :default => 0.0
+      t.float :redfrom
+      t.float :redto
+      t.float :yellowfrom
+      t.float :yellowto
+      t.float :greenfrom
+      t.float :greento
 
       t.timestamps
     end

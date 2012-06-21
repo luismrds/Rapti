@@ -5,6 +5,12 @@ class CreateIndicators < ActiveRecord::Migration
       t.float :weight
       t.integer :objective_id
       t.integer :operation_id
+      t.float :redfrom
+      t.float :redto
+      t.float :yellowfrom
+      t.float :yellowto
+      t.float :greenfrom
+      t.float :greento
 
       t.timestamps
     end

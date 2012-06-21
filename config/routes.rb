@@ -12,10 +12,14 @@ Rails3BootstrapDeviseCancan::Application.routes.draw do
 
   resources :indicators
 
+  match "indicator_scores/indicatoratdate/:ind/:date" => "indicator_scores#indicatoratdate", :as => :indicatoratdate
   resources :indicator_scores
 
+  match "objective_scores/objectiveatdate/:obj/:date" => "objective_scores#objectiveatdate", :as => :objectiveatdate
   resources :objective_scores
 
+  match "perspective_scores/strategymap/:date_id" => "perspective_scores#strategymap", :as => :strategymap
+  match "perspective_scores/strategymap" => "perspective_scores#strategymap", :as => :strategymap
   resources :perspective_scores
 
   match "score_dates/setindicatorsgoals/:id" => "score_dates#setindicatorsgoals", :as => :setindicatorsgoals
@@ -35,7 +39,7 @@ Rails3BootstrapDeviseCancan::Application.routes.draw do
   authenticated :user do
     root :to => 'perspectives#strategyMap'
   end
-  root :to => "perspectives#strategyMap"
+  root :to => "perspective_scores#strategymap#1"
   devise_for :users
   resources :users, :only => [:show, :index]
 end

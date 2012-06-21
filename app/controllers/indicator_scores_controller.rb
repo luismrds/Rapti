@@ -1,4 +1,7 @@
 class IndicatorScoresController < ApplicationController
+  include ApplicationHelper
+  include IndicatorScoresHelper
+  
   # GET /indicator_scores
   # GET /indicator_scores.json
   def index
@@ -80,4 +83,45 @@ class IndicatorScoresController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def indicatoratdate
+    @indicator = Indicator.find(params[:ind])
+    @date = ScoreDate.find(params[:date])
+    @sons = @indicator.sons
+    @currentsons = []
+    @sons.each{|i|
+      @currentsons << IndicatorScore.find_by_indicator_id_and_scoredate_id(i.id, params[:date])
+    }
+    @currentindicator = IndicatorScore.find_by_indicator_id_and_scoredate_id(params[:ind],params[:date])
+    @chart = produceGauge("", @currentindicator.score, 800, 240, @currentindicator.redfrom, @currentindicator.redto, @currentindicator.yellowfrom, @currentindicator.yellowto, @currentindicator.greenfrom, @currentindicator.greento, 5)
+
+#    @lastsix = getLastNobjectiveScore(6, @objective, @date)
+
+
+    data_table = GoogleVisualr::DataTable.new
+    data_table.new_column('number', 'Actual');
+    data_table.new_column('number', 'Meta');
+    data_table.new_column('number', 'Progreso');
+    data_table.new_column('number', 'Baseline');
+    data_table.new_column('number', 'Crecimiento');
+
+    data_table.add_rows(1)
+    data_table.set_cell(0, 0, @currentindicator.score)
+    data_table.set_cell(0, 1, @currentindicator.goal)
+    data_table.set_cell(0, 2, @currentindicator.progress)
+    data_table.set_cell(0, 3, @currentindicator.baseline)
+    data_table.set_cell(0, 4, @currentindicator.growth)
+
+    opts   = { :width => 600, :showRowNumber => false }
+    @tablechart = GoogleVisualr::Interactive::Table.new(data_table, opts)
+
+    @lastSix = getLastNindicatorScore(6, @indicator, @date)
+    @linechart = produceLineChart("Tendencia de 6 meses", @lastSix, @indicator)
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @objective }
+    end
+  end 
+
 end

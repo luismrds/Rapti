@@ -4,6 +4,12 @@ class CreatePerspectiveScores < ActiveRecord::Migration
       t.integer :perspective_id
       t.integer :scoredate_id
       t.float :score
+      t.float :redfrom
+      t.float :redto
+      t.float :yellowfrom
+      t.float :yellowto
+      t.float :greenfrom
+      t.float :greento
 
       t.timestamps
     end

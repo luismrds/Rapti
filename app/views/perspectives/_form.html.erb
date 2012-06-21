@@ -12,12 +12,36 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name, "Nombre" %><br />
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :weight %><br />
+    <%= f.label :weight, "Peso" %><br />
     <%= f.text_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :redfrom, "Rojo (Desde)"%><br />
+    <%= f.text_field :redfrom %>
+  </div>
+  <div class="field">
+    <%= f.label :redto, "Rojo (Hasta)"%><br />
+    <%= f.text_field :redto %>
+  </div>
+    <div class="field">
+    <%= f.label :yellowfrom, "Amarillo (Desde)"%><br />
+    <%= f.text_field :yellowfrom %>
+  </div>
+  <div class="field">
+    <%= f.label :yellowto, "Amarillo (Hasta)"%><br />
+    <%= f.text_field :yellowto %>
+  </div>
+  <div class="field">
+    <%= f.label :greenfrom, "Verde (Desde)"%><br />
+    <%= f.text_field :greenfrom %>
+  </div>
+  <div class="field">
+    <%= f.label :greento, "Verde (Hasta)"%><br />
+    <%= f.text_field :greento %>
   </div>
   <div class="actions">
     <%= f.submit %>

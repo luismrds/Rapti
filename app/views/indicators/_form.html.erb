@@ -23,6 +23,10 @@
         <%= f.label "Operacion" %><br />
         <%=h collection_select(:indicator, :operation_id, Operation.all, :id, :name, :prompt => true) %>
   </div>
+  <div class="field">
+        <%= f.label "Objetivo" %><br />
+        <%=h collection_select(:indicator, :objective_id, Objective.all, :id, :name, :prompt => true) %>
+  </div>
 
 <p>
   <h3>Objetivos que ayuda a obtener</h3>

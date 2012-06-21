@@ -116,4 +116,5 @@ include ApplicationHelper
 
   def explore
   end
+
 end

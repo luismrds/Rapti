@@ -1,0 +1,34 @@
+<h1>Mapa estrategico</h1>
+</br>
+<div class="row-fluid">
+  <div class="span12">
+
+
+  <% @perspectives.each do |p|%>
+    <ul class="breadcrumb">
+      <li>
+        <h2><%=h p.name %></h2>
+      </li>
+    </ul>
+    <% i = 0%>
+      <% p.objectives.each do |o|%>
+        <% if i%3 == 0 %>
+            <div class="row-fluid">
+        <% end %>
+        <% i = i + 1%>
+        <div class="span4" align="center">
+          <%= link_to o.name, objectiveatdate_path(o.id,@date.id), :class => state(o,@date)%>
+        </div><!--span4-->
+        <% if i%3 == 0 %>
+            </div> <!--fin row--></br>
+          <div class="row-fluid">
+        <% end %>
+      <% end %>
+    </div></br>
+  <% end %>
+
+
+  </div>
+</div>
+
+

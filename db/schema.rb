@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120606143854) do
+ActiveRecord::Schema.define(:version => 20120621000307) do
 
   create_table "indicator_father_son", :id => false, :force => true do |t|
     t.integer "indicatorfather_id"
@@ -22,18 +22,36 @@ ActiveRecord::Schema.define(:version => 20120606143854) do
     t.integer  "indicator_id"
     t.integer  "scoredate_id"
     t.float    "score"
+    t.float    "goal",         :default => 0.0
+    t.float    "redfrom"
+    t.float    "redto"
+    t.float    "yellowfrom"
+    t.float    "yellowto"
+    t.float    "greenfrom"
+    t.float    "greento"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
-    t.float    "goal",         :default => 0.0
+    t.float    "progress"
+    t.float    "baseline"
+    t.float    "growth"
   end
 
   create_table "indicators", :force => true do |t|
     t.string   "name"
     t.float    "weight"
     t.integer  "objective_id"
+    t.integer  "operation_id"
+    t.float    "redfrom"
+    t.float    "redto"
+    t.float    "yellowfrom"
+    t.float    "yellowto"
+    t.float    "greenfrom"
+    t.float    "greento"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
-    t.integer  "operation_id"
+    t.float    "progress"
+    t.float    "baseline"
+    t.float    "growth"
   end
 
   create_table "indicators_objectives", :id => false, :force => true do |t|
@@ -45,16 +63,35 @@ ActiveRecord::Schema.define(:version => 20120606143854) do
     t.integer  "objective_id"
     t.integer  "scoredate_id"
     t.float    "score"
+    t.float    "redfrom"
+    t.float    "redto"
+    t.float    "yellowfrom"
+    t.float    "yellowto"
+    t.float    "greenfrom"
+    t.float    "greento"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.float    "progress"
+    t.float    "baseline"
+    t.float    "growth"
   end
 
   create_table "objectives", :force => true do |t|
     t.string   "name"
     t.float    "weight"
+    t.float    "score"
     t.integer  "perspective_id"
+    t.float    "redfrom"
+    t.float    "redto"
+    t.float    "yellowfrom"
+    t.float    "yellowto"
+    t.float    "greenfrom"
+    t.float    "greento"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
+    t.float    "progress"
+    t.float    "baseline"
+    t.float    "growth"
   end
 
   create_table "operations", :force => true do |t|
@@ -70,6 +107,12 @@ ActiveRecord::Schema.define(:version => 20120606143854) do
     t.integer  "perspective_id"
     t.integer  "scoredate_id"
     t.float    "score"
+    t.float    "redfrom"
+    t.float    "redto"
+    t.float    "yellowfrom"
+    t.float    "yellowto"
+    t.float    "greenfrom"
+    t.float    "greento"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
@@ -77,6 +120,12 @@ ActiveRecord::Schema.define(:version => 20120606143854) do
   create_table "perspectives", :force => true do |t|
     t.string   "name"
     t.float    "weight"
+    t.float    "redfrom"
+    t.float    "redto"
+    t.float    "yellowfrom"
+    t.float    "yellowto"
+    t.float    "greenfrom"
+    t.float    "greento"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -84,9 +133,9 @@ ActiveRecord::Schema.define(:version => 20120606143854) do
   create_table "raw_data", :force => true do |t|
     t.string   "name"
     t.integer  "operation_id"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-    t.float    "default_value"
+    t.float    "default_value", :default => 1.0
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   create_table "raw_data_scores", :force => true do |t|

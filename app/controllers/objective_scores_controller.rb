@@ -1,4 +1,6 @@
 class ObjectiveScoresController < ApplicationController
+  include ApplicationHelper
+  include ObjectiveScoresHelper
   # GET /objective_scores
   # GET /objective_scores.json
   def index
@@ -80,4 +82,45 @@ class ObjectiveScoresController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+  def objectiveatdate
+    @objective = Objective.find(params[:obj])
+    @date = ScoreDate.find(params[:date])
+    @indicators = @objective.indicators
+    @currentindicators = []
+    @indicators.each{|i|
+      @currentindicators << IndicatorScore.find_by_indicator_id_and_scoredate_id(i.id, params[:date])
+    }
+    @currentobjective = ObjectiveScore.find_by_objective_id_and_scoredate_id(params[:obj],params[:date])
+    @chart = produceGauge("", @currentobjective.score, 800, 240, @objective.redfrom, @objective.redto, @objective.yellowfrom, @objective.yellowto, @objective.greenfrom, @objective.greento, 5)
+
+#    @lastsix = getLastNobjectiveScore(6, @objective, @date)
+
+
+    data_table = GoogleVisualr::DataTable.new
+    data_table.new_column('number', 'Actual');
+    data_table.new_column('number', 'Meta');
+    data_table.new_column('number', 'Progreso');
+    data_table.new_column('number', 'Baseline');
+    data_table.new_column('number', 'Crecimiento');
+
+    data_table.add_rows(1)
+    data_table.set_cell(0, 0, @currentobjective.score)
+    data_table.set_cell(0, 1, @currentobjective.goal)
+    data_table.set_cell(0, 2, @currentobjective.progress)
+    data_table.set_cell(0, 3, @currentobjective.baseline)
+    data_table.set_cell(0, 4, @currentobjective.growth)
+
+    opts   = { :width => 600, :showRowNumber => false }
+    @tablechart = GoogleVisualr::Interactive::Table.new(data_table, opts)
+
+    @lastSix = getLastNobjectiveScore(6, @objective, @date)
+    @linechart = produceLineChart("Tendencia de 6 meses", @lastSix, @objective)
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @objective }
+    end
+  end 
 end

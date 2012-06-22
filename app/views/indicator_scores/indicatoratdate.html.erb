@@ -33,4 +33,21 @@
   <%= render_chart @linechart, 'linechart' %>
 </div>
 
-
+<div class="row-fluid" align="center">
+    <%= link_to @date.year - 1, objectiveatdate_path(@indicator, ScoreDate.find_by_year_and_month(@date.year - 1,12).id)%>
+      <<
+    <%= link_to "Enero", objectiveatdate_path(@indicator, ScoreDate.find_by_year_and_month(@date.year,1).id)%>
+    <%= link_to "Febrero", objectiveatdate_path(@indicator, ScoreDate.find_by_year_and_month(@date.year,2).id)%>
+    <%= link_to "Marzo", objectiveatdate_path(@indicator, ScoreDate.find_by_year_and_month(@date.year,3).id)%>
+    <%= link_to "Abril", objectiveatdate_path(@indicator, ScoreDate.find_by_year_and_month(@date.year,4).id)%>
+    <%= link_to "Mayo", objectiveatdate_path(@indicator, ScoreDate.find_by_year_and_month(@date.year,5).id)%>
+    <%= link_to "Junio", objectiveatdate_path(@indicator, ScoreDate.find_by_year_and_month(@date.year,6).id)%>
+    <%= link_to "Julio", objectiveatdate_path(@indicator, ScoreDate.find_by_year_and_month(@date.year,7).id)%>
+    <%= link_to "Agosto", objectiveatdate_path(@indicator, ScoreDate.find_by_year_and_month(@date.year,8).id)%>
+    <%= link_to "Septiembre", objectiveatdate_path(@indicator, ScoreDate.find_by_year_and_month(@date.year,9).id)%>
+    <%= link_to "Octubre", objectiveatdate_path(@indicator, ScoreDate.find_by_year_and_month(@date.year,10).id)%>
+    <%= link_to "Noviembre", objectiveatdate_path(@indicator, ScoreDate.find_by_year_and_month(@date.year,11).id)%>
+    <%= link_to "Diciembre", objectiveatdate_path(@indicator, ScoreDate.find_by_year_and_month(@date.year,12).id)%>
+      >>
+    <%= link_to @date.year + 1, objectiveatdate_path(@indicator, ScoreDate.find_by_year_and_month(@date.year + 1,1).id)%>
+</div>

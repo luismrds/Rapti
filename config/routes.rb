@@ -1,5 +1,8 @@
 Rails3BootstrapDeviseCancan::Application.routes.draw do
   
+  match "vectors/vectoratdate/:vec/:dat" => "vectors#vectoratdate", :as => :vectoratdate
+  resources :vectors
+
   resources :operations
 
   match "raw_data_scores/prepmassiveInsertion/:date_id" => "raw_data_scores#prepmassiveInsertion", :as => :prepmassiveInsertion

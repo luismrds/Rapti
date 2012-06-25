@@ -1,0 +1,59 @@
+<h2>Vector: <%=h @vector.name %></h2>
+</br>
+<div class="row-fluid">
+  <div class="span12">
+
+
+  <% @perspectives.each do |p|%>
+    <ul class="breadcrumb">
+      <li>
+        <h2><%=h p.name %></h2>
+      </li>
+    </ul>
+      <% i = 0%>
+        <% p.objectives.each do |o|%>
+          <% if @objectives.include? o %>
+            <% if i%3 == 0 %>
+                <div class="row-fluid">
+            <% end %>
+            <% i = i + 1%>
+            <div class="span4" align="center">
+              <%= link_to o.name, objectiveatdate_path(o.id,@date.id), :class => state(o,@date)%>
+            </div><!--span4-->
+            <% if i%3 == 0 %>
+                </div> <!--fin row--></br>
+              <div class="row-fluid">
+            <% end %>
+          <% end%>
+        <% end %>
+      </div></br>
+
+
+
+
+
+
+  <% end %>
+
+  </div>
+</div>
+
+<div class="row-fluid" align="center">
+    <%= link_to @date.year - 1, vectoratdate_path(@vector.id, ScoreDate.find_by_year_and_month(@date.year - 1,12).id)%>
+      <<
+    <%= link_to "Enero", vectoratdate_path(@vector.id, ScoreDate.find_by_year_and_month(@date.year,1).id)%>
+    <%= link_to "Febrero", vectoratdate_path(@vector.id, ScoreDate.find_by_year_and_month(@date.year,2).id)%>
+    <%= link_to "Marzo", vectoratdate_path(@vector.id, ScoreDate.find_by_year_and_month(@date.year,3).id)%>
+    <%= link_to "Abril", vectoratdate_path(@vector.id, ScoreDate.find_by_year_and_month(@date.year,4).id)%>
+    <%= link_to "Mayo", vectoratdate_path(@vector.id, ScoreDate.find_by_year_and_month(@date.year,5).id)%>
+    <%= link_to "Junio", vectoratdate_path(@vector.id, ScoreDate.find_by_year_and_month(@date.year,6).id)%>
+    <%= link_to "Julio", vectoratdate_path(@vector.id, ScoreDate.find_by_year_and_month(@date.year,7).id)%>
+    <%= link_to "Agosto", vectoratdate_path(@vector.id, ScoreDate.find_by_year_and_month(@date.year,8).id)%>
+    <%= link_to "Septiembre", vectoratdate_path(@vector.id, ScoreDate.find_by_year_and_month(@date.year,9).id)%>
+    <%= link_to "Octubre", vectoratdate_path(@vector.id, ScoreDate.find_by_year_and_month(@date.year,10).id)%>
+    <%= link_to "Noviembre", vectoratdate_path(@vector.id, ScoreDate.find_by_year_and_month(@date.year,11).id)%>
+    <%= link_to "Diciembre", vectoratdate_path(@vector.id, ScoreDate.find_by_year_and_month(@date.year,12).id)%>
+      >>
+    <%= link_to @date.year + 1, vectoratdate_path(@vector.id, ScoreDate.find_by_year_and_month(@date.year + 1,1).id)%>
+</div>
+

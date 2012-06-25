@@ -1,0 +1,23 @@
+<h1>Listing vectors</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @vectors.each do |vector| %>
+  <tr>
+    <td><%= vector.name %></td>
+    <td><%= link_to 'Show', vector %></td>
+    <td><%= link_to 'Edit', edit_vector_path(vector) %></td>
+    <td><%= link_to 'Destroy', vector, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Vector', new_vector_path %>

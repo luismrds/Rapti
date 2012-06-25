@@ -11,6 +11,9 @@ rails generate scaffold IndicatorScore indicator_id:integer date_id:integer scor
 rails generate migration ObjectivesIndicatorsBridgeTable
 rails generate migration IndicatorHabtmRecursive
 
+rails generate scaffold Vector name:string 
+rails generate migration ObjectivesVectorsBridgeTable
+
 
 PruebaRaw
 

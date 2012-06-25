@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120621000307) do
+ActiveRecord::Schema.define(:version => 20120625052345) do
 
   create_table "indicator_father_son", :id => false, :force => true do |t|
     t.integer "indicatorfather_id"
@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(:version => 20120621000307) do
     t.float    "progress"
     t.float    "baseline"
     t.float    "growth"
+    t.float    "goal"
   end
 
   create_table "objectives", :force => true do |t|
@@ -189,5 +190,16 @@ ActiveRecord::Schema.define(:version => 20120621000307) do
   end
 
   add_index "users_roles", ["user_id", "role_id"], :name => "index_users_roles_on_user_id_and_role_id"
+
+  create_table "vectors", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "vectors_objectives", :id => false, :force => true do |t|
+    t.integer "vector_id"
+    t.integer "objective_id"
+  end
 
 end

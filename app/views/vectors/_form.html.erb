@@ -1,0 +1,36 @@
+<%= form_for(@vector) do |f| %>
+  <% if @vector.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vector.errors.count, "error") %> prohibited this vector from being saved:</h2>
+
+      <ul>
+      <% @vector.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <p>
+    <h3>Objetivos que contiene</h3>
+  </p>
+
+    <% for objective in Objective.all %>  
+          <div>  
+            <%= check_box_tag "vector[objective_ids][]", objective.id, @vector.objectives.include?(objective) %>  
+            <%= objective.name %>  
+          </div>  
+    <% end %>
+
+<p>
+
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

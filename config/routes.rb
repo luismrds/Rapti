@@ -42,7 +42,11 @@ Rails3BootstrapDeviseCancan::Application.routes.draw do
   authenticated :user do
     root :to => 'perspectives#strategyMap'
   end
-  root :to => "perspective_scores#strategymap"
+  unauthenticated :user do
+    devise_scope :user do 
+      get "/" => "devise/sessions#new"
+    end
+  end
   devise_for :users
   resources :users, :only => [:show, :index]
 end

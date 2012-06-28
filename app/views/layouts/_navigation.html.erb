@@ -52,6 +52,9 @@
   <li>
     <%= link_to "Datos", raw_data_path%>
   </li>
+  <li>
+    <%= link_to 'Crear Usuario', new_user_registration_path %>
+  </li>
 
 
   
@@ -73,8 +76,6 @@
       </li>
     <% end %>
   <% else %>
-    <li>
-    <%= link_to 'Crear Usuario', new_user_registration_path %>
-    </li>
+
   <% end %>
 </ul>

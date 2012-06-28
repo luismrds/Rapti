@@ -40,7 +40,7 @@ Rails3BootstrapDeviseCancan::Application.routes.draw do
   resources :perspectives
 
   authenticated :user do
-    root :to => 'perspectives#strategyMap'
+    root :to => 'perspective_scores#strategymap'
   end
   unauthenticated :user do
     devise_scope :user do 

@@ -16,34 +16,6 @@ include ApplicationHelper
   def show
     @objective = Objective.find(params[:id])
     @indicators = @objective.indicators
-    @charts = []
-    for i in @indicators
-        ch = []
-        #Should change array for a Hash whith "chart" and "indicator_id"
-    	ch[0] = produceGauge(i.name, i.today_score, 800, 240, 90, 100, 75, 90, 5)
-        ch[1] = i      
-        @charts << ch
-    end
-
-
-    data_table = GoogleVisualr::DataTable.new
-
-    data_table.new_column('string', 'Year' ) 
-    data_table.new_column('number', 'Sales') 
-    data_table.new_column('number', 'Expenses') 
-
-    # Add Rows and Values 
-    data_table.add_rows([ 
-      ['Dic', 1000, 400], 
-      ['Ene', 1170, 460], 
-      ['Feb', 660, 1120], 
-      ['Mar', 1030, 540], 
-      ['Abr', 710, 1410], 
-      ['May', 960, 980] 
-    ])
-    option = { width: 400, height: 240, title: 'Ultimos 6 meses' }
-    @chart = GoogleVisualr::Interactive::AreaChart.new(data_table, option)
-
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @objective }

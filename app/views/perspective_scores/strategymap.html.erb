@@ -1,4 +1,4 @@
-<h1>Mapa estrategico</h1>
+<h2>Mapa estrategico (<%=h scoredate_month_to_text(@date)%>/<%=h @date.year%>)</h2>
 </br>
 <div class="row-fluid">
   <div class="span12">
@@ -9,7 +9,7 @@
       <li>
         <h2><%=h p.name %></h2>
       </li>
-    </ul>
+    
     <% i = 0%>
       <% p.objectives.each do |o|%>
         <% if i%3 == 0 %>
@@ -24,12 +24,13 @@
           <div class="row-fluid">
         <% end %>
       <% end %>
-    </div></br>
+
+    </div>
+</ul>
   <% end %>
 
   </div>
 </div>
-
 <div class="row-fluid" align="center">
     <%= link_to @date.year - 1, thestrategymap_path(ScoreDate.find_by_year_and_month(@date.year - 1,12).id)%>
       <<

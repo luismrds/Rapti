@@ -4,5 +4,6 @@ class ObjectiveScore < ActiveRecord::Base
 
   belongs_to :objective
 
+  #With this validation there will be only one objective_score in a given scoredate
   validates :objective_id, :uniqueness => {:scope => :scoredate_id}
 end

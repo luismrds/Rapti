@@ -16,14 +16,40 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :weight %><br />
+    <%= f.label :weight, "Peso" %><br />
     <%= f.text_field :weight %>
   </div>
   <div class="field">
-    <%= f.label :perspective_id %><br />
+    <%= f.label :perspective_id, "Perspectiva" %><br />
     <%= f.collection_select :perspective_id, Perspective.all, :id, :name %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="field">
+    <%= f.label :redfrom, "Inicio del color rojo" %><br />
+    <%= f.text_field :redfrom %>
+  </div>
+  <div class="field">
+    <%= f.label :redfrom, "Fin del color rojo" %><br />
+    <%= f.text_field :greenfrom %>
+  </div>
+  <div class="field">
+    <%= f.label :yellowfrom, "Inicio del color amarillo" %><br />
+    <%= f.text_field :yellowfrom %>
+  </div>
+  <div class="field">
+    <%= f.label :yellowfrom, "Fin del color amarillo" %><br />
+    <%= f.text_field :yellowfrom %>
+  </div>
+  <div class="field">
+    <%= f.label :greenfrom, "Inicio de color verde" %><br />
+    <%= f.text_field :greenfrom %>
+  </div>
+  <div class="field">
+    <%= f.label :greento, "Fin del color verde" %><br />
+    <%= f.text_field :greento %>
+  </div>
+
+
+<div class="actions">
+    <%= f.submit "Editar" %>
   </div>
 <% end %>

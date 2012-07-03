@@ -3,5 +3,6 @@ class IndicatorScore < ActiveRecord::Base
 
   belongs_to :indicator
 
+  #With this validation there will be only one indicator_score in a given scoredate
   validates :indicator_id, :uniqueness => {:scope => :scoredate_id}
 end

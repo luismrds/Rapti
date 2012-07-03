@@ -101,9 +101,9 @@ class ObjectiveScoresController < ApplicationController
     data_table = GoogleVisualr::DataTable.new
     data_table.new_column('number', 'Actual');
     data_table.new_column('number', 'Meta');
-    data_table.new_column('number', 'Progreso');
-    data_table.new_column('number', 'Baseline');
-    data_table.new_column('number', 'Crecimiento');
+    data_table.new_column('number', 'Avance');
+    data_table.new_column('number', 'Base');
+    data_table.new_column('number', 'Comparacion');
 
     data_table.add_rows(1)
     data_table.set_cell(0, 0, @currentobjective.score)

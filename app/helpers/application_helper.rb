@@ -1,5 +1,8 @@
 module ApplicationHelper
 
+include ScoreDatesHelper
+#Produce a Gauge with the given parameters using google Visualr 
+#A Library that uses the google visualization API
     def produceGauge(name, value, width, height, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, minorTicks)
         data_table = GoogleVisualr::DataTable.new
 	    data_table.new_column('string'  , 'Label')
@@ -11,6 +14,9 @@ module ApplicationHelper
     	return GoogleVisualr::Interactive::Gauge.new(data_table, opts)
     end
 
+#Produce a Line Chart with the given parameters using google Visualr 
+#A Library that uses the google visualization API
+
     def produceLineChart(title, scores, indicador)
         data_table = GoogleVisualr::DataTable.new
         data_table.new_column('string', 'Mes' ) 
@@ -18,11 +24,11 @@ module ApplicationHelper
         data_table.new_column('number', 'Meta')  
         # Add Rows and Values 
         scores.each{|s|
-            data_table.add_rows([[ScoreDate.find(s.scoredate_id).month.to_s, s.score, s.goal]])
+            data_table.add_rows([[scoredate_month_to_text(ScoreDate.find(s.scoredate_id)), s.score, s.goal]])
         }
         option = { title: title }
+        option["vAxes" => { title: "Porcentaje"}]
         return GoogleVisualr::Interactive::LineChart.new(data_table, option)
     end
 
-  
 end

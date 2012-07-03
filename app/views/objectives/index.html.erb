@@ -1,4 +1,4 @@
-<h1>Listado de objectivos</h1>
+<h2>Listado de objectivos</h2>
 
 <table>
   <tr>
@@ -15,13 +15,13 @@
     <td><%= objective.name %></td>
     <td><%= objective.weight %></td>
     <td><%= Perspective.find(objective.perspective_id).name %></td>
-    <td><%= link_to 'Show', objective %></td>
-    <td><%= link_to 'Edit', edit_objective_path(objective) %></td>
-    <td><%= link_to 'Destroy', objective, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Mostrar', objective %></td>
+    <td><%= link_to 'Editar', edit_objective_path(objective) %></td>
+    <td><%= link_to 'Eliminar', objective, confirm: 'Esta ud seguro?', method: :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New Objective', new_objective_path %>
+<%= link_to 'Nuevo Objetivo', new_objective_path %>

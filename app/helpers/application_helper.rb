@@ -3,14 +3,14 @@ module ApplicationHelper
 include ScoreDatesHelper
 #Produce a Gauge with the given parameters using google Visualr 
 #A Library that uses the google visualization API
-    def produceGauge(name, value, width, height, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, minorTicks)
+    def produceGauge(name, value, width, height, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, minorTicks, min, max)
         data_table = GoogleVisualr::DataTable.new
 	    data_table.new_column('string'  , 'Label')
 	    data_table.new_column('number'  , 'Value')
         data_table.add_rows(1)
        	data_table.set_cell(0, 0, name )
     	data_table.set_cell(0, 1, value.round(2))
-        opts   = { :width => width, :height => height, :redFrom => redfrom, :redTo => redto, :yellowFrom => yellowfrom, :yellowTo => yellowto, :greenFrom => greenfrom, :greenTo => greento, :minorTicks => minorTicks }
+        opts   = { :width => width, :height => height, :redFrom => redfrom, :redTo => redto, :yellowFrom => yellowfrom, :yellowTo => yellowto, :greenFrom => greenfrom, :greenTo => greento, :minorTicks => minorTicks, :min => min, :max => max, :view => {'columns' => {} }}
     	return GoogleVisualr::Interactive::Gauge.new(data_table, opts)
     end
 

@@ -11,26 +11,26 @@ Infinity = 1
 
         if !firstOperand.operation_id && !secondOperand.operation_id
             formula = firstDatum.value.to_s + self.operator + secondDatum.value.to_s
-            puts formula 
+            puts self.name + " : " + formula 
             return eval(formula)
         end        
         if !firstOperand.operation_id && secondOperand.operation_id
             operacion2 = Operation.find(secondOperand.operation_id)
             formula = firstDatum.value.to_s + self.operator + operacion2.calculateOperationValue(dateid).to_s
-            puts formula
+            puts self.name + " : " + formula
             return eval(formula)
         end        
         if firstOperand.operation_id && !secondOperand.operation_id
             operation1 = Operation.find(firstOperand.operation_id)            
             formula = operation1.calculateOperationValue(dateid).to_s + self.operator + secondDatum.value.to_s
-            puts formula 
+            puts self.name + " : " + formula 
             return eval(formula)
         end        
         if firstOperand.operation_id && secondOperand.operation_id
             operation1 = Operation.find(firstOperand.operation_id)
             operacion2 = Operation.find(secondOperand.operation_id)
             formula = operation1.calculateOperationValue(dateid).to_s + self.operator + operacion2.calculateOperationValue(dateid).to_s
-            puts formula
+            puts self.name + " : " + formula
             return eval(formula)
         end
 

@@ -1,5 +1,5 @@
 class IndicatorScore < ActiveRecord::Base
-  attr_accessible :indicator_id, :score, :scoredate_id, :goal, :redfrom, :redto, :yellowfrom, :yellowto, :greenfrom, :greento
+  attr_accessible :indicator_id, :score, :scoredate_id, :goal, :redfrom, :redto, :yellowfrom, :yellowto, :greenfrom, :greento, :progress, :baseline, :growth
 
   belongs_to :indicator
 

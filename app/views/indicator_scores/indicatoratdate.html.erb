@@ -18,11 +18,11 @@
       <th title="Definicion de Comp">Comp.</th>
     <tr>
     <tr>
-      <td align = "center"><%= @currentindicator.score %></td>
-      <td align = "center"><%= @currentindicator.goal %></td>
-      <td align = "center"><%= @currentindicator.progress %></td>
-      <td align = "center"><%= @currentindicator.baseline %></td>
-      <td align = "center"><%= @currentindicator.growth %></td>
+      <td align = "center"><%= @currentindicator.score.round(2) %></td>
+      <td align = "center"><%= @currentindicator.goal.round(2) %></td>
+      <td align = "center"><%= @currentindicator.progress.round(2) %></td>
+      <td align = "center"><%= @currentindicator.baseline.round(2) %></td>
+      <td align = "center"><%= @currentindicator.growth.round(2) %></td>
     </tr> 
   </table>
 

@@ -94,7 +94,16 @@ class IndicatorScoresController < ApplicationController
       @currentsons << IndicatorScore.find_by_indicator_id_and_scoredate_id(i.id, params[:date])
     }
     @currentindicator = IndicatorScore.find_by_indicator_id_and_scoredate_id(params[:ind],params[:date])
-    @chart = produceGauge("", @currentindicator.score, 800, 240, @currentindicator.redfrom, @currentindicator.redto, @currentindicator.yellowfrom, @currentindicator.yellowto, @currentindicator.greenfrom, @currentindicator.greento, 5)
+    if @currentindicator.greento > @currentindicator.redfrom
+      min = @currentindicator.redfrom
+      max = @currentindicator.greento
+    end
+    if @currentindicator.greento <  @currentindicator.redfrom
+      max = @currentindicator.redto
+      min = @currentindicator.greenfrom
+    end
+
+    @chart = produceGauge("", @currentindicator.score, 800, 200, @currentindicator.redfrom, @currentindicator.redto, @currentindicator.yellowfrom, @currentindicator.yellowto, @currentindicator.greenfrom, @currentindicator.greento, 5, min, max)
 
 #    @lastsix = getLastNobjectiveScore(6, @objective, @date)
 

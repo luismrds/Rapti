@@ -16,7 +16,7 @@ include IndicatorsHelper
   # GET /indicators/1.json
   def show
     @indicator = Indicator.find(params[:id])
-    @chart = produceGauge(@indicator.name, @indicator.today_score, 625, 187.5, 90, 100, 75, 90, 5)    
+    #@chart = produceGauge(@indicator.name, @indicator.today_score, 625, 187.5, 90, 100, 75, 90, 5)    
     @lastSix = getLastN(6, @indicator, ScoreDate.find_by_month_and_year(Date.today.month,Date.today.year))
     @linechart = produceLineChart("Tendencia de 6 meses", @lastSix, @indicator)
 

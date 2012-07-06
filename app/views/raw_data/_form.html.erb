@@ -16,6 +16,10 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
+    <%= f.label "Pista"%><br />
+    <%= f.text_field :hint %>
+  </div>
+  <div class="field">
     <%= f.label :default_value %><br />
     <%= f.text_field :default_value %>
   </div>
@@ -24,6 +28,6 @@
         <%=h collection_select(:raw_datum, :operation_id, Operation.all, :id, :name, :prompt => true) %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Confirmar"%>
   </div>
 <% end %>

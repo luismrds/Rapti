@@ -6,7 +6,17 @@
 
 <p>
   <b>Ponderacion:</b>
-  <%= @indicator.weight %>%
+  <%= @indicator.weight %>
+</p>
+
+<p>
+  <b>Operacion:</b>
+  <%= @indicator.operation.name %>
+</p>
+
+<p>
+  <b>Objetivo:</b>
+  <%= @indicator.objective.name %>
 </p>
 
 <p>
@@ -41,15 +51,5 @@
 <% end %>
 </table>
 
-<div class="row">
-    <div id='chart'></div>
-    <%= render_chart(@chart, 'chart') %>
-</div>
-<div class="row">
-    <div id='linechart'></div>
-    <%= render_chart(@linechart, 'linechart') %>
-</div>
-
-
-<%= link_to 'Edit', edit_indicator_path(@indicator) %> |
-<%= link_to 'Back', indicators_path %>
+<%= link_to 'Editar', edit_indicator_path(@indicator) %> |
+<%= link_to 'Volver', indicators_path %>

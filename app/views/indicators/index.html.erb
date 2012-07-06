@@ -1,4 +1,4 @@
-<h1>Listado de indicadores</h1>
+<h2>Listado de indicadores</h2>
 
 <table>
   <tr>
@@ -15,9 +15,9 @@
     <td><%= indicator.name %></td>
     <td><%= indicator.weight %></td>
     <td><%= Objective.find(indicator.objective_id).name %></td>
-    <td><%= link_to 'Show', indicator %></td>
-    <td><%= link_to 'Edit', edit_indicator_path(indicator) %></td>
-    <td><%= link_to 'Destroy', indicator, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to 'Mostrar', indicator %></td>
+    <td><%= link_to 'Editar', edit_indicator_path(indicator) %></td>
+    <td><%= link_to 'Eliminar', indicator, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>

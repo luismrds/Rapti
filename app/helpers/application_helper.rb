@@ -9,7 +9,7 @@ include ScoreDatesHelper
 	    data_table.new_column('number'  , 'Value')
         data_table.add_rows(1)
        	data_table.set_cell(0, 0, name )
-    	data_table.set_cell(0, 1, value)
+    	data_table.set_cell(0, 1, value.round(2))
         opts   = { :width => width, :height => height, :redFrom => redfrom, :redTo => redto, :yellowFrom => yellowfrom, :yellowTo => yellowto, :greenFrom => greenfrom, :greenTo => greento, :minorTicks => minorTicks }
     	return GoogleVisualr::Interactive::Gauge.new(data_table, opts)
     end

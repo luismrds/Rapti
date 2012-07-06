@@ -12,5 +12,5 @@ class ScoreDate < ActiveRecord::Base
   has_many :objectivescores, :class_name => 'ObjectiveScore', :foreign_key => "scoredate_id"
   accepts_nested_attributes_for :objectivescores
 
-  attr_accessible :month, :year, :rawdatascore_attributes, :indicatorscores_attributes
+  attr_accessible :month, :year, :rawdatascore_attributes, :indicatorscores_attributes, :rawdatascores_attributes
 end

@@ -1,5 +1,7 @@
 module OperationsHelper
 
+Infinity = 1
+
     def calculateOperationValue(dateid)
         firstOperand = RawDatum.find(self.firstoperand)
         secondOperand = RawDatum.find(self.secondoperand)

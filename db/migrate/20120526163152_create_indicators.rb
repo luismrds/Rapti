@@ -2,6 +2,7 @@ class CreateIndicators < ActiveRecord::Migration
   def change
     create_table :indicators do |t|
       t.string :name
+      t.string :acronym
       t.float :weight
       t.integer :objective_id
       t.integer :operation_id

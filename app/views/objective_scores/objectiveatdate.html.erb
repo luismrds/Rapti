@@ -1,5 +1,5 @@
 <h2><%=h @objective.name%> (<%=h scoredate_month_to_text(@date)%>/<%=h @date.year%>)</h2>
-<h3>Medido en: Porcentaje</h3>
+<h3>Unidades: <%=h @objective.measurement%></h3>
 
 <div class="row-fluid">
     <div class="span4" align="center">
@@ -7,14 +7,25 @@
         <%= render_chart(@chart, 'chart') %>
     </div>
 
-    <div class="span8" align="center">
+<div class="span8" align="center">
 
-
-          <div id='tablechart'></div>
-          <%= render_chart @tablechart, 'tablechart' %>
-
-
-    </br>
+  <table width="100%">
+    <tr>
+      <th title="Definicion de actual">Actual</th>
+      <th title="Definicion de Meta">Meta</th>
+      <th title="Definicion de Avance">Avance</th>
+      <th title="Definicion de Base">Base</th>
+      <th title="Definicion de Comp">Comp.</th>
+    <tr>
+    <tr>
+      <td align = "center"><%= @currentobjective.score %></td>
+      <td align = "center"><%= @currentobjective.goal %></td>
+      <td align = "center"><%= @currentobjective.progress %></td>
+      <td align = "center"><%= @currentobjective.baseline %></td>
+      <td align = "center"><%= @currentobjective.growth %></td>
+    </tr> 
+  </table>
+</br>
 <!--    <div class="row-fluid" align="left">        
       <h3>Indicadores: (<%= link_to "Ver juntos", exploreobjectives_path() %> )</h3>
         <OL TYPE="1">
@@ -27,23 +38,25 @@
   <table width="100%">
     <tr>
       <th></th>
-      <th>Inficador</th>
-      <th>Actual</th>
-      <th>Meta</th>
-      <th>Avance</th>
-      <th>Base</th>
-      <th>Comparacion</th>
+      <th>Indicador</th>
+      <th title="Definicion de actual">Actual</th>
+      <th title="Definicion de Meta">Meta</th>
+      <th title="Definicion de Avance">Avance</th>
+      <th title="Definicion de Base">Base</th>
+      <th title="Definicion de Comp">Comp.</th>
+      <th title="Definicion de Peso">Peso</th>
     <tr>
 <% i = 1 %>
     <% @currentindicators.each do |ci|%>
       <tr>
-        <td align = "center"><%=h i%>. </td>
-        <td align = "center"><%= link_to ci.indicator.name, indicatoratdate_path(ci.indicator_id,ci.scoredate_id), :class => indicatorscorestate(ci)%></td>
+        <td align = "center"><%=h i%>. </td><% i = i + 1 %>
+        <td align = "left"><%= link_to ci.indicator.name, indicatoratdate_path(ci.indicator_id,ci.scoredate_id), :class => indicatorscorestate(ci), :style=>'color:#FFFFFF;'%></td>
         <td align = "center"><%= ci.score %></td>
         <td align = "center"><%= ci.goal %></td>
         <td align = "center"><%= ci.progress %></td>
         <td align = "center"><%= ci.baseline %></td>
         <td align = "center"><%= ci.growth %></td>
+        <td align = "center"><%= ci.indicator.weight %></td>
       </tr>         
      <% end %>
   </table>

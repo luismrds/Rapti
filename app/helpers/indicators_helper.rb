@@ -2,9 +2,28 @@ module IndicatorsHelper
 
 include OperationsHelper
 
-    def calculateIndicatorValue(dateid)
-        return self.operation.calculateOperationValue(dateid) 
-    end
+  def calculateIndicatorValue(dateid)
+      return self.operation.calculateOperationValue(dateid) 
+  end
+
+  def SetIndicatorValue(dateid)
+    value = self.operation.calculateOperationValue(dateid)
+    ind = IndicatorScore.find_by_indicator_id_and_scoredate_id(self.id, dateid)
+    ind.score = value 
+    ind.save
+  end
+
+  def setAllIndicatorValue
+    dates = ScoreDate.all
+    indicators = Indicator.all
+    dates.each{|d|
+      indicators.each{|i|
+        if i.operation
+          i.SetIndicatorValue(d.id)
+        end
+      }
+    }
+  end 
 
     def getLastN(n, indicator, date)
         dateObject = Date.new(date.year,date.month,1)        

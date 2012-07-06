@@ -6,6 +6,8 @@ class Indicator < ActiveRecord::Base
   has_many :indicatorscores, :class_name => 'IndicatorScore', :foreign_key => "scoredate_id"
   belongs_to :operation
 
+  belongs_to :objective
+
   has_and_belongs_to_many :sons, :join_table => "indicator_father_son", :class_name => "Indicator", :foreign_key => "indicatorfather_id", :association_foreign_key => "indicatorson_id"
 
 

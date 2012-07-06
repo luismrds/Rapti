@@ -11,7 +11,7 @@
     </div>
   <% end %>
 
-<h1>Establezca los valores para el mes <%=h @score_date.month %> del anho <%=h @score_date.year %></h1>
+<h2>Establezca los valores (<%=h scoredate_month_to_text(@score_date)%>/<%=h @score_date.year%>)</h2>
 
     <% i=0 %>
 
@@ -20,10 +20,10 @@
         <div class="row-fluid">
     <% end %>
 
-    <div class="span4" align="center" >  
+ <div class="span4" align="center" >  
     <%= builder.label :rawdata_id, @names[i] %>
     <% i = i+1 %>
-    <%= builder.number_field :value %><br />
+    <%= builder.text_field :value %><br />
    </div><!-- fin span -->
     <% if i%3 == 0 %>
         </div> <!--fin row-->
@@ -32,11 +32,31 @@
 
   <% end %>
 </div>
-  <div class="actions">
-    <%= f.submit "Establecer valores" %>
+  </br>
+  <div class="row-fluid">
+    <p aling="center"><%= f.submit "Establecer valores" %></p>
   </div>
 
 <% end %>
+
+<div class="row-fluid" align="center">
+    <%= link_to @score_date.year - 1, filloperands_path(ScoreDate.find_by_year_and_month(@score_date.year - 1,12).id)%>
+      <<
+    <%= link_to "Enero", filloperands_path(ScoreDate.find_by_year_and_month(@score_date.year,1).id)%>
+    <%= link_to "Febrero", filloperands_path(ScoreDate.find_by_year_and_month(@score_date.year,2).id)%>
+    <%= link_to "Marzo", filloperands_path(ScoreDate.find_by_year_and_month(@score_date.year,3).id)%>
+    <%= link_to "Abril", filloperands_path(ScoreDate.find_by_year_and_month(@score_date.year,4).id)%>
+    <%= link_to "Mayo", filloperands_path(ScoreDate.find_by_year_and_month(@score_date.year,5).id)%>
+    <%= link_to "Junio", filloperands_path(ScoreDate.find_by_year_and_month(@score_date.year,6).id)%>
+    <%= link_to "Julio", filloperands_path(ScoreDate.find_by_year_and_month(@score_date.year,7).id)%>
+    <%= link_to "Agosto", filloperands_path(ScoreDate.find_by_year_and_month(@score_date.year,8).id)%>
+    <%= link_to "Septiembre", filloperands_path(ScoreDate.find_by_year_and_month(@score_date.year,9).id)%>
+    <%= link_to "Octubre", filloperands_path(ScoreDate.find_by_year_and_month(@score_date.year,10).id)%>
+    <%= link_to "Noviembre", filloperands_path(ScoreDate.find_by_year_and_month(@score_date.year,11).id)%>
+    <%= link_to "Diciembre", filloperands_path(ScoreDate.find_by_year_and_month(@score_date.year,12).id)%>
+      >>
+    <%= link_to @score_date.year + 1, filloperands_path(ScoreDate.find_by_year_and_month(@score_date.year + 1,1).id)%>
+</div>
 
 
 

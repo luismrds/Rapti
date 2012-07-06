@@ -21,11 +21,11 @@
   </div>
   <div class="field">
         <%= f.label "Primer operando" %><br />
-        <%=h collection_select(:operation, :firstoperand, RawDatum.all, :id, :name, :prompt => true) %>
+        <%=h collection_select(:operation, :firstoperand_id, RawDatum.all, :id, :name, :prompt => true) %>
   </div>
   <div class="field">
         <%= f.label "Segundo operando" %><br />
-        <%=h collection_select(:operation, :secondoperand, RawDatum.all, :id, :name, :prompt => true) %>
+        <%=h collection_select(:operation, :secondoperand_id, RawDatum.all, :id, :name, :prompt => true) %>
   </div>
 
   <div class="actions">

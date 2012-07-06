@@ -1,9 +1,10 @@
-<h1>Listado de datos</h1>
+<h2>Listado de datos</h2>
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Operation</th>
+    <th>Nombre</th>
+    <th>Operacion</th>
+    <th>Pista</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,7 +13,12 @@
 <% @raw_data.each do |raw_datum| %>
   <tr>
     <td><%= raw_datum.name %></td>
-    <td><%= raw_datum.operation_id %></td>
+    <% if raw_datum.operation %>    
+      <td><%= raw_datum.operation.name %></td>
+    <% else %>
+      <td align = "center"> - </td>
+    <% end %>
+    <td><%= raw_datum.hint %></td>
     <td><%= link_to 'Show', raw_datum %></td>
     <td><%= link_to 'Edit', edit_raw_datum_path(raw_datum) %></td>
     <td><%= link_to 'Destroy', raw_datum, confirm: 'Are you sure?', method: :delete %></td>

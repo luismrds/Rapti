@@ -1,3 +1,20 @@
+<!--<style>
+am:link { 
+  color: #FFFFFF;
+}
+a:visited { 
+  color: #FFFFFF;
+}
+a:hover { 
+  color: #FFFFFF;
+}
+a:active { 
+  color: #FFFFFF;
+}
+
+</style>-->
+
+
 <h2>Mapa estrategico (<%=h scoredate_month_to_text(@date)%>/<%=h @date.year%>)</h2>
 </br>
 <div class="row-fluid">
@@ -13,15 +30,19 @@
     <% i = 0%>
       <% p.objectives.each do |o|%>
         <% if i%3 == 0 %>
-            <div class="row-fluid">
+            <div class="row-fluid" align = "center">
         <% end %>
         <% i = i + 1%>
         <div class="span4" align="center">
-          <%= link_to o.name, objectiveatdate_path(o.id,@date.id), :class => state(o,@date)%>
+          <% if o.acronym %>          
+            <%= link_to o.acronym, objectiveatdate_path(o.id,@date.id), :class => state(o,@date), :style=>'color:#FFFFFF;'%>
+          <% else %>
+            <%= link_to o.name, objectiveatdate_path(o.id,@date.id), :class => state(o,@date), :style=>'color:#FFFFFF;'%>
+          <% end %>
         </div><!--span4-->
         <% if i%3 == 0 %>
             </div> <!--fin row--></br>
-          <div class="row-fluid">
+          <div class="row-fluid" align = "center">
         <% end %>
       <% end %>
 

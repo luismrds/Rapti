@@ -11,20 +11,77 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :indicator_id %><br />
-    <%= f.collection_select :indicator_id, Indicator.all, :id, :name %>
-  </div>
 
-  <div class="field">
-    <%= f.label :scoredate_id %><br />
-    <%= f.collection_select :scoredate_id, ScoreDate.all, :id, :month %>
-  </div>
-  <div class="field">
-    <%= f.label :score %><br />
+
+  <p>
+    <b>Indicador:</b>
+    <%= @indicator_score.indicator.name %>
+  </p>
+
+  <p>
+    <b>Mes:</b>
+    <%=h scoredate_month_to_text(@date)%>/<%=h @date.year%>
+  </p>
+
+<div class="row-fluid" align="center">
+  <div class="span3" align="center">
+    <%= f.label :score, "Medicion"%><br />
     <%= f.text_field :score %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="span3" align="center">
+    <%= f.label :goal, "Meta" %><br />
+    <%= f.text_field :goal %>
+  </div>
+  <div class="span3" align="center">
+    <%= f.label :iniciorojo, "Inicio Rojo" %><br />
+    <%= f.text_field :redfrom %>
+  </div>
+  <div class="span3" align="center">
+    <%= f.label :finrojo, "Fin Rojo" %><br />
+    <%= f.text_field :redto %>
+  </div>
+
+</div>
+<div class="row-fluid" align="center">
+
+  <div class="span3" align="center">
+    <%= f.label :inicioamarillo, "Inicio Amarillo" %><br />
+    <%= f.text_field :yellowfrom %>
+  </div>
+  <div class="span3" align="center">
+    <%= f.label :finamarillo, "Fin Amarillo" %><br />
+    <%= f.text_field :yellowto %>
+  </div>
+  <div class="span3" align="center">
+    <%= f.label :inicioverde, "Inicio Verde" %><br />
+    <%= f.text_field :greenfrom %>
+  </div>
+  <div class="span3" align="center">
+    <%= f.label :finverde, "Fin Verde" %><br />
+    <%= f.text_field :greento %>
+  </div>
+
+</div>
+
+<div class="row-fluid" align="center">
+  <div class="span4" align="center">
+    <%= f.label :progress, "Avance" %><br />
+    <%= f.text_field :progress %>
+  </div>
+  <div class="span4" align="center">
+    <%= f.label :base, "Base" %><br />
+    <%= f.text_field :baseline %>
+  </div>
+  <div class="span4" align="center">
+    <%= f.label :growth, "Comparacion" %><br />
+    <%= f.text_field :growth %>
+  </div>
+
+</div>
+
+</br>
+
+  <div class="row-fluid" align="center">
+    <%= f.submit "Confirmar"%>
   </div>
 <% end %>

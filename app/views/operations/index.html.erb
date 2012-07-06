@@ -1,11 +1,11 @@
-<h1>Listado operations</h1>
+<h2>Listado de operaciones</h2>
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Operator</th>
-    <th>Firstoperand</th>
-    <th>Secondoperand</th>
+    <th>Nombre</th>
+    <th>Operador</th>
+    <th>Primer operando</th>
+    <th>Segundo operando</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,11 +15,11 @@
   <tr>
     <td><%= operation.name %></td>
     <td><%= operation.operator %></td>
-    <td><%= operation.firstoperand %></td>
-    <td><%= operation.secondoperand %></td>
-    <td><%= link_to 'Show', operation %></td>
-    <td><%= link_to 'Edit', edit_operation_path(operation) %></td>
-    <td><%= link_to 'Destroy', operation, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= operation.firstoperand.name %></td>
+    <td><%= operation.secondoperand.name %></td>
+    <td><%= link_to 'Mostrar', operation %></td>
+    <td><%= link_to 'Editar', edit_operation_path(operation) %></td>
+    <td><%= link_to 'Eliminar', operation, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
 </table>

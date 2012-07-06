@@ -1,11 +1,12 @@
 class IndicatorScoresController < ApplicationController
   include ApplicationHelper
   include IndicatorScoresHelper
+  include ScoreDatesHelper
   
   # GET /indicator_scores
   # GET /indicator_scores.json
   def index
-    @indicator_scores = IndicatorScore.all
+    @indicator_scores = IndicatorScore.order("indicator_id")
 
     respond_to do |format|
       format.html # index.html.erb

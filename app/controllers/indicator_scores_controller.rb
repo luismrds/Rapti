@@ -6,7 +6,7 @@ class IndicatorScoresController < ApplicationController
   # GET /indicator_scores
   # GET /indicator_scores.json
   def index
-    @indicator_scores = IndicatorScore.order("indicator_id")
+    @indicator_scores = IndicatorScore.order("indicator_id, scoredate_id")
 
     respond_to do |format|
       format.html # index.html.erb

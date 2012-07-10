@@ -2,7 +2,7 @@ class RawDataScoresController < ApplicationController
   # GET /raw_data_scores
   # GET /raw_data_scores.json
   def index
-    @raw_data_scores = RawDataScore.all
+    @raw_data_scores = RawDataScore.order("rawdata_id, scoredate_id")
 
     respond_to do |format|
       format.html # index.html.erb

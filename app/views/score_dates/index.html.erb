@@ -2,6 +2,7 @@
 
 <table>
   <tr>
+    <th>ID</th>
     <th>Month</th>
     <th>Year</th>
     <th></th>
@@ -11,6 +12,7 @@
 
 <% @score_dates.each do |score_date| %>
   <tr>
+    <td><%= score_date.id %></td>
     <td><%= score_date.month %></td>
     <td><%= score_date.year %></td>
     <td><%= link_to 'Show', score_date %></td>

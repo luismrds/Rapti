@@ -2,7 +2,7 @@ class ScoreDatesController < ApplicationController
   # GET /score_dates
   # GET /score_dates.json
   def index
-    @score_dates = ScoreDate.all
+    @score_dates = ScoreDate.order("month")
 
     respond_to do |format|
       format.html # index.html.erb

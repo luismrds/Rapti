@@ -1,5 +1,5 @@
-<h2><%=h @indicator.name%></h2>
-<h3>Medido en: Porcentaje</h3>
+<h2><%=h @indicator.name%> (<%=h scoredate_month_to_text(@date)%>/<%=h @date.year%>)</h2>
+<h3>Medido en: <%=h @indicator.unit%></h3>
 
 <div class="row">
     <div class="span4" align="center">

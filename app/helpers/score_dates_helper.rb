@@ -9,6 +9,18 @@ module ScoreDatesHelper
     return number_to_month(month)
   end
 
+  def zeroToUseless
+    [13,14,15,16,17,18,19,20].each{|i|
+      puts i       
+      date = ScoreDate.find(i)
+      inds = date.indicatorscores
+      inds.each{|is|
+        is.score = 0
+        is.save    
+      }
+    }
+  end
+
   def number_to_month(n)
     case n
     when 1

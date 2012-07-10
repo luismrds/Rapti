@@ -1,5 +1,5 @@
 class Indicator < ActiveRecord::Base
-  attr_accessible :name, :objective_ids, :weight, :operation_id, :objective_id
+  attr_accessible :name, :objective_ids, :weight, :operation_id, :objective_id, :unit
 
   has_and_belongs_to_many :objectives
 

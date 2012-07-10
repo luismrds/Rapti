@@ -18,7 +18,7 @@ Rails3BootstrapDeviseCancan::Application.routes.draw do
   match "indicator_scores/indicatoratdate/:ind/:date" => "indicator_scores#indicatoratdate", :as => :indicatoratdate
   resources :indicator_scores
 
-  match "objective_scores/objectiveatdate/:obj/:date" => "objective_scores#objectiveatdate", :as => :objectiveatdate
+  match "objective_scores/objectiveatdate/:obj/:date/:trend" => "objective_scores#objectiveatdate", :as => :objectiveatdate
   resources :objective_scores
 
   match "perspective_scores/strategymap/:date_id" => "perspective_scores#strategymap", :as => :thestrategymap

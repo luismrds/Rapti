@@ -35,9 +35,9 @@ a:active {
         <% i = i + 1%>
         <div class="span4" align="center">
           <% if o.acronym %>          
-            <%= link_to o.acronym, objectiveatdate_path(o.id,@date.id), :class => state(o,@date), :style=>'color:#FFFFFF;'%>
+            <%= link_to o.acronym, objectiveatdate_path(o.id,@date.id, @trend), :class => state(o,@date), :style=>'color:#FFFFFF;'%>
           <% else %>
-            <%= link_to o.name, objectiveatdate_path(o.id,@date.id), :class => state(o,@date), :style=>'color:#FFFFFF;'%>
+            <%= link_to o.name, objectiveatdate_path(o.id,@date.id, @trend), :class => state(o,@date), :style=>'color:#FFFFFF;'%>
           <% end %>
         </div><!--span4-->
         <% if i%3 == 0 %>

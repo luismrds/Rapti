@@ -65,8 +65,13 @@
 </div>
 </div>
 </br>
-<h2>Tendencia de los ultimos 6 meses</h2>
-
+<h2>Tendencia de los ultimos <%=h @trend.to_s %> meses</h2>
+<% if @trend == "3" %>  
+  <h3><%= link_to "Ver 6 meses", objectiveatdate_path(@objective, @date, 6)%></h3>
+<% end %>
+<% if @trend == "6" %>  
+  <h3><%= link_to "Ver 3 meses", objectiveatdate_path(@objective, @date, 3)%></h3>
+<% end %>
 <div class="row-fluid">
   <div id='linechart'></div>
   <%= render_chart @linechart, 'linechart' %>

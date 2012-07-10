@@ -87,6 +87,7 @@ class ObjectiveScoresController < ApplicationController
   def objectiveatdate
     @objective = Objective.find(params[:obj])
     @date = ScoreDate.find(params[:date])
+    @trend = params[:trend]
     @indicators = @objective.indicators
     @currentindicators = []
     @indicators.each{|i|
@@ -124,8 +125,8 @@ class ObjectiveScoresController < ApplicationController
     opts   = { :width => 600, :showRowNumber => false }
     @tablechart = GoogleVisualr::Interactive::Table.new(data_table, opts)
 
-    @lastSix = getLastNobjectiveScore(6, @objective, @date)
-    @linechart = produceLineChart("Tendencia de 6 meses", @lastSix, @objective)
+    @lastN = getLastNobjectiveScore(@trend.to_i, @objective, @date)
+    @linechart = produceLineChart("Tendencia de " + @trend.to_s + " meses anteriores", @lastN, @objective)
 
     respond_to do |format|
       format.html # show.html.erb

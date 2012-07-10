@@ -1,6 +1,5 @@
-<h2><%=h @indicator.name%> (<%=h scoredate_month_to_text(@date)%>/<%=h @date.year%>)</h2>
-<h3>Medido en: <%=h @indicator.unit%></h3>
-
+<h2><%=h @indicator.name%> (<%=h scoredate_month_to_text(@date)%>/<%=h @date.year%>) <%= link_to image_tag("info.png", :size => "48x30"), @indicator, :class => 'brand' %></h2>
+<h3>Unidades: <%=h @indicator.unit%></h3>
 <div class="row">
     <div class="span4" align="center">
         <div id='chart'></div>
@@ -16,6 +15,7 @@
       <th title="Definicion de Avance">Avance</th>
       <th title="Definicion de Base">Base</th>
       <th title="Definicion de Comp">Comp.</th>
+      <th title="Ponderacion para calculo del desempeno del Objetivo">Peso.</th>
     <tr>
     <tr>
       <td align = "center"><%= @currentindicator.score.round(2) %></td>
@@ -23,6 +23,11 @@
       <td align = "center"><%= @currentindicator.progress.round(2) %></td>
       <td align = "center"><%= @currentindicator.baseline.round(2) %></td>
       <td align = "center"><%= @currentindicator.growth.round(2) %></td>
+      <% if @currentindicator.indicator.weight %>
+        <td align = "center"><%= @currentindicator.indicator.weight.round(2) %></td>
+      <% else %>
+        <td align = "center"> - </td>
+      <% end %>
     </tr> 
   </table>
 

@@ -1,4 +1,4 @@
-<h2><%=h @objective.name%> (<%=h scoredate_month_to_text(@date)%>/<%=h @date.year%>)</h2>
+<h2><%=h @objective.name%> (<%=h scoredate_month_to_text(@date)%>/<%=h @date.year%>)  <%= link_to image_tag("info.png", :size => "48x30"), @objective, :class => 'brand' %></h2></h2>
 <h3>Unidades: <%=h @objective.measurement%></h3>
 
 <div class="row-fluid">

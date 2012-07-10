@@ -24,6 +24,10 @@
     <%= f.text_field :weight %>
   </div>
   <div class="field">
+    <%= f.label :formula %><br />
+    <%= f.text_field :formula %>
+  </div>
+  <div class="field">
         <%= f.label "Operacion" %><br />
         <%=h collection_select(:indicator, :operation_id, Operation.all, :id, :name, :prompt => true) %>
   </div>

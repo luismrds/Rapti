@@ -14,10 +14,12 @@
   <%= @indicator.formula %>
 </p>
 
-<p>
-  <b>Operacion:</b>
-  <%= @indicator.operation.name %>
-</p>
+<% if @indicator.operation %>
+  <p>
+    <b>Operacion:</b>
+    <%= @indicator.operation.name %>
+  </p>
+<% end %>
 
 <p>
   <b>Objetivo:</b>

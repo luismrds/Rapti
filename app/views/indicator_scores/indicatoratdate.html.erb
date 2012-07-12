@@ -1,5 +1,13 @@
-<h2><%=h @indicator.name%> (<%=h scoredate_month_to_text(@date)%>/<%=h @date.year%>) <%= link_to image_tag("info.png", :size => "48x30"), @indicator, :class => 'brand' %></h2>
-<h3>Unidades: <%=h @indicator.unit%></h3>
+<div class="row">
+  <div class="span11" align="left">
+  <h2><%=h @indicator.name%> (<%=h scoredate_month_to_text(@date)%>/<%=h @date.year%>) 
+  </div>
+  <div class="span1" align="left">
+  <%= link_to image_tag("info.png", :size => "48x30"), @indicator, :class => 'brand' %></h2>
+  </div>
+</div>
+
+<h3 align="left">Unidades: <%=h @indicator.unit%></h3>
 <div class="row">
     <div class="span4" align="center">
         <div id='chart'></div>
@@ -18,11 +26,36 @@
       <th title="Ponderacion para calculo del desempeno del Objetivo">Peso.</th>
     <tr>
     <tr>
-      <td align = "center"><%= @currentindicator.score.round(2) %></td>
-      <td align = "center"><%= @currentindicator.goal.round(2) %></td>
-      <td align = "center"><%= @currentindicator.progress.round(2) %></td>
-      <td align = "center"><%= @currentindicator.baseline.round(2) %></td>
-      <td align = "center"><%= @currentindicator.growth.round(2) %></td>
+      <% if @currentindicator.score %>
+        <td align = "center"><%= @currentindicator.score.round(2) %></td>
+      <% else %>
+        <td align = "center"> - </td>
+      <% end %>
+
+      <% if @currentindicator.goal %>
+        <td align = "center"><%= @currentindicator.goal.round(2) %></td>
+      <% else %>
+        <td align = "center"> - </td>
+      <% end %>
+
+      <% if @currentindicator.indicator.progress %>
+        <td align = "center"><%= @currentindicator.progress.round(2) %></td>
+      <% else %>
+        <td align = "center"> - </td>
+      <% end %>
+
+      <% if @currentindicator.indicator.baseline %>
+        <td align = "center"><%= @currentindicator.baseline.round(2) %></td>
+      <% else %>
+        <td align = "center"> - </td>
+      <% end %>
+
+      <% if @currentindicator.indicator.growth %>
+        <td align = "center"><%= @currentindicator.growth.round(2) %></td>
+      <% else %>
+        <td align = "center"> - </td>
+      <% end %>
+
       <% if @currentindicator.indicator.weight %>
         <td align = "center"><%= @currentindicator.indicator.weight.round(2) %></td>
       <% else %>
@@ -44,7 +77,14 @@
 </div>
 </div>
 </br>
-<h2>Tendencia de los ultimos 6 meses</h2>
+
+<h2>Tendencia de los ultimos <%=h @trend.to_s %> meses</h2>
+<% if @trend == "3" %>  
+  <h3><%= link_to "Ver 6 meses", indicatoratdate_path(@indicator, @date, 6)%></h3>
+<% end %>
+<% if @trend == "6" %>  
+  <h3><%= link_to "Ver 3 meses", indicatoratdate_path(@indicator, @date, 3)%></h3>
+<% end %>
 
 <div class="row">
   <div id='linechart'></div>

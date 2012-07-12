@@ -88,6 +88,7 @@ class IndicatorScoresController < ApplicationController
   def indicatoratdate
     @indicator = Indicator.find(params[:ind])
     @date = ScoreDate.find(params[:date])
+    @trend = params[:trend]
     @sons = @indicator.sons
     @currentsons = []
     @sons.each{|i|
@@ -125,8 +126,8 @@ class IndicatorScoresController < ApplicationController
     opts   = { :width => 600, :showRowNumber => false }
     @tablechart = GoogleVisualr::Interactive::Table.new(data_table, opts)
 
-    @lastSix = getLastNindicatorScore(6, @indicator, @date)
-    @linechart = produceLineChart("Tendencia de 6 meses", @lastSix, @indicator)
+    @lastN = getLastNindicatorScore(@trend.to_i, @indicator, @date)
+    @linechart = produceLineChart("Tendencia de " + @trend.to_s + " meses anteriores", @lastN, @indicator)
 
     respond_to do |format|
       format.html # show.html.erb

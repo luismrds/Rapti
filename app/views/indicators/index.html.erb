@@ -14,7 +14,11 @@
   <tr>
     <td><%= indicator.name %></td>
     <td><%= indicator.weight %></td>
-    <td><%= Objective.find(indicator.objective_id).name %></td>
+    <% if indicator.objective%>    
+      <td><%= indicator.objective.name %></td>
+    <% else %>
+      <td> - </td>
+    <% end %>
     <td><%= link_to 'Mostrar', indicator %></td>
     <td><%= link_to 'Editar', edit_indicator_path(indicator) %></td>
     <td><%= link_to 'Eliminar', indicator, confirm: 'Are you sure?', method: :delete %></td>

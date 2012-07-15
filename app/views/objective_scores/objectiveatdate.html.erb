@@ -1,5 +1,29 @@
-<h2><%=h @objective.name%> (<%=h scoredate_month_to_text(@date)%>/<%=h @date.year%>)  <%= link_to image_tag("info.png", :size => "48x30"), @objective, :class => 'brand' %></h2></h2>
-<h3>Unidades: <%=h @objective.measurement%></h3>
+<style>
+am:link { 
+  color: #FFFFFF;
+}
+a:hover { 
+  background-color: transparent;
+}
+a:active { 
+  color: #FFFFFF;
+}
+
+</style>
+
+<div class="row">
+  <div class="span11" align="left">
+    <h2><%=h @objective.name%> (<%=h scoredate_month_to_text(@date)%>/<%=h @date.year%>)</h2>
+    <h3>Unidades: <%=h @objective.measurement%></h3>
+  </div>
+  <div class="span1" align="left">
+    <%= link_to image_tag("info.png", :size => "48x30"), @objective, :class => 'brand' %>
+  </div>
+</div>
+
+
+  
+
 
 <div class="row-fluid">
     <div class="span4" align="center">
@@ -50,7 +74,7 @@
     <% @currentindicators.each do |ci|%>
       <tr>
         <td align = "center"><%=h i%>. </td><% i = i + 1 %>
-        <td align = "left"><%= link_to ci.indicator.name, indicatoratdate_path(ci.indicator_id,ci.scoredate_id), :class => indicatorscorestate(ci), :style=>'color:#FFFFFF;'%></td>
+        <td align = "center"><%= link_to ci.indicator.name, indicatoratdate_path(ci.indicator_id,ci.scoredate_id), :class => indicatorscorestate(ci), :style=>'color:#FFFFFF;'%></td>
         <td align = "center"><%= ci.score %></td>
         <td align = "center"><%= ci.goal %></td>
         <td align = "center"><%= ci.progress %></td>

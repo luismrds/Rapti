@@ -13,7 +13,7 @@ module IndicatorScoresHelper
   end
 
 #FOR DEMO AND TEST'S USE ONLY
-# If fills the indicatorScore with random data for testing and demo.
+# It fills the indicatorScore with random data for testing and demo.
   def fill_em
     os = IndicatorScore.all
     os.each{|o|
@@ -29,6 +29,21 @@ module IndicatorScoresHelper
       o.growth = rand(100)
       o.goal = rand(100)
       o.save
+    }
+  end
+
+  def fill_from_default(indid)
+    inds = IndicatorScore.find_all_by_indicator_id(indid)
+    inds.each{|i|
+      #i.score = rand(100)
+      i.score = 0
+      i.redfrom = i.indicator.redfrom
+      i.redto = i.indicator.redto
+      i.yellowfrom = i.indicator.yellowfrom 
+      i.yellowto = i.indicator.yellowto 
+      i.greenfrom = i.indicator.greenfrom
+      i.greento = i.indicator.greento
+      i.save
     }
   end
 
@@ -50,5 +65,13 @@ module IndicatorScoresHelper
       }
       return scores 
   end
+
+  def cut_decimals
+    scores = IndicatorScore.all
+    scores.each{|s|
+      s.score = s.score.round(2)
+      s.save
+    }
+  end 
 
 end

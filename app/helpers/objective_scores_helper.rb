@@ -60,13 +60,14 @@ module ObjectiveScoresHelper
 
   def indicatorscorestate(ind)
     score = ind.score
-    if score >= ind.redfrom && score < ind.redto
+    #if score >= ind.redfrom && score < ind.redto
+    if score < ind.redto
       return 'btn btn-danger'
     end
     if score >= ind.yellowfrom && score <= ind.yellowto
       return 'btn btn-warning'
     end
-    if score > ind.greenfrom && score <= ind.greento
+    if score > ind.greenfrom #&& score <= ind.greento
       return 'btn btn-success'
     end
   end

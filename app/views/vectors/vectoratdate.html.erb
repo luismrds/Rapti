@@ -18,7 +18,7 @@
             <% end %>
             <% i = i + 1%>
             <div class="span4" align="center">
-              <%= link_to o.name, objectiveatdate_path(o.id,@date.id), :class => state(o,@date)%>
+              <%= link_to o.name, objectiveatdate_path(o.id,@date.id,6), :class => state(o,@date)%>
             </div><!--span4-->
             <% if i%3 == 0 %>
                 </div> <!--fin row--></br>

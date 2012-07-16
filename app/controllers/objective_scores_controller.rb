@@ -91,7 +91,10 @@ class ObjectiveScoresController < ApplicationController
     @indicators = @objective.indicators
     @currentindicators = []
     @indicators.each{|i|
-      @currentindicators << IndicatorScore.find_by_indicator_id_and_scoredate_id(i.id, params[:date])
+      indscore = IndicatorScore.find_by_indicator_id_and_scoredate_id(i.id, params[:date])
+      if indscore && indscore.indicator.show
+        @currentindicators << indscore
+      end
     }
     @currentobjective = ObjectiveScore.find_by_objective_id_and_scoredate_id(params[:obj],params[:date])
     

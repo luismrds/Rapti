@@ -7,4 +7,15 @@ class IndicatorScore < ActiveRecord::Base
 
   #With this validation there will be only one indicator_score in a given scoredate
   validates :indicator_id, :uniqueness => {:scope => :scoredate_id}
+
+  def percentage
+    b = self.redfrom
+    e = self.greento
+    if e >= b
+      size = e - b
+    else 
+      size = b - e
+    end
+    return (self.score - b)*100 / size 
+  end
 end

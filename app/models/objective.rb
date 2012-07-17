@@ -5,4 +5,6 @@ class Objective < ActiveRecord::Base
   #has_and_belongs_to_many :indicators
 
   has_many :indicators
+  has_many :objective_scores
+  
 end

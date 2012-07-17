@@ -57,5 +57,11 @@ include OperationsHelper
     }
   end
 
+  def cleanIndicatorNoShow
+    noshow = Indicator.find_all_by_show(FALSE)
+    noshow.each{|n|
+      Indicator.delete(n)
+    }
+  end
 
 end

@@ -74,4 +74,14 @@ module IndicatorScoresHelper
     }
   end 
 
+  def cleanIndicatorScoresNoShow
+    noshow = Indicator.find_all_by_show(FALSE)
+    noshow.each{|n|
+      scores = n.indicator_scores
+      scores.each{|s|
+        IndicatorScore.delete(s)
+      }
+    }
+  end
+
 end

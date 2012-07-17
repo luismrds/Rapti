@@ -14,13 +14,14 @@ module PerspectiveScoresHelper
 
   def state(obj,date)
     score = ObjectiveScore.find_by_objective_id_and_scoredate_id(obj.id,date.id).score
-    if score >= obj.redfrom && score < obj.redto
+    #if score >= obj.redfrom && score < obj.redto
+    if score < obj.redto
       return 'btn btn-danger'
     end
     if score >= obj.yellowfrom && score <= obj.yellowto
       return 'btn btn-warning'
     end
-    if score > obj.greenfrom && score <= obj.greento
+    if score > obj.greenfrom #&& score <= obj.greento
       return 'btn btn-success'
     end
   end

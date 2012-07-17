@@ -72,4 +72,50 @@ module ObjectiveScoresHelper
     end
   end
 
+  def calculate
+    obj = self.objective
+    date = self.scoredate
+    indicators = obj.indicators
+    is = []
+    indicators.each{|i|
+      is << IndicatorScore.find_by_indicator_id_and_scoredate_id(i.id, self.scoredate_id)
+    }
+    value = 0 
+    is.each{|i|
+      w = i.indicator.weight/100
+      value = value + (w * i.percentage)
+    }
+    self.score = value
+    self.save
+  end
+
+#Deletes de ObjectiveScores of those objectives that are set to not be shown 
+
+
+  def cleanObjectivesScoresNoShow
+    noshow = Objective.find_all_by_show(FALSE)
+    noshow.each{|n|
+      scores = n.objective_scores
+      scores.each{|s|
+        ObjectiveScore.delete(s)
+      }
+    }
+  end
 end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

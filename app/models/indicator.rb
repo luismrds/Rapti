@@ -3,6 +3,7 @@ class Indicator < ActiveRecord::Base
 
   has_and_belongs_to_many :objectives
 
+  has_many :indicator_scores
   has_many :indicatorscores, :class_name => 'IndicatorScore', :foreign_key => "scoredate_id"
   belongs_to :operation
 

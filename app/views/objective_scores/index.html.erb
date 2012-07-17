@@ -2,9 +2,9 @@
 
 <table>
   <tr>
-    <th>Objective</th>
-    <th>Date</th>
-    <th>Score</th>
+    <th>Objetivo</th>
+    <th>Fecha</th>
+    <th>Valor</th>
     <th></th>
     <th></th>
     <th></th>
@@ -12,8 +12,8 @@
 
 <% @objective_scores.each do |objective_score| %>
   <tr>
-    <td><%= objective_score.objective_id %></td>
-    <td><%= objective_score.date_id %></td>
+    <td><%= objective_score.objective.name %></td>
+    <td><%= objective_score.scoredate.month %>/<%= objective_score.scoredate.year %></td>
     <td><%= objective_score.score %></td>
     <td><%= link_to 'Show', objective_score %></td>
     <td><%= link_to 'Edit', edit_objective_score_path(objective_score) %></td>

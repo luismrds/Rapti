@@ -4,7 +4,7 @@ class ObjectiveScoresController < ApplicationController
   # GET /objective_scores
   # GET /objective_scores.json
   def index
-    @objective_scores = ObjectiveScore.all
+    @objective_scores = ObjectiveScore.order("objective_id, scoredate_id")
 
     respond_to do |format|
       format.html # index.html.erb

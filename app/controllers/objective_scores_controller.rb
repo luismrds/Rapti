@@ -109,27 +109,8 @@ class ObjectiveScoresController < ApplicationController
     @chart = produceGauge("", @currentobjective.score, 800, 240, @objective.redfrom, @objective.redto, 25, @objective.yellowto, @objective.greenfrom, @objective.greento, 5, min, max)
 
 #    @lastsix = getLastNobjectiveScore(6, @objective, @date)
-
-
-    data_table = GoogleVisualr::DataTable.new
-    data_table.new_column('number', 'Actual');
-    data_table.new_column('number', 'Meta');
-    data_table.new_column('number', 'Avance');
-    data_table.new_column('number', 'Base');
-    data_table.new_column('number', 'Comparacion');
-
-    data_table.add_rows(1)
-    data_table.set_cell(0, 0, @currentobjective.score)
-    data_table.set_cell(0, 1, @currentobjective.goal)
-    data_table.set_cell(0, 2, @currentobjective.progress)
-    data_table.set_cell(0, 3, @currentobjective.baseline)
-    data_table.set_cell(0, 4, @currentobjective.growth)
-
-    opts   = { :width => 600, :showRowNumber => false }
-    @tablechart = GoogleVisualr::Interactive::Table.new(data_table, opts)
-
     @lastN = getLastNobjectiveScore(@trend.to_i, @objective, @date)
-    @linechart = produceLineChart("Tendencia de " + @trend.to_s + " meses anteriores", @lastN, @objective)
+    @linechart = produceLineChart("Tendencia de " + @trend.to_s + " meses anteriores", @lastN, @objective.name)
 
     respond_to do |format|
       format.html # show.html.erb

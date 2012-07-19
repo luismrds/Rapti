@@ -127,7 +127,7 @@ class IndicatorScoresController < ApplicationController
     @tablechart = GoogleVisualr::Interactive::Table.new(data_table, opts)
 
     @lastN = getLastNindicatorScore(@trend.to_i, @indicator, @date)
-    @linechart = produceLineChart("Tendencia de " + @trend.to_s + " meses anteriores", @lastN, @indicator)
+    @linechart = produceLineChart("Tendencia de " + @trend.to_s + " meses anteriores", @lastN, @indicator.name)
 
     respond_to do |format|
       format.html # show.html.erb

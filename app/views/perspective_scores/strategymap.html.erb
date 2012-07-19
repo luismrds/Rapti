@@ -22,11 +22,11 @@ a:active {
 
 
   <% @perspectives.each do |p|%>
-    <ul class="breadcrumb">
+    <ul class="breadcrumb" align="left">
       <li>
-        <h2><%=h p.name %></h2>
+        <h2><%=h p.name %> <%= link_to "Ver en dashboard", showdashboard_path("perspective", "current", p.id, @date.id), :class => mystate(p,@date), :style=>'color:#FFFFFF;'%></h2> 
       </li>
-    
+    </ul>
     <% i = 0%>
       <% p.showableObjectives.each do |o|%>
         <% if i%3 == 0 %>
@@ -45,9 +45,9 @@ a:active {
           <div class="row-fluid" align = "center">
         <% end %>
       <% end %>
-
+              
     </div>
-</ul>
+</br>
   <% end %>
 
   </div>

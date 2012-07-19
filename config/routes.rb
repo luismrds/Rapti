@@ -39,6 +39,8 @@ Rails3BootstrapDeviseCancan::Application.routes.draw do
   match "perspectives/strategyMap" => "perspectives#strategyMap", :as => :strategyMap
   resources :perspectives
 
+  match "dashboards/show/:cat/:type/:id/:date" => "dashboards#show", :as => :showdashboard
+  #match "dashboards/show/:cat/:id/:date" => "dashboards#show", :as => :showdashboard
   authenticated :user do
     root :to => 'perspective_scores#strategymap'
   end

@@ -62,7 +62,7 @@ a:active {
   <table width="100%">
     <tr>
       <th></th>
-      <th>Indicador</th>
+      <th>Indicador <%= link_to "Ver en dashboard", showdashboard_path("objective", "current", @objective, @date.id), :class => mystate(@objective,@date), :style=>'color:#FFFFFF;'%></th>
       <th title="Definicion de actual">Actual</th>
       <th title="Definicion de Meta">Meta</th>
       <th title="Definicion de Avance">Avance</th>

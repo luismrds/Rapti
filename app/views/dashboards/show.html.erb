@@ -1,0 +1,26 @@
+<h2>Dashboard de<%=h @tc %> (<%=h scoredate_month_to_text(@sc)%>/<%=h @sc.year%>) 
+<% if @type == "current" %>
+  <%= link_to "Ver tendencias", showdashboard_path(@category, "trend", @individual.id, @sc.id)%>
+<% end %>
+<% if @type == "trend" %>
+  <%= link_to "Ver actual", showdashboard_path(@category, "current", @individual.id, @sc.id)%>
+<% end %>
+
+</h2>
+
+<% i = 0%>
+  <div class="row-fluid">
+    <% @charts.each do |p|%>
+      <div class="span4" align="center">
+        <div id=<%= "'chart" + i.to_s + "'"%>></div>
+        <%= render_chart(p, "chart" + i.to_s) %>
+        <%=h @sons[i].name %>
+      </div><!--span4-->
+      <% i = i + 1%>
+      <% if i%3 == 0 %>
+          </div><!--row-->
+          <div class="row-fluid">
+      <% end %>
+
+    <% end %>
+  </div>

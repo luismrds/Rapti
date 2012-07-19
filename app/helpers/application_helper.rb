@@ -17,10 +17,10 @@ include ScoreDatesHelper
 #Produce a Line Chart with the given parameters using google Visualr 
 #A Library that uses the google visualization API
 
-    def produceLineChart(title, scores, indicador)
+    def produceLineChart(title, scores, name)
         data_table = GoogleVisualr::DataTable.new
         data_table.new_column('string', 'Mes' ) 
-        data_table.new_column('number', indicador.name) 
+        data_table.new_column('number', name) 
         data_table.new_column('number', 'Meta')  
         # Add Rows and Values 
         scores.each{|s|

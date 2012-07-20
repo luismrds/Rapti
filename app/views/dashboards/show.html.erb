@@ -8,6 +8,16 @@
 
 </h2>
 
+<div class="row-fluid">
+  <div class="span12" align="center">
+    <div id="mychart"></div>
+    <%= render_chart(@mychart, "mychart") %>
+    <%=h @individual.name %>
+  </div><!--span4-->
+</div>
+
+<br/>
+
 <% i = 0%>
   <div class="row-fluid">
     <% @charts.each do |p|%>

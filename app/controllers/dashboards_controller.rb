@@ -1,6 +1,7 @@
 class DashboardsController < ApplicationController
   include ApplicationHelper
   include ObjectiveScoresHelper
+  include PerspectiveScoresHelper
   include IndicatorScoresHelper
 
   def show
@@ -19,7 +20,9 @@ class DashboardsController < ApplicationController
       @last6s = []
       @sons.each{|i|
         @last6s << getLastNobjectiveScore(6, i, @sc)
-      }      
+      }     
+      myscore = PerspectiveScore.find_by_perspective_id_and_scoredate_id(@individual.id, date).score
+      mylast6s = getLastNperspectiveScore(6, @individual, @sc)
     end
     if @category == "objective"
       @individual = Objective.find(params[:id])
@@ -37,13 +40,15 @@ class DashboardsController < ApplicationController
       @currentscores.each{|c|
         @names << c.indicator.name
       }
+      myscore = ObjectiveScore.find_by_objective_id_and_scoredate_id(@individual.id, date).score
+      mylast6s = getLastNobjectiveScore(6, @individual, @sc)
     end
     if @type == "current"
       @charts  = []
       @currentscores.each{|c|
         @charts << produceGauge("", c.score, 800, 200, c.redfrom, c.redto, c.yellowfrom, c.yellowto, c.greenfrom, c.greento, 5, 0, 100)
       }
-
+      @mychart = produceGauge("", myscore, 800, 200, @individual.redfrom, @individual.redto, @individual.yellowfrom, @individual.yellowto, @individual.greenfrom, @individual.greento, 5, 0, 100)
     end
     if @type == "trend"
       @charts  = []
@@ -52,6 +57,7 @@ class DashboardsController < ApplicationController
         @charts << produceLineChart("Tendencia de 6 meses anteriores", l, @sons[i].name)
         i = i + 1
       }
+      @mychart = produceLineChart("Tendencia de 6 meses anteriores", mylast6s, @individual.name)
     end
   end
 

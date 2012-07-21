@@ -4,7 +4,7 @@ include IndicatorsHelper
   # GET /indicators
   # GET /indicators.json
   def index
-    @indicators = Indicator.all
+    @indicators = Indicator.order("name")
 
     respond_to do |format|
       format.html # index.html.erb

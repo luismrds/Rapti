@@ -84,4 +84,18 @@ module IndicatorScoresHelper
     }
   end
 
+  def indicatorState(ind,date)
+    score = IndicatorScore.find_by_indicator_id_and_scoredate_id(ind.id,date.id).score
+    #if score >= ind.redfrom && score < ind.redto
+    if score >= ind.redfrom 
+      return 'btn btn-danger'
+    end
+    if score >= ind.yellowfrom && score <= ind.yellowto
+      return 'btn btn-warning'
+    end
+    if score > ind.greenfrom #&& score <= ind.greento
+      return 'btn btn-success'
+    end
+  end
+
 end

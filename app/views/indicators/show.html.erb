@@ -21,11 +21,12 @@
   </p>
 <% end %>
 
-<p>
-  <b>Objetivo:</b>
-  <%= @indicator.objective.name %>
-</p>
-
+<% if @indicator.objective %>
+  <p>
+    <b>Objetivo:</b>
+    <%= @indicator.objective.name %>
+  </p>
+<% end %>
 
 <% if @indicator.sons.size > 0 %>
   <p>

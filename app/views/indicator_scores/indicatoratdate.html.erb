@@ -81,11 +81,11 @@ a:active {
 
     </br>
     <div class="row" align="left">        
-      <h3>Indicadores: (<%= link_to "Ver juntos", exploreobjectives_path() %> )</h3>
+      <h3>Indicadores:  <%= link_to "Ver en dashboard", showdashboard_path("indicator", "current", @indicator, @date.id), :class => indicatorState(@indicator,@date), :style=>'color:#FFFFFF;'%></h3>
         <OL TYPE="1">
-          <% @currentsons.each do |cs|%>
-            <LI><p><%= link_to cs.indicator.name, cs, :class => indicatorscorestate(ci)%></p>
-          <% end %>
+          <% @currentsons.each do |cs|%>        
+            <LI><p><%= link_to cs.indicator.name, indicatoratdate_path(cs.indicator_id,cs.scoredate_id), :class => indicatorscorestate(cs), :style=>'color:#FFFFFF;'%>
+<% end %>
         </OL>
     </div>
 </div>

@@ -43,6 +43,25 @@ class DashboardsController < ApplicationController
       myscore = ObjectiveScore.find_by_objective_id_and_scoredate_id(@individual.id, date).score
       mylast6s = getLastNobjectiveScore(6, @individual, @sc)
     end
+    if @category == "indicator"
+      @individual = Indicator.find(params[:id])
+      @tc = "l Indicador: " + @individual.name + " "
+      @sons = @individual.sons
+      @currentscores = []
+      @sons.each{|i|
+        @currentscores << IndicatorScore.find_by_indicator_id_and_scoredate_id(i.id, date)
+      }
+      @last6s = []
+      @sons.each{|i|
+        @last6s << getLastNindicatorScore(6, i, @sc)
+      }
+      @names = []
+      @currentscores.each{|c|
+        @names << c.indicator.name
+      }
+      myscore = IndicatorScore.find_by_indicator_id_and_scoredate_id(@individual.id, date).score
+      mylast6s = getLastNindicatorScore(6, @individual, @sc)
+    end
     if @type == "current"
       @charts  = []
       @currentscores.each{|c|

@@ -83,8 +83,10 @@ module ObjectiveScoresHelper
     }
     value = 0 
     is.each{|i|
-      w = i.indicator.weight/100
-      value = value + (w * i.percentage)
+      if i.indicator.weight
+        w = i.indicator.weight/100
+        value = value + (w * i.percentage)
+      end
     }
     self.score = value
     self.save

@@ -1,30 +1,12 @@
-<!--<style>
-am:link { 
-  color: #FFFFFF;
-}
-a:visited { 
-  color: #FFFFFF;
-}
-a:hover { 
-  color: #FFFFFF;
-}
-a:active { 
-  color: #FFFFFF;
-}
-
-</style>-->
-
-
 <h2>Mapa estrategico (<%=h scoredate_month_to_text(@date)%>/<%=h @date.year%>)</h2>
 </br>
 <div class="row-fluid">
   <div class="span12">
 
-
   <% @perspectives.each do |p|%>
     <ul class="breadcrumb" align="left">
       <li>
-        <h2><%=h p.name %> <%= link_to "Ver en dashboard", showdashboard_path("perspective", "current", p.id, @date.id), :class => mystate(p,@date), :style=>'color:#FFFFFF;'%></h2> 
+        <h2><%=h p.name %> <%= link_to "D", showdashboard_path("perspective", "current", p.id, @date.id), :class => mystate(p,@date), :style=>'color:#FFFFFF;'%></h2> 
       </li>
     </ul>
     <% i = 0%>
@@ -35,9 +17,9 @@ a:active {
         <% i = i + 1%>
         <div class="span4" align="center">
           <% if o.acronym %>          
-            <%= link_to o.acronym, objectiveatdate_path(o.id,@date.id, @trend), :class => state(o,@date), :style=>'color:#FFFFFF;'%>
+            <%= link_to o.acronym, objectiveatdate_path(o.id,@date.id, @trend), :class => objectiveOval(o,@date), :style=>'color:#FFFFFF;'%>
           <% else %>
-            <%= link_to o.name, objectiveatdate_path(o.id,@date.id, @trend), :class => state(o,@date), :style=>'color:#FFFFFF;'%>
+            <%= link_to o.name, objectiveatdate_path(o.id,@date.id, @trend), :class => objectiveOval(o,@date), :style=>'color:#FFFFFF;'%>
           <% end %>
         </div><!--span4-->
         <% if i%3 == 0 %>

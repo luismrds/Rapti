@@ -23,3 +23,29 @@
   -moz-box-shadow: 0 1px 2px rgba(0,0,0,.15);
   box-shadow: 0 1px 2px rgba(0,0,0,.15);
 }
+
+.objectiveRed {
+     border:1px #333;   
+    padding:8px;
+    background-color: #B80000 ;
+    -webkit-border-radius:40px/24px;
+    -moz-border-radius:40px/24px;
+    border-radius:40px/24px;
+    hover: none;
+}
+.objectiveYellow {
+     border:1px #333;   
+    padding:8px;
+    background-color:#D6C90D;
+    -webkit-border-radius:40px/24px;
+    -moz-border-radius:40px/24px;
+    border-radius:40px/24px;
+}
+.objectiveGreen {
+     border:1px #333;   
+    padding:8px;
+    background-color:green;
+    -webkit-border-radius:40px/24px;
+    -moz-border-radius:40px/24px;
+    border-radius:40px/24px;
+}

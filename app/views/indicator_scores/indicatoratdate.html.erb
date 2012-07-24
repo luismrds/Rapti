@@ -94,10 +94,13 @@ a:active {
 
 <h2>Tendencia de los ultimos <%=h @trend.to_s %> meses</h2>
 <% if @trend == "3" %>  
-  <h3><%= link_to "Ver 6 meses", indicatoratdate_path(@indicator, @date, 6)%></h3>
+  <h3><%= link_to "Ver 6 meses", indicatoratdate_path(@indicator, @date, 6)%> | <%= link_to "Ver 12 meses", indicatoratdate_path(@indicator, @date, 12)%></h3>
 <% end %>
 <% if @trend == "6" %>  
-  <h3><%= link_to "Ver 3 meses", indicatoratdate_path(@indicator, @date, 3)%></h3>
+  <h3><%= link_to "Ver 3 meses", indicatoratdate_path(@indicator, @date, 3)%> | <%= link_to "Ver 12 meses", indicatoratdate_path(@indicator, @date, 12)%></h3>
+<% end %>
+<% if @trend == "12" %>  
+  <h3><%= link_to "Ver 3 meses", indicatoratdate_path(@indicator, @date, 3)%> | <%= link_to "Ver 6 meses", indicatoratdate_path(@indicator, @date, 6)%></h3>
 <% end %>
 
 <div class="row">

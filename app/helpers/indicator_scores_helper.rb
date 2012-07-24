@@ -32,11 +32,20 @@ module IndicatorScoresHelper
     }
   end
 
+  def fill_all_from_default
+    ind = Indicator.all
+    ind.each{|i|
+      fill_from_default(i.id)
+    }
+  end  
+
   def fill_from_default(indid)
     inds = IndicatorScore.find_all_by_indicator_id(indid)
     inds.each{|i|
       #i.score = rand(100)
-      i.score = 0
+      if !i.score
+        i.score = 0
+      end
       i.redfrom = i.indicator.redfrom
       i.redto = i.indicator.redto
       i.yellowfrom = i.indicator.yellowfrom 

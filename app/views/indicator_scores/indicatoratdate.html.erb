@@ -30,8 +30,9 @@ a:active {
 
     <div class="span8" align="center">
 
-  <table width="100%">
+  <table class="table table-bordered" width="100%">
     <tr>
+      <th width="11%">Unidades</th>
       <th title="Definicion de actual">Actual</th>
       <th title="Definicion de Meta">Meta</th>
       <th title="Definicion de Avance">Avance</th>
@@ -40,6 +41,7 @@ a:active {
       <th title="Ponderacion para calculo del desempeno del Objetivo">Peso.</th>
     <tr>
     <tr>
+      <td align = "center"><%= @currentindicator.indicator.unit %></td>
       <% if @currentindicator.score %>
         <td align = "center"><%= @currentindicator.score.round(2) %></td>
       <% else %>
@@ -80,14 +82,33 @@ a:active {
 
 
     </br>
-    <div class="row" align="left">        
-      <h3>Indicadores:  <%= link_to "Ver en dashboard", showdashboard_path("indicator", "current", @indicator, @date.id), :class => indicatorState(@indicator,@date), :style=>'color:#FFFFFF;'%></h3>
-        <OL TYPE="1">
-          <% @currentsons.each do |cs|%>        
-            <LI><p><%= link_to cs.indicator.name, indicatoratdate_path(cs.indicator_id,cs.scoredate_id), :class => indicatorscorestate(cs), :style=>'color:#FFFFFF;'%>
-<% end %>
-        </OL>
-    </div>
+
+
+  <table class="table table-bordered" width="100%">
+    <tr>
+      <th width="11%"><%= link_to "Indicador", showdashboard_path("indicator", "current", @indicator.id, @date.id), :style=>'color:#00489b;'%></th>
+      <th title="Definicion de actual">Valor</th>
+      <th title="Definicion de Meta">Meta</th>
+      <th title="Definicion de Avance">Avance</th>
+      <th title="Definicion de Base">Base</th>
+      <th title="Definicion de Comp">Comp.</th>
+      <th title="Definicion de Peso">Peso</th>
+    <tr>
+
+    <% @currentsons.each do |ci|%>
+      <tr>
+        <td align = "center"><%= link_to ci.indicator.name, indicatoratdate_path(ci.indicator_id,ci.scoredate_id), :class => indicatorscorestate(ci), :style=>'color:#FFFFFF;'%></td>
+        <td align = "center"><%= ci.score %></td>
+        <td align = "center"><%= ci.goal %></td>
+        <td align = "center"><%= ci.progress %></td>
+        <td align = "center"><%= ci.baseline %></td>
+        <td align = "center"><%= ci.growth %></td>
+        <td align = "center"><%= ci.indicator.weight %></td>
+      </tr>         
+     <% end %>
+  </table>
+
+
 </div>
 </div>
 </br>

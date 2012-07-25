@@ -106,7 +106,7 @@ class ObjectiveScoresController < ApplicationController
       max = @currentobjective.redto
       min = @currentobjective.greenfrom
     end
-    @chart = produceGauge("", @currentobjective.score, 800, 240, @objective.redfrom, @objective.redto, 25, @objective.yellowto, @objective.greenfrom, @objective.greento, 5, min, max)
+    @chart = produceGauge("", @currentobjective.score, 220, 220, @objective.redfrom, @objective.redto, 25, @objective.yellowto, @objective.greenfrom, @objective.greento, 5, min, max)
 
 #    @lastsix = getLastNobjectiveScore(6, @objective, @date)
     @lastN = getLastNobjectiveScore(@trend.to_i, @objective, @date)

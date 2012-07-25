@@ -104,7 +104,7 @@ class IndicatorScoresController < ApplicationController
       min = @currentindicator.greenfrom
     end
 
-    @chart = produceGauge("", @currentindicator.score, 800, 200, @currentindicator.redfrom, @currentindicator.redto, @currentindicator.yellowfrom, @currentindicator.yellowto, @currentindicator.greenfrom, @currentindicator.greento, 5, min, max)
+    @chart = produceGauge("", @currentindicator.score, 220, 220, @currentindicator.redfrom, @currentindicator.redto, @currentindicator.yellowfrom, @currentindicator.yellowto, @currentindicator.greenfrom, @currentindicator.greento, 5, min, max)
 
 #    @lastsix = getLastNobjectiveScore(6, @objective, @date)
 

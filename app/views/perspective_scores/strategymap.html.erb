@@ -14,11 +14,11 @@
 
 </br><% i = 0%>
                 <% @financiera.showableObjectives.each do |o|%>
-                  <% if i%3 == 0 %>
+                  <% if i%4 == 0 %>
                       <div class="row-fluid" align = "center">
                   <% end %>
                   <% i = i + 1%>
-                  <div class="span4" align="center">
+                  <div class="span3" align="center">
                     <% if o.acronym %>          
                       <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
                         <%=h objectiveOval(o,@date) %><%=h o.name%></div>
@@ -29,7 +29,7 @@
                       <% end %>
                     <% end %>
                   </div><!--span4-->
-                  <% if i%3 == 0 %>
+                  <% if i%4 == 0 %>
                       </div> <!--fin row--></br>
                     <div class="row-fluid" align = "center">
                   <% end %>
@@ -42,11 +42,11 @@
               <td>
 </br><% i = 0%>
                 <% @clientes.showableObjectives.each do |o|%>
-                  <% if i%3 == 0 %>
+                  <% if i%4 == 0 %>
                       <div class="row-fluid" align = "center">
                   <% end %>
                   <% i = i + 1%>
-                  <div class="span4" align="center">
+                  <div class="span3" align="center">
                     <% if o.acronym %>          
                       <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
                         <%=h objectiveOval(o,@date) %><%=h o.name%></div>
@@ -57,7 +57,7 @@
                       <% end %>
                     <% end %>
                   </div><!--span4-->
-                  <% if i%3 == 0 %>
+                  <% if i%4 == 0 %>
                       </div> <!--fin row--></br>
                     <div class="row-fluid" align = "center">
                   <% end %>
@@ -100,11 +100,11 @@
             <td>
 </br><% i = 0%>
                 <% @desarrollo.showableObjectives.each do |o|%>
-                  <% if i%3 == 0 %>
+                  <% if i%4 == 0 %>
                       <div class="row-fluid" align = "center">
                   <% end %>
                   <% i = i + 1%>
-                  <div class="span4" align="center">
+                  <div class="span3" align="center">
                     <% if o.acronym %>          
                       <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
                         <%=h objectiveOval(o,@date) %><%=h o.name%></div>
@@ -115,7 +115,7 @@
                       <% end %>
                     <% end %>
                   </div><!--span4-->
-                  <% if i%3 == 0 %>
+                  <% if i%4 == 0 %>
                       </div> <!--fin row--></br>
                     <div class="row-fluid" align = "center">
                   <% end %>

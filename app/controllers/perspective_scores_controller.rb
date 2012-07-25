@@ -87,5 +87,9 @@ class PerspectiveScoresController < ApplicationController
     @date = ScoreDate.find(params[:date_id])
     @trend = "6"
     @perspectives = Perspective.all
+    @financiera = Perspective.find(1)
+    @clientes = Perspective.find(2)
+    @procesos = Perspective.find(3)
+    @desarrollo = Perspective.find(4)
   end 
 end

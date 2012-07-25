@@ -94,5 +94,25 @@ class VectorsController < ApplicationController
       end 
     }
     @objectives = @vector.objectives
+
+    @perspectives = Perspective.all
+    @financiera = []
+    @clientes = []
+    @procesos = []
+    @desarrollo = []
+    @vector.objectives.each{|o|
+      if o.perspective_id == 1
+        @financiera << o 
+      end 
+      if o.perspective_id == 2
+        @clientes << o 
+      end
+      if o.perspective_id == 3
+        @procesos << o 
+      end 
+      if o.perspective_id == 4
+        @desarrollo << o 
+      end 
+    }
   end
 end

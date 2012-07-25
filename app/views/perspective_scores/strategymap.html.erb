@@ -1,4 +1,151 @@
-<h2>Mapa estrategico (<%=h scoredate_month_to_text(@date)%>/<%=h @date.year%>)</h2>
+
+  <h2><%=h image_tag("bmo.png", :size => "100x70") %> Mapa estrategico (<%=h scoredate_month_to_text(@date)%>/<%=h @date.year%>)</h2>
+
+<div class="row-fluid">
+  <table class="table darkborder">
+      <tbody>
+      	<tr>
+
+
+        <td><%= link_to image_tag("financiera_btn.png"), showdashboard_path("perspective", "current", 1, @date.id), :style=>'color:#FFFFFF;'%></td>      	
+
+            <td>
+            	<!--<div class="row-fluid">-->
+
+</br><% i = 0%>
+                <% @financiera.showableObjectives.each do |o|%>
+                  <% if i%3 == 0 %>
+                      <div class="row-fluid" align = "center">
+                  <% end %>
+                  <% i = i + 1%>
+                  <div class="span4" align="center">
+                    <% if o.acronym %>          
+                      <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
+                        <%=h objectiveOval(o,@date) %><%=h o.name%></div>
+                      <% end %>
+                    <% else %>
+                      <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
+                        <%=h objectiveOval(o,@date) %><%=h o.name%></div>
+                      <% end %>
+                    <% end %>
+                  </div><!--span4-->
+                  <% if i%3 == 0 %>
+                      </div> <!--fin row--></br>
+                    <div class="row-fluid" align = "center">
+                  <% end %>
+                <% end %>                	
+                </div>
+            </td>
+          </tr>
+          <tr>
+                    <td><%= link_to image_tag("clientesy_btn.png"), showdashboard_path("perspective", "current", 2, @date.id), :style=>'color:#FFFFFF;'%></td>
+              <td>
+</br><% i = 0%>
+                <% @clientes.showableObjectives.each do |o|%>
+                  <% if i%3 == 0 %>
+                      <div class="row-fluid" align = "center">
+                  <% end %>
+                  <% i = i + 1%>
+                  <div class="span4" align="center">
+                    <% if o.acronym %>          
+                      <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
+                        <%=h objectiveOval(o,@date) %><%=h o.name%></div>
+                      <% end %>
+                    <% else %>
+                      <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
+                        <%=h objectiveOval(o,@date) %><%=h o.name%></div>
+                      <% end %>
+                    <% end %>
+                  </div><!--span4-->
+                  <% if i%3 == 0 %>
+                      </div> <!--fin row--></br>
+                    <div class="row-fluid" align = "center">
+                  <% end %>
+                <% end %> 
+                  </div>
+              </td>
+          </tr>
+          <tr>
+                    <td><%= link_to image_tag("procesos_btn.png"), showdashboard_path("perspective", "current", 3, @date.id), :style=>'color:#FFFFFF;'%></td>
+              <td>
+</br>
+<% i = 0%>
+                <% @procesos.showableObjectives.each do |o|%>
+                  <% if i%3 == 0 %>
+                      <div class="row-fluid" align = "center">
+                  <% end %>
+                  <% i = i + 1%>
+                  <div class="span4" align="center">
+                    <% if o.acronym %>          
+                      <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
+                        <%=h objectiveOval(o,@date) %><%=h o.name%></div>
+                      <% end %>
+                    <% else %>
+                      <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
+                        <%=h objectiveOval(o,@date) %><%=h o.name%></div>
+                      <% end %>
+                    <% end %>
+                  </div><!--span4-->
+                  <% if i%3 == 0 %>
+                      </div> <!--fin row--></br>
+                    <div class="row-fluid" align = "center">
+                  <% end %>
+                <% end %> 
+                  </div>
+                  </div>
+              </td>
+          </tr>
+        <tr>
+                    <td><%= link_to image_tag("desarrollo_btn.png"), showdashboard_path("perspective", "current", 4, @date.id), :style=>'color:#FFFFFF;'%></td>
+            <td>
+</br><% i = 0%>
+                <% @desarrollo.showableObjectives.each do |o|%>
+                  <% if i%3 == 0 %>
+                      <div class="row-fluid" align = "center">
+                  <% end %>
+                  <% i = i + 1%>
+                  <div class="span4" align="center">
+                    <% if o.acronym %>          
+                      <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
+                        <%=h objectiveOval(o,@date) %><%=h o.name%></div>
+                      <% end %>
+                    <% else %>
+                      <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
+                        <%=h objectiveOval(o,@date) %><%=h o.name%></div>
+                      <% end %>
+                    <% end %>
+                  </div><!--span4-->
+                  <% if i%3 == 0 %>
+                      </div> <!--fin row--></br>
+                    <div class="row-fluid" align = "center">
+                  <% end %>
+                <% end %> 
+            </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+
+
+
+
+
+<!--
+-------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
 </br>
 <div class="row-fluid">
   <div class="span12">
@@ -22,9 +169,9 @@
             <%= link_to o.name, objectiveatdate_path(o.id,@date.id, @trend), :class => objectiveOval(o,@date), :style=>'color:#FFFFFF;'%>
           <% end %>
         </div><!--span4-->
-        <% if i%3 == 0 %>
+        <!--<% if i%3 == 0 %>
             </div> <!--fin row--></br>
-          <div class="row-fluid" align = "center">
+         <!-- <div class="row-fluid" align = "center">
         <% end %>
       <% end %>
               
@@ -33,7 +180,7 @@
   <% end %>
 
   </div>
-</div>
+</div>-->
 <div class="row-fluid" align="center">
     <%= link_to @date.year - 1, thestrategymap_path(ScoreDate.find_by_year_and_month(@date.year - 1,12).id)%>
       <<

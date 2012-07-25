@@ -1,9 +1,9 @@
-<h2>Dashboard de<%=h @tc %> (<%=h scoredate_month_to_text(@sc)%>/<%=h @sc.year%>) 
+<h2>Dashboard de<%=h @tc %> (<%=h scoredate_month_to_text(@sc)%>/<%=h @sc.year%>) </h2>
 <% if @type == "current" %>
-  <%= link_to "Ver tendencias", showdashboard_path(@category, "trend", @individual.id, @sc.id)%>
+  <h3><%= link_to "Ver tendencias", showdashboard_path(@category, "trend", @individual.id, @sc.id)%></h3>
 <% end %>
 <% if @type == "trend" %>
-  <%= link_to "Ver actual", showdashboard_path(@category, "current", @individual.id, @sc.id)%>
+  <h3><%= link_to "Ver actual", showdashboard_path(@category, "current", @individual.id, @sc.id)%></h3>
 <% end %>
 
 </h2>

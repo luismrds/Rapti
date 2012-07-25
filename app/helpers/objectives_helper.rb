@@ -43,14 +43,27 @@ include ObjectiveScoresHelper
     score = ObjectiveScore.find_by_objective_id_and_scoredate_id(obj.id,date.id).score
     #if score >= obj.redfrom && score < obj.redto
     if score < obj.redto
-      return 'objectiveRed'
+      return '<div class="objectiveRed">'.html_safe
     end
     if score >= obj.yellowfrom && score <= obj.yellowto
-      return 'objectiveYellow'
+      return '<div class="objectiveYellow">'.html_safe
     end
     if score > obj.greenfrom #&& score <= obj.greento
-      return 'objectiveGreen'
+      return '<div class="objectiveGreen">'.html_safe
     end
   end
 
+  def objectiveBootstrapOval(obj,date)
+    score = ObjectiveScore.find_by_objective_id_and_scoredate_id(obj.id,date.id).score
+    #if score >= obj.redfrom && score < obj.redto
+    if score < obj.redto
+      return 'badge badge-important'
+    end
+    if score >= obj.yellowfrom && score <= obj.yellowto
+      return 'badge badge-warning'
+    end
+    if score > obj.greenfrom #&& score <= obj.greento
+      return 'badge badge-success'
+    end
+  end
 end

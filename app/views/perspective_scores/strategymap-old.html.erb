@@ -1,0 +1,55 @@
+<h2>Mapa estrategico (<%=h scoredate_month_to_text(@date)%>/<%=h @date.year%>)</h2>
+</br>
+<div class="row-fluid">
+  <div class="span12">
+
+  <% @perspectives.each do |p|%>
+    <ul class="breadcrumb" align="left">
+      <li>
+        <h2><%=h p.name %> <%= link_to "D", showdashboard_path("perspective", "current", p.id, @date.id), :class => mystate(p,@date), :style=>'color:#FFFFFF;'%></h2> 
+      </li>
+    </ul>
+    <% i = 0%>
+      <% p.showableObjectives.each do |o|%>
+        <% if i%3 == 0 %>
+            <div class="row-fluid" align = "center">
+        <% end %>
+        <% i = i + 1%>
+        <div class="span4" align="center">
+          <% if o.acronym %>          
+            <%= link_to o.acronym, objectiveatdate_path(o.id,@date.id, @trend), :class => objectiveOval(o,@date), :style=>'color:#FFFFFF;'%>
+          <% else %>
+            <%= link_to o.name, objectiveatdate_path(o.id,@date.id, @trend), :class => objectiveOval(o,@date), :style=>'color:#FFFFFF;'%>
+          <% end %>
+        </div><!--span4-->
+        <% if i%3 == 0 %>
+            </div> <!--fin row--></br>
+          <div class="row-fluid" align = "center">
+        <% end %>
+      <% end %>
+              
+    </div>
+</br>
+  <% end %>
+
+  </div>
+</div>
+<div class="row-fluid" align="center">
+    <%= link_to @date.year - 1, thestrategymap_path(ScoreDate.find_by_year_and_month(@date.year - 1,12).id)%>
+      <<
+    <%= link_to "Enero", thestrategymap_path(ScoreDate.find_by_year_and_month(@date.year,1).id)%>
+    <%= link_to "Febrero", thestrategymap_path(ScoreDate.find_by_year_and_month(@date.year,2).id)%>
+    <%= link_to "Marzo", thestrategymap_path(ScoreDate.find_by_year_and_month(@date.year,3).id)%>
+    <%= link_to "Abril", thestrategymap_path(ScoreDate.find_by_year_and_month(@date.year,4).id)%>
+    <%= link_to "Mayo", thestrategymap_path(ScoreDate.find_by_year_and_month(@date.year,5).id)%>
+    <%= link_to "Junio", thestrategymap_path(ScoreDate.find_by_year_and_month(@date.year,6).id)%>
+    <%= link_to "Julio", thestrategymap_path(ScoreDate.find_by_year_and_month(@date.year,7).id)%>
+    <%= link_to "Agosto", thestrategymap_path(ScoreDate.find_by_year_and_month(@date.year,8).id)%>
+    <%= link_to "Septiembre", thestrategymap_path(ScoreDate.find_by_year_and_month(@date.year,9).id)%>
+    <%= link_to "Octubre", thestrategymap_path(ScoreDate.find_by_year_and_month(@date.year,10).id)%>
+    <%= link_to "Noviembre", thestrategymap_path(ScoreDate.find_by_year_and_month(@date.year,11).id)%>
+    <%= link_to "Diciembre", thestrategymap_path(ScoreDate.find_by_year_and_month(@date.year,12).id)%>
+      >>
+    <%= link_to @date.year + 1, thestrategymap_path(ScoreDate.find_by_year_and_month(@date.year + 1,1).id)%>
+</div>
+

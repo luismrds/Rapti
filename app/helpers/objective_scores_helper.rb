@@ -104,6 +104,14 @@ module ObjectiveScoresHelper
       }
     }
   end
+
+  def cut_decimals
+    scores = ObjectiveScore.all
+    scores.each{|s|
+      s.score = s.score.round(2)
+      s.save
+    }
+  end 
 end
 
 

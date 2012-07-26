@@ -1,40 +1,60 @@
 <p id="notice"><%= notice %></p>
 
-<h2>
-  <%= @objective.name %>(<%= @objective.acronym %>)
-</h2>
+<h2 align="center">Informacion de Objetivo</h2>
 
-<p>
-  <b>Ponderacion:</b>
-  <%= @objective.weight %>%
-</p>
+<br>
 
-<p>
-  <b>Perspectiva:</b>
-  <%= @objective.perspective.name %>
-</p>
-<p>
-  <b>Rago de color rojo:</b>
-  <%= @objective.redfrom%>, <%= @objective.redto%>
-</p>
-<p>
-  <b>Rago de color amarillo:</b>
-  <%= @objective.yellowfrom%>, <%= @objective.yellowto%>
-</p>
+<div class="row-fluid">
+  <div class="span6">
+    <table class="table table-bordered table-striped"> 
 
-<p>
-  <b>Rago de color verde:</b>
-  <%= @objective.greenfrom%>, <%= @objective.greento%>
-</p>
-<p>
-  <b>Baseline</b>
-  <%= @objective.baseline%>
-</p>
-<p>
-  <b>Tendencia deseada:</b>
-  Crecer	
-</p>
+	      <tr>
+         	<th colspan="2" width="50%"><%= @objective.name %> (<%= @objective.acronym %>)</th>
+        </tr>
+   
+      <tr>
+	      <td width="50%">Ponderacion:</td>
+        <td width="50%"><%= @objective.weight %>%</td>
+      </tr>
+      <tr>
+	      <td width="50%">Perspectiva:</td>
+        <td width="50%"><%= @objective.perspective.name %></td>
+      </tr>
+      <tr>
+	      <td width="50%">Rango del color Rojo:</td>
+        <td width="50%"><%= @objective.redfrom%>, <%= @objective.redto%></td>
+      </tr>
+      <tr>
+	      <td width="50%">Rango del color Amarillo :</td>
+        <td width="50%"><%= @objective.yellowfrom%>, <%= @objective.yellowto%></td>
+      </tr>
+      <tr>
+	      <td width="50%">Rango del color Verde:</td>
+        <td width="50%"><%= @objective.greenfrom%>, <%= @objective.greento%></td>
+      </tr>
+    </table>
+  </div>
 
-<td><%= link_to 'Editar', edit_objective_path(@objective) %></td>
+
+  <div class="span6">
+    <table class="table table-bordered table-striped"> 
+      <tr>
+       	<th colspan="2" width="50%">Indicadores</th>
+      </tr>
+      <tr>
+       	<th>Nombre</th>
+       	<th>Peso</th>
+      </tr>
+      <% @objective.indicators.each do |i|%>      
+        <tr>
+	        <td width="50%"><%=h i.name %></td>
+          <td width="50%"><%=h i.weight %>%</td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<td width="50%"><%= link_to 'Editar', edit_objective_path(@objective) %></td>
 
  

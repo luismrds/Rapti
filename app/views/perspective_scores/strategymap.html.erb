@@ -1,18 +1,13 @@
-
-  <h2><%=h image_tag("bmo.png", :size => "100x70") %> Mapa estrategico (<%=h scoredate_month_to_text(@date)%>/<%=h @date.year%>)</h2>
+<h2><%=h image_tag("bmo.png", :size => "100x70") %> Mapa estrategico (<%=h scoredate_month_to_text(@date)%>/<%=h @date.year%>)</h2>
 
 <div class="row-fluid">
   <table class="table darkborder">
       <tbody>
       	<tr>
-
-
-        <td><%= link_to image_tag("financiera_btn.png"), showdashboard_path("perspective", "current", 1, @date.id), :style=>'color:#FFFFFF;'%></td>      	
-
+        	<td rowspan="<%=h (@financiera.showableObjectives.size/4).ceil %>"><%= link_to image_tag("financiera_btn.png"), showdashboard_path("perspective", "current", 1, @date.id), :style=>'color:#FFFFFF;'%></td>
             <td>
-            	<!--<div class="row-fluid">-->
 
-</br><% i = 0%>
+<% i = 0%>
                 <% @financiera.showableObjectives.each do |o|%>
                   <% if i%4 == 0 %>
                       <div class="row-fluid" align = "center">
@@ -21,7 +16,7 @@
                   <div class="span3" align="center">
                     <% if o.acronym %>          
                       <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
-                        <%=h objectiveOval(o,@date) %><%=h o.name%></div>
+                        <%=h objectiveOval(o,@date) %><%=h o.acronym%></div>
                       <% end %>
                     <% else %>
                       <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
@@ -31,16 +26,23 @@
                   </div><!--span4-->
                   <% if i%4 == 0 %>
                       </div> <!--fin row--></br>
-                    <div class="row-fluid" align = "center">
+                    <% if o != @financiera.showableObjectives.last %>
+                      <div class="row-fluid" align = "center">
+                    <% end%>
                   <% end %>
-                <% end %>                	
-                </div>
+                <% end %>  
+
+
+
+
             </td>
-          </tr>
-          <tr>
-                    <td><%= link_to image_tag("clientesy_btn.png"), showdashboard_path("perspective", "current", 2, @date.id), :style=>'color:#FFFFFF;'%></td>
-              <td>
-</br><% i = 0%>
+        </tr>
+        <tr>
+        	<td rowspan="<%=h (@clientes.showableObjectives.size/4).ceil %>"><%= link_to image_tag("clientesy_btn.png"), showdashboard_path("perspective", "current", 2, @date.id), :style=>'color:#FFFFFF;'%></td>
+            <td>
+
+
+<% i = 0%>
                 <% @clientes.showableObjectives.each do |o|%>
                   <% if i%4 == 0 %>
                       <div class="row-fluid" align = "center">
@@ -49,7 +51,7 @@
                   <div class="span3" align="center">
                     <% if o.acronym %>          
                       <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
-                        <%=h objectiveOval(o,@date) %><%=h o.name%></div>
+                        <%=h objectiveOval(o,@date) %><%=h o.acronym%></div>
                       <% end %>
                     <% else %>
                       <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
@@ -59,26 +61,30 @@
                   </div><!--span4-->
                   <% if i%4 == 0 %>
                       </div> <!--fin row--></br>
-                    <div class="row-fluid" align = "center">
+                    <% if o == @clientes.showableObjectives.last %>
+                      <div class="row-fluid" align = "center">
+                    <% end%>
                   <% end %>
                 <% end %> 
-                  </div>
-              </td>
-          </tr>
-          <tr>
-                    <td><%= link_to image_tag("procesos_btn.png"), showdashboard_path("perspective", "current", 3, @date.id), :style=>'color:#FFFFFF;'%></td>
-              <td>
-</br>
+
+
+            </td>
+        </tr>
+        <tr>
+        	<td rowspan="<%=h (@procesos.showableObjectives.size/4).ceil %>"><%= link_to image_tag("procesos_btn.png"), showdashboard_path("perspective", "current", 3, @date.id), :style=>'color:#FFFFFF;'%></td>
+            <td>
+            	
+
 <% i = 0%>
                 <% @procesos.showableObjectives.each do |o|%>
-                  <% if i%3 == 0 %>
+                  <% if i%4 == 0 %>
                       <div class="row-fluid" align = "center">
                   <% end %>
                   <% i = i + 1%>
-                  <div class="span4" align="center">
+                  <div class="span3" align="center">
                     <% if o.acronym %>          
                       <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
-                        <%=h objectiveOval(o,@date) %><%=h o.name%></div>
+                        <%=h objectiveOval(o,@date) %><%=h o.acronym%></div>
                       <% end %>
                     <% else %>
                       <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
@@ -86,19 +92,23 @@
                       <% end %>
                     <% end %>
                   </div><!--span4-->
-                  <% if i%3 == 0 %>
+                  <% if i%4 == 0 %>
                       </div> <!--fin row--></br>
-                    <div class="row-fluid" align = "center">
+                    <% if o != @procesos.showableObjectives.last %>
+                      <div class="row-fluid" align = "center"><!--ifed-->
+                    <% end%>
                   <% end %>
-                <% end %> 
-                  </div>
-                  </div>
-              </td>
-          </tr>
+                <% end %>
+
+
+            </td>
+        </tr>
         <tr>
-                    <td><%= link_to image_tag("desarrollo_btn.png"), showdashboard_path("perspective", "current", 4, @date.id), :style=>'color:#FFFFFF;'%></td>
+        	<td rowspan="<%=h (@desarrollo.showableObjectives.size/4).ceil %>"><%= link_to image_tag("desarrollo_btn.png"), showdashboard_path("perspective", "current", 4, @date.id), :style=>'color:#FFFFFF;'%></td>
             <td>
-</br><% i = 0%>
+
+
+<% i = 0%>
                 <% @desarrollo.showableObjectives.each do |o|%>
                   <% if i%4 == 0 %>
                       <div class="row-fluid" align = "center">
@@ -107,7 +117,7 @@
                   <div class="span3" align="center">
                     <% if o.acronym %>          
                       <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
-                        <%=h objectiveOval(o,@date) %><%=h o.name%></div>
+                        <%=h objectiveOval(o,@date) %><%=h o.acronym%></div>
                       <% end %>
                     <% else %>
                       <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
@@ -119,12 +129,23 @@
                       </div> <!--fin row--></br>
                     <div class="row-fluid" align = "center">
                   <% end %>
-                <% end %> 
+                <% end %>
+
+
+
             </td>
         </tr>
       </tbody>
     </table>
-  </div>
+</div>
+
+
+
+
+
+
+
+
 
 
 

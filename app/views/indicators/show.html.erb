@@ -1,65 +1,62 @@
 <p id="notice"><%= notice %></p>
+<h2 align="center">Informacion de Indicador</h2>
 
-<h2>
-  <%= @indicator.name %>
-</h2>
+<br>
 
-<p>
-  <b>Ponderacion:</b>
-  <%= @indicator.weight %>
-</p>
-
-<p>
-  <b>Formula:</b>
-  <%= @indicator.formula %>
-</p>
-
-<% if @indicator.operation %>
-  <p>
-    <b>Operacion:</b>
-    <%= @indicator.operation.name %>
-  </p>
-<% end %>
-
-<% if @indicator.objective %>
-  <p>
-    <b>Objetivo:</b>
-    <%= @indicator.objective.name %>
-  </p>
-<% end %>
-
-<% if @indicator.sons.size > 0 %>
-  <p>
-    <p>Listado de Indicadores que lo influencian</td></p>
-  </p>
-
-
-  <table>
-    <tr>
-      <th>Name</th>
-      <th>Weight</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-
-  <% @indicator.sons.each do |son| %>
-    <tr>
-      <td><%= son.name %></td>
-      <td><%= son.weight %></td>
-      <% if son.today_score <= 25 %>
-          <td><span class="label label-important"><%= link_to 'Mostrar', son %></span></td>
+<div class="row-fluid">
+  <div class="span6">
+    <table class="table table-bordered table-striped"> 
+      <tr>
+       	<th colspan="2" width="50%"><%= @indicator.name %></th>
+      </tr>
+      <tr>
+	      <td width="50%">Ponderacion:</td>
+        <td width="50%"><%= @indicator.weight %>%</td>
+      </tr>
+      <tr>
+	      <td width="50%">Formula:</td>
+        <td width="50%"><%= @indicator.formula %>%</td>
+      </tr>
+      <% if @indicator.operation %>
+        <tr>
+          <td>Operacion:</td>
+          <td><%= @indicator.operation.name %></td>
+        </tr>
       <% end %>
-      <% if son.today_score > 25 && son.today_score < 75 %>
-          <td><span class="label label-warning"><%= link_to 'Mostrar', son %></span></td>
+
+      <% if @indicator.objective %>
+        <tr>
+          <td>Objetivo:</td>
+          <td><%= @indicator.objective.name %></td>
+        </tr>
       <% end %>
-      <% if son.today_score >= 75 %>
-          <td><span class="label label-success"><%= link_to 'Mostrar', son %></span></td>
-      <% end %>
-      <td><%= link_to 'Desligar', emancipate_path(@indicator, son) %></td>
-    </tr>
+
+    </table>
+  </div>
+
+  <% if @indicator.sons.size > 0 %>
+    <div class="span6">  
+      <table class="table table-bordered table-striped"> 
+        <tr>
+         	<th colspan="2" width="50%">Listado de Indicadores que lo influencian</th>
+        </tr>
+        <tr>
+          <th>Nombre</th>
+          <th>Desligar</th>
+        </tr>
+        <% @indicator.sons.each do |son| %>
+          <tr>
+            <td><%= son.name %></td>
+            <td><%= link_to 'Desligar', emancipate_path(@indicator, son) %></td>
+          </tr>
+        <% end %>
+
+      </table>
+    </div>
   <% end %>
-  </table>
-<% end %>
+</div>
+
+
+
 <%= link_to 'Editar', edit_indicator_path(@indicator) %> |
 <%= link_to 'Volver', indicators_path %>

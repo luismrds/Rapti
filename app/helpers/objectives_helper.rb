@@ -42,13 +42,13 @@ include ObjectiveScoresHelper
   def objectiveOval(obj,date)
     score = ObjectiveScore.find_by_objective_id_and_scoredate_id(obj.id,date.id).score
     #if score >= obj.redfrom && score < obj.redto
-    if score < obj.redto
+    if score <= obj.redto
       return '<div class="objectiveRed">'.html_safe
     end
     if score >= obj.yellowfrom && score <= obj.yellowto
       return '<div class="objectiveYellow">'.html_safe
     end
-    if score > obj.greenfrom #&& score <= obj.greento
+    if score >= obj.greenfrom #&& score <= obj.greento
       return '<div class="objectiveGreen">'.html_safe
     end
   end

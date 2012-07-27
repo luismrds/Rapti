@@ -39,17 +39,20 @@ include ObjectiveScoresHelper
     }
   end
 
-  def objectiveOval(obj,date)
+  def objectiveOval(obj,date,name)
     score = ObjectiveScore.find_by_objective_id_and_scoredate_id(obj.id,date.id).score
     #if score >= obj.redfrom && score < obj.redto
     if score <= obj.redto
-      return '<div class="objectiveRed">'.html_safe
+      a = '<div class="objectiveRed">'+name+"</div><!--cierra nombe-->"
+      return a.html_safe
     end
     if score >= obj.yellowfrom && score <= obj.yellowto
-      return '<div class="objectiveYellow">'.html_safe
+      a = '<div class="objectiveYellow">'+name+"</div><!--cierra nombe-->"
+      return a.html_safe
     end
     if score >= obj.greenfrom #&& score <= obj.greento
-      return '<div class="objectiveGreen">'.html_safe
+      a = '<div class="objectiveGreen">'+name+"</div><!--cierra nombe-->"
+      return a.html_safe
     end
   end
 
@@ -64,6 +67,20 @@ include ObjectiveScoresHelper
     end
     if score > obj.greenfrom #&& score <= obj.greento
       return 'badge badge-success'
+    end
+  end
+
+  def objectiveStaticButton(obj,date)
+    score = ObjectiveScore.find_by_objective_id_and_scoredate_id(obj.id,date.id).score
+    #if score >= obj.redfrom && score < obj.redto
+    if score < obj.redto
+      return obj.redButton
+    end
+    if score >= obj.yellowfrom && score <= obj.yellowto
+      return obj.yellowButton
+    end
+    if score > obj.greenfrom #&& score <= obj.greento
+      return obj.greenButton
     end
   end
 end

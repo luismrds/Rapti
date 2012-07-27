@@ -8,7 +8,7 @@ a:hover {
 a:active { 
   color: #FFFFFF;
 }
-
+table:td{text-align:center !important;}
 </style>
 
 <div class="row">
@@ -45,8 +45,8 @@ a:active {
     </thead>
       <tbody>
       	<tr>
-          	<td>%</td>
-            <td align = "center"><%= @currentobjective.score %></td>
+          	<td align = "center">%</td>
+            <td class = "tdc"><%= @currentobjective.score %></td>
             <td align = "center"><%= @currentobjective.goal %></td>
             <td align = "center"><%= @currentobjective.progress %></td>
             <td align = "center"><%= @currentobjective.baseline %></td>
@@ -94,7 +94,7 @@ a:active {
 
     <% @currentindicators.each do |ci|%>
       <tr>
-        <td align = "center"><%= link_to ci.indicator.name, indicatoratdate_path(ci.indicator_id,ci.scoredate_id), :class => indicatorscorestate(ci), :style=>'color:#FFFFFF;'%></td>
+        <td align = "center"><%= link_to ci.indicator.acronym, indicatoratdate_path(ci.indicator_id,ci.scoredate_id), :class => indicatorscorestate(ci), :style=>'color:#FFFFFF;'%></td>
         <td align = "center"><%= ci.score %></td>
         <td align = "center"><%= ci.goal %></td>
         <td align = "center"><%= ci.progress %></td>

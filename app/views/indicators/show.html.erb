@@ -17,6 +17,38 @@
 	      <td width="50%">Formula:</td>
         <td width="50%"><%= @indicator.formula %>%</td>
       </tr>
+      <tr>
+	      <td width="50%">Descripcion</td>
+        <td width="50%"></td>
+      </tr>
+      <tr>
+	      <td width="50%">Unidades</td>
+        <td width="50%"></td>
+      </tr>
+      <tr>
+	      <td width="50%">Formula</td>
+        <td width="50%"></td>
+      </tr>
+      <tr>
+	      <td width="50%">Valor Minimo</td>
+        <td width="50%"></td>
+      </tr>
+      <tr>
+	      <td width="50%">Valor Maximo</td>
+        <td width="50%"></td>
+      </tr>
+      <tr>
+	      <td width="50%">Rango del color Rojo</td>
+        <td width="50%"><%= @indicator.redfrom%>, <%= @indicator.redto%></td>
+      </tr>
+      <tr>
+	      <td width="50%">Rango del color Amarillo </td>
+        <td width="50%"><%= @indicator.yellowfrom%>, <%= @indicator.yellowto%></td>
+      </tr>
+      <tr>
+	      <td width="50%">Rango del color Verde</td>
+        <td width="50%"><%= @indicator.greenfrom%>, <%= @indicator.greento%></td>
+      </tr>
       <% if @indicator.operation %>
         <tr>
           <td>Operacion:</td>

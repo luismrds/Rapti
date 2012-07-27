@@ -73,4 +73,68 @@ module PerspectiveScoresHelper
       return scores 
   end
 
+  def perspectiveLayout(perspective, date)
+    lay = ""
+    i = 0
+    perspective.showableObjectives.each { |o|
+      if i%4 == 0 
+         lay = lay + '<div class="row-fluid" align = "center">'
+      end
+      if perspective.showableObjectives.size - i == 2 && i%4 == 0
+        lay = lay + '<div class="span3" align="center"></div>'
+        i = i + 1
+      end
+      i = i + 1
+      lay = lay + '<div class="span3" align="center">'
+      if o.acronym   
+        a = link_to objectiveatdate_path(o.id,@date.id,6) do 
+                    objectiveOval(o,date,o.acronym) 
+            end 
+        lay = lay + a 
+      else
+        a = link_to objectiveatdate_path(o.id,@date.id,6) do 
+                    objectiveOval(o,date,o.name) 
+            end 
+        lay = lay + a 
+      end
+      lay = lay + "</div><!--span3-->"
+      if i%4 == 0 
+          lay = lay + '</div> <!--fin row--><div class="row-fluid" align = "center"><!--WhiteSpace--></br></div> '
+        lay = lay + '<div class="row-fluid" align = "center">'
+      end
+    }
+    return lay.html_safe
+  end 
+
+  def perspectiveStaticLayout(perspective, date)
+    lay = ""
+    i = 0
+    perspective.showableObjectives.each { |o|
+      if i%4 == 0 
+         lay = lay + '<div class="row-fluid" align = "center">'
+      end
+      if perspective.showableObjectives.size - i == 2 && i%4 == 0
+        lay = lay + '<div class="span3" align="center"></div>'
+        i = i + 1
+      end
+      i = i + 1
+      lay = lay + '<div class="span3" align="center">'
+      if o.acronym   
+        a = link_to image_tag(objectiveStaticButton(o,date), :size => "148x70"), objectiveatdate_path(o.id,@date.id,6) 
+        lay = lay + a 
+      else
+        a = link_to objectiveatdate_path(o.id,@date.id,6) do 
+                    objectiveOval(o,date,o.name) 
+            end 
+        lay = lay + a 
+      end
+      lay = lay + "</div><!--span3-->"
+      if i%4 == 0 
+          lay = lay + '</div> <!--fin row--><div class="row-fluid" align = "center"><!--WhiteSpace--></br></div> '
+        lay = lay + '<div class="row-fluid" align = "center">'
+      end
+    }
+    return lay.html_safe
+  end 
+
 end

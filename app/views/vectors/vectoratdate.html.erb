@@ -24,7 +24,7 @@
                               <% i = i + 1%>
                               <div class="span6" align="center">
                                 <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
-                                  <%=h objectiveOval(o,@date) %><%=h o.acronym%></div>
+                                  <%=h objectiveOval(o,@date,o.acronym) %>
                                 <% end %>
                               </div><!--span4-->
                               <% if i%2 == 0 %>
@@ -51,7 +51,7 @@
                               <% i = i + 1%>
                               <div class="span4" align="center">
                                 <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
-                                  <%=h objectiveOval(o,@date) %><%=h o.acronym%></div>
+                                  <%=h objectiveOval(o,@date,o.acronym) %>
                                 <% end %>
                               </div><!--span4-->
                               <% if i%2 == 0 %>
@@ -78,7 +78,7 @@
                               <% i = i + 1%>
                               <div class="span6" align="center">                                
                                 <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
-                                  <%=h objectiveOval(o,@date) %><%=h o.acronym%></div>
+                                  <%=h objectiveOval(o,@date,o.acronym) %>
                                 <% end %>
                               </div><!--span4-->
                               <% if i%2 == 0 %>
@@ -104,7 +104,7 @@
                               <% i = i + 1%>
                               <div class="span6" align="center">
                                <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
-                                  <%=h objectiveOval(o,@date) %><%=h o.acronym%></div>
+                                  <%=h objectiveOval(o,@date,o.acronym) %>
                                 <% end %>
                               </div><!--span4-->
                               <% if i%3 == 0 %>
@@ -126,7 +126,7 @@
     <thead>
     	<tr>
         	<th width="5%">&nbsp;</th>
-          <th width="35%">Objectivo</th>
+          <th width="35%">Objetivo</th>
           <th>Unidad</th>
           <th>Valor</th>
           <th>Meta</th>
@@ -142,7 +142,7 @@
           <% @financiera.each do |f|%>  
             <% a = ObjectiveScore.find_by_objective_id_and_scoredate_id(f.id,@date.id)%>
             <td><%= link_to objectiveatdate_path(f.id,@date.id,6) do %>
-                  <%=h objectiveOval(f,@date) %><%=h f.acronym%></div>
+                  <%=h objectiveOval(f,@date,f.acronym) %></div>
                 <% end %></td>
             <td>%</td>
             <td><%=h a.score%></td>
@@ -159,7 +159,7 @@
           <% @clientes.each do |c|%>  
             <% a = ObjectiveScore.find_by_objective_id_and_scoredate_id(c.id,@date.id)%>
             <td><%= link_to objectiveatdate_path(f.id,@date.id,6) do %>
-                  <%=h objectiveOval(c,@date) %><%=h c.acronym%></div>
+                  <%=h objectiveOval(c,@date,c.acronym) %></div>
                 <% end %></td>
             <td>%</td>
             <td><%=h a.score%></td>
@@ -176,7 +176,7 @@
           <% @procesos.each do |p|%>  
               <% a = ObjectiveScore.find_by_objective_id_and_scoredate_id(p.id,@date.id)%>
               <td><%= link_to objectiveatdate_path(p.id,@date.id,6) do %>
-                  <%=h objectiveOval(p,@date) %><%=h p.acronym%></div>
+                  <%=h objectiveOval(p,@date,p.acronym) %></div>
                 <% end %></td>
               <td>%</td>
               <td><%=h a.score %></td>

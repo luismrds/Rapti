@@ -1,12 +1,13 @@
 <h2><%=h image_tag("bmo.png", :size => "100x70") %> Vector: <%=h @vector.name %> (<%=h scoredate_month_to_text(@date)%>/<%=h @date.year%>)</h2>
 <br>
+
 <div class="row-fluid">
 	<div class="span4">
     	<table class="table table-bordered">
             <thead>
             	<tr>
                 	<th width="12%">80%</th>
-                    <th>Tema Estrategico 1</th>
+                    <th>Objetivos</th>
                 </tr>
             </thead>
             <tbody>
@@ -126,7 +127,8 @@
     <thead>
     	<tr>
         	<th width="5%">&nbsp;</th>
-          <th width="35%">Objetivo</th>
+          <th width="5%">&nbsp;</th>
+          <th width="35%">Indicadores por Objetivo</th>
           <th>Unidad</th>
           <th>Valor</th>
           <th>Meta</th>
@@ -138,10 +140,10 @@
     <tbody>
       <% if @financiera.size > 0 %>
       	<tr>
-      	  <td rowspan="<%=h @financiera.size%>"><%= link_to image_tag("financiera_btn.png"), showdashboard_path("perspective", "current", 4, @date.id), :style=>'color:#FFFFFF;'%></td>
+      	  <td rowspan="<%=h @financiera.size + 1%>"><%= link_to image_tag("financiera_btn.png"), showdashboard_path("perspective", "current", 4, @date.id), :style=>'color:#FFFFFF;'%></td>
           <% @financiera.each do |f|%>  
             <% a = ObjectiveScore.find_by_objective_id_and_scoredate_id(f.id,@date.id)%>
-            <td><%= link_to objectiveatdate_path(f.id,@date.id,6) do %>
+            <td colspan="2"><%= link_to objectiveatdate_path(f.id,@date.id,6) do %>
                   <%=h objectiveOval(f,@date,f.acronym) %></div>
                 <% end %></td>
             <td>%</td>
@@ -150,6 +152,18 @@
             <td><%=h a.progress%></td>
             <td><%=h a.baseline%></td>
             <td><%=h a.growth%></td>
+            <% f.indicators.each do |i|%>  
+              </tr><tr>
+              <% ind = IndicatorScore.find_by_indicator_id_and_scoredate_id(i.id,@date.id)%>
+              <td></td>
+              <td><%= link_to ind.indicator.acronym, indicatoratdate_path(ind.indicator_id,ind.scoredate_id,6), :class => indicatorscorestate(ind), :style=>'color:#FFFFFF;'%></td>
+              <td>%</td>
+              <td><%=h ind.score%></td>
+              <td><%=h ind.goal%></td>
+              <td><%=h ind.progress%></td>
+              <td><%=h ind.baseline%></td>
+              <td><%=h ind.growth%></td>
+            <% end %>
           <% end %>
         </tr>
       <% end %>
@@ -158,7 +172,7 @@
         	<td rowspan="<%=h @clientes.size%>"><%= link_to image_tag("clientes_btn.png"), showdashboard_path("perspective", "current", 4, @date.id), :style=>'color:#FFFFFF;'%></a></td>
           <% @clientes.each do |c|%>  
             <% a = ObjectiveScore.find_by_objective_id_and_scoredate_id(c.id,@date.id)%>
-            <td><%= link_to objectiveatdate_path(f.id,@date.id,6) do %>
+            <td colspan="2"><%= link_to objectiveatdate_path(f.id,@date.id,6) do %>
                   <%=h objectiveOval(c,@date,c.acronym) %></div>
                 <% end %></td>
             <td>%</td>
@@ -171,11 +185,11 @@
         </tr>
       <% end %>
       <% if @procesos.size > 0 %>
-        <tr>
-        	<td rowspan="<%=h @procesos.size%>"><%= link_to image_tag("procesos_btn.png"), showdashboard_path("perspective", "current", 4, @date.id), :style=>'color:#FFFFFF;'%></td>
+        <tr><!--IniciaProceso-->
+        	<td rowspan="<%=h @filasprocesos%>"><%= link_to image_tag("procesos_btn.png"), showdashboard_path("perspective", "current", 4, @date.id), :style=>'color:#FFFFFF;'%></td>
           <% @procesos.each do |p|%>  
               <% a = ObjectiveScore.find_by_objective_id_and_scoredate_id(p.id,@date.id)%>
-              <td><%= link_to objectiveatdate_path(p.id,@date.id,6) do %>
+              <td colspan="2"><%= link_to objectiveatdate_path(p.id,@date.id,6) do %>
                   <%=h objectiveOval(p,@date,p.acronym) %></div>
                 <% end %></td>
               <td>%</td>
@@ -184,9 +198,23 @@
               <td><%=h a.progress%></td>
               <td><%=h a.baseline%></td>
               <td><%=h a.growth%></td>
-            </tr>
+              <% p.indicators.each do |i|%>  
+                </tr><!--dentro del each--><tr>
+                <% ind = IndicatorScore.find_by_indicator_id_and_scoredate_id(i.id,@date.id)%>
+                  <td></td>
+                  <td><%= link_to ind.indicator.acronym, indicatoratdate_path(ind.indicator_id,ind.scoredate_id,6), :class => indicatorscorestate(ind), :style=>'color:#FFFFFF;'%></td>
+                  <td>%</td>
+                  <td><%=h ind.score%></td>
+                  <td><%=h ind.goal%></td>
+                  <td><%=h ind.progress%></td>
+                  <td><%=h ind.baseline%></td>
+                  <td><%=h ind.growth%></td>
+                  <% if i.id == p.indicators.last.id%>
+                    </tr><tr><!--if last-->
+                  <% end %>    
+              <% end %>
           <% end %>
-        </tr>
+        </tr><!--permanente al final-->
       <% end %>
       <% if @desarrollo.size > 0 %>
         <tr>
@@ -213,6 +241,8 @@
     </table>
   </div>
 </div>
+
+
 
 
 

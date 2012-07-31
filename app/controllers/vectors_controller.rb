@@ -100,15 +100,18 @@ class VectorsController < ApplicationController
     @clientes = []
     @procesos = []
     @desarrollo = []
+    @filasprocesos = 0
     @vector.objectives.each{|o|
       if o.perspective_id == 1
-        @financiera << o 
+        @financiera << o
       end 
       if o.perspective_id == 2
         @clientes << o 
       end
       if o.perspective_id == 3
-        @procesos << o 
+        @procesos << o  
+        @filasprocesos = @filasprocesos + 1
+        @filasprocesos = @filasprocesos + o.indicators.size
       end 
       if o.perspective_id == 4
         @desarrollo << o 

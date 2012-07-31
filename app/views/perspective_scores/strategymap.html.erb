@@ -18,25 +18,25 @@ a:active {
   <table class="table darkborder">
       <tbody>
       	<tr>
-        	<td rowspan="<%=h (@financiera.showableObjectives.size/4).ceil %>"><%= link_to image_tag("financiera_btn.png"), showdashboard_path("perspective", "current", 1, @date.id), :style=>'color:#FFFFFF;'%></td>
+        	<td rowspan="<%=h (@financiera.showableObjectives.size/4).ceil %>"><%= link_to image_tag("financiera_btn.png"), showdashboard_path("perspective", "trend", 1, @date.id), :style=>'color:#FFFFFF;'%></td>
             <td>
               <%=h perspectiveStaticLayout(@financiera, @date)%>
             </td>
         </tr>
         <tr>
-        	<td rowspan="<%=h (@clientes.showableObjectives.size/4).ceil %>"><%= link_to image_tag("clientesy_btn.png"), showdashboard_path("perspective", "current", 2, @date.id), :style=>'color:#FFFFFF;'%></td>
+        	<td rowspan="<%=h (@clientes.showableObjectives.size/4).ceil %>"><%= link_to image_tag("clientesy_btn.png"), showdashboard_path("perspective", "trend", 2, @date.id), :style=>'color:#FFFFFF;'%></td>
             <td>
               <%=h perspectiveStaticLayout(@clientes, @date)%>
             </td>
         </tr>
         <tr>
-        	<td rowspan="<%=h (@procesos.showableObjectives.size/4).ceil %>"><%= link_to image_tag("procesos_btn.png"), showdashboard_path("perspective", "current", 3, @date.id), :style=>'color:#FFFFFF;'%></td>
+        	<td rowspan="<%=h (@procesos.showableObjectives.size/4).ceil %>"><%= link_to image_tag("procesos_btn.png"), showdashboard_path("perspective", "trend", 3, @date.id), :style=>'color:#FFFFFF;'%></td>
             <td>
               <%=h perspectiveStaticLayout(@procesos, @date)%>
             </td>
         </tr>
         <tr>
-        	<td rowspan="<%=h (@desarrollo.showableObjectives.size/4).ceil %>"><%= link_to image_tag("desarrollo_btn.png"), showdashboard_path("perspective", "current", 4, @date.id), :style=>'color:#FFFFFF;'%></td>
+        	<td rowspan="<%=h (@desarrollo.showableObjectives.size/4).ceil %>"><%= link_to image_tag("desarrollo_btn.png"), showdashboard_path("perspective", "trend", 4, @date.id), :style=>'color:#FFFFFF;'%></td>
             <td>
               <%=h perspectiveStaticLayout(@desarrollo, @date)%>
             </td>

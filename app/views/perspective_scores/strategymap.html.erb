@@ -20,31 +20,32 @@ a:active {
       	<tr>
         	<td rowspan="<%=h (@financiera.showableObjectives.size/4).ceil %>"><%= link_to image_tag("financiera_btn.png"), showdashboard_path("perspective", "trend", 1, @date.id), :style=>'color:#FFFFFF;'%></td>
             <td>
-              <%=h perspectiveStaticLayout(@financiera, @date)%>
+              <%=h perspectiveCoordinatesLayout(@financiera, @date)%>
             </td>
         </tr>
         <tr>
         	<td rowspan="<%=h (@clientes.showableObjectives.size/4).ceil %>"><%= link_to image_tag("clientesy_btn.png"), showdashboard_path("perspective", "trend", 2, @date.id), :style=>'color:#FFFFFF;'%></td>
             <td>
-              <%=h perspectiveStaticLayout(@clientes, @date)%>
+              <%=h perspectiveCoordinatesLayout(@clientes, @date)%>
             </td>
         </tr>
         <tr>
         	<td rowspan="<%=h (@procesos.showableObjectives.size/4).ceil %>"><%= link_to image_tag("procesos_btn.png"), showdashboard_path("perspective", "trend", 3, @date.id), :style=>'color:#FFFFFF;'%></td>
             <td>
-              <%=h perspectiveStaticLayout(@procesos, @date)%>
+              <%=h perspectiveCoordinatesLayout(@procesos, @date)%>
             </td>
         </tr>
         <tr>
         	<td rowspan="<%=h (@desarrollo.showableObjectives.size/4).ceil %>"><%= link_to image_tag("desarrollo_btn.png"), showdashboard_path("perspective", "trend", 4, @date.id), :style=>'color:#FFFFFF;'%></td>
             <td>
-              <%=h perspectiveStaticLayout(@desarrollo, @date)%>
+              <%=h perspectiveCoordinatesLayout(@desarrollo, @date)%>
             </td>
         </tr>
 <tr>
       </tbody>
     </table>
 </div>
+
 <div class="row-fluid" align="center">
     <%= link_to @date.year - 1, thestrategymap_path(ScoreDate.find_by_year_and_month(@date.year - 1,12).id)%>
       <<

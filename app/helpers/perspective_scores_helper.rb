@@ -137,4 +137,59 @@ module PerspectiveScoresHelper
     return lay.html_safe
   end 
 
+  def perspectiveCoordinatesLayout(perspective, date)
+    lay = ""
+    rowcounter = 1
+    rows = []
+    actr = []
+    perspective.showableObjectives.each { |o|    
+      puts "NUMERO DE FILA" + rowcounter.to_s
+      puts "NUMERO del objetivo" + o.row.to_s      
+      if o.row == rowcounter
+        actr << o
+        if o == perspective.showableObjectives.last
+          rows << actr
+        end
+      else
+        rows << actr
+        rowcounter = rowcounter + 1 
+        actr = []
+        actr << o 
+      end
+    }
+    colcounter = 1
+    rows.each{|r|
+      lay = lay + '<div class="row-fluid" align = "center">'
+      colcounter = 1
+      r.each{|o|
+        dif = o.col - colcounter
+        dif.times{
+          lay = lay + '<div class="span3" align="center"><!--columnaVacia--></div>' 
+        }
+        lay = lay + '<div class="span3" align="center">'
+        a = link_to image_tag(objectiveStaticButton(o,date), :size => "148x70"), objectiveatdate_path(o.id,@date.id,6) 
+        lay = lay + a + '</div><!--div para el link -->'
+        colcounter = colcounter + dif + 1
+      }
+      lay = lay + '</div><!--div para el row -->'
+    }
+    return lay.html_safe
+
+=begin
+    perspective.showableObjectives.each { |o|
+      if o.row != row
+        lay = lay + '</div><!--otroRow--><div class="row-fluid" align = "center">'
+      end
+      t = o.col - col - 1
+      t.times{ lay = lay + '<div class="span3" align="center"><!--Multiples--></div>' }
+      lay = lay + '<div class="span3" align="center">'
+      a = link_to image_tag(objectiveStaticButton(o,date), :size => "148x70"), objectiveatdate_path(o.id,@date.id,6) 
+      lay = lay + a
+      lay = lay + "</div><!--span3-->"
+      row = o.row
+      col = o.col
+    }
+=end
+  end 
+
 end

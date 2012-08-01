@@ -5,7 +5,7 @@ class Perspective < ActiveRecord::Base
   has_many :perspective_scores
 
   def showableObjectives
-    all = self.objectives
+    all = self.objectives.order("row ASC, col ASC")
     all.delete_if {|a| !a.show }
   end
   

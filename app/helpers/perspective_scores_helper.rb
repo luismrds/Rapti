@@ -142,9 +142,7 @@ module PerspectiveScoresHelper
     rowcounter = 1
     rows = []
     actr = []
-    perspective.showableObjectives.each { |o|    
-      puts "NUMERO DE FILA" + rowcounter.to_s
-      puts "NUMERO del objetivo" + o.row.to_s      
+    perspective.showableObjectives.each { |o|          
       if o.row == rowcounter
         actr << o
         if o == perspective.showableObjectives.last
@@ -174,22 +172,81 @@ module PerspectiveScoresHelper
       lay = lay + '</div><!--div para el row -->'
     }
     return lay.html_safe
+  end 
 
-=begin
-    perspective.showableObjectives.each { |o|
-      if o.row != row
-        lay = lay + '</div><!--otroRow--><div class="row-fluid" align = "center">'
+  def perspectiveCoordinatesVectorLayout(perspective, date)
+    lay = ""
+    rowcounter = 1
+    rows = []
+    actr = []
+    perspective.showableObjectives.each { |o|          
+      if o.row == rowcounter
+        actr << o
+        if o == perspective.showableObjectives.last
+          rows << actr
+        end
+      else
+        rows << actr
+        rowcounter = rowcounter + 1 
+        actr = []
+        actr << o 
       end
-      t = o.col - col - 1
-      t.times{ lay = lay + '<div class="span3" align="center"><!--Multiples--></div>' }
-      lay = lay + '<div class="span3" align="center">'
-      a = link_to image_tag(objectiveStaticButton(o,date), :size => "148x70"), objectiveatdate_path(o.id,@date.id,6) 
-      lay = lay + a
-      lay = lay + "</div><!--span3-->"
-      row = o.row
-      col = o.col
     }
-=end
+    colcounter = 1
+    vectcounter = 0 
+    vectsize = 0 
+    invector = false
+    backspan = ""
+    buttonspan = "" 
+    #lay = lay + '<div class="span12 alert alert-error">'
+    rows.each{|r|
+      lay = lay + '<div class="row-fluid" align = "center">'
+      colcounter = 1
+      r.each{|ri|
+        dif = ri.col - colcounter
+        dif.times{
+          lay = lay + '<div class="span3" align="center"><!--columnaVacia--></div>' 
+        }
+        if ri.vectors.size > 0 && vectsize == 0 
+          vectsize = ri.vectors.first.inprocess
+          if vectsize == 2
+            backspan = '<div class="span6 alert alert-error">'
+          end
+          if vectsize == 3
+            backspan = '<div class="span9 alert alert-error">'
+          end
+          lay = lay + backspan
+          invector = true
+        end
+        if invector  
+          vectcounter = vectcounter + 1
+        end
+        if !invector
+          lay = lay + '<div class="span3" align="center">'
+        end
+        if vectsize > 0
+          if vectsize == 2
+            span = '<div class="span6 align="center">'
+          end
+          if vectsize == 3
+            span = '<div class="span9 align="center">'
+          end
+          lay = lay + span
+        end
+        a = link_to image_tag(objectiveStaticButton(ri,date), :size => "148x70"), objectiveatdate_path(ri.id,@date.id,6) 
+        lay = lay + a + '</div><!--div para el link -->'
+        colcounter = colcounter + dif + 1
+        if vectsize != 0 &&  vectcounter == vectsize
+          vectsize = 0
+          a = link_to ri.vectors.first.name , vectoratdate_path(1,@date)
+          lay = lay + a
+          lay = lay + '</div><!--div para el alert-error -->'
+        end
+      }
+      lay = lay + '</div><!--div para el row -->'
+    #lay = lay + '</div><!--div para el alert-error -->'
+    }
+    return lay.html_safe
   end 
 
 end

@@ -32,7 +32,7 @@ a:active {
         <tr>
         	<td rowspan="<%=h (@procesos.showableObjectives.size/4).ceil %>"><%= link_to image_tag("procesos_btn.png"), showdashboard_path("perspective", "trend", 3, @date.id), :style=>'color:#FFFFFF;'%></td>
             <td>
-              <%=h perspectiveCoordinatesLayout(@procesos, @date)%>
+              <%=h perspectiveCoordinatesVectorLayout(@procesos, @date)%>
             </td>
         </tr>
         <tr>

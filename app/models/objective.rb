@@ -6,5 +6,6 @@ class Objective < ActiveRecord::Base
 
   has_many :indicators
   has_many :objective_scores
+  has_and_belongs_to_many :vectors, :join_table => "vectors_objectives", :class_name => "Vector"
   
 end

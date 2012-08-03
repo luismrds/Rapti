@@ -222,14 +222,14 @@ module PerspectiveScoresHelper
           vectcounter = vectcounter + 1
         end
         if !invector
-          lay = lay + '<div class="span3" align="center">'
+          lay = lay + '<div class="span3" align="center"><!--inicia link fuera-->'
         end
         if vectsize > 0
           if vectsize == 2
-            span = '<div class="span6 align="center">'
+            span = '<div class="span6 align="center"><!--dentro del vector-->'
           end
           if vectsize == 3
-            span = '<div class="span9 align="center">'
+            span = '<div class="span9 align="center"><!--dentro del vector-->'
           end
           lay = lay + span
         end
@@ -238,6 +238,7 @@ module PerspectiveScoresHelper
         colcounter = colcounter + dif + 1
         if vectsize != 0 &&  vectcounter == vectsize
           vectsize = 0
+          invector = false
           a = link_to ri.vectors.first.name , vectoratdate_path(1,@date)
           lay = lay + a
           lay = lay + '</div><!--div para el alert-error -->'

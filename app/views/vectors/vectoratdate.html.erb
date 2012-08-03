@@ -25,7 +25,7 @@
                               <% i = i + 1%>
                               <div class="span6" align="center">
                                 <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
-                                  <%=h objectiveOval(o,@date,o.acronym) %>
+                                  <%=h image_tag(objectiveStaticButton(o,@date), :size => "148x70")%>
                                 <% end %>
                               </div><!--span4-->
                               <% if i%2 == 0 %>
@@ -52,7 +52,7 @@
                               <% i = i + 1%>
                               <div class="span4" align="center">
                                 <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
-                                  <%=h objectiveOval(o,@date,o.acronym) %>
+                                  <%=h image_tag(objectiveStaticButton(o,@date), :size => "148x70")%>
                                 <% end %>
                               </div><!--span4-->
                               <% if i%2 == 0 %>
@@ -79,7 +79,7 @@
                               <% i = i + 1%>
                               <div class="span6" align="center">                                
                                 <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
-                                  <%=h objectiveOval(o,@date,o.acronym) %>
+                                  <%=h image_tag(objectiveStaticButton(o,@date), :size => "148x70")%>
                                 <% end %>
                               </div><!--span4-->
                               <% if i%2 == 0 %>
@@ -105,7 +105,7 @@
                               <% i = i + 1%>
                               <div class="span6" align="center">
                                <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
-                                  <%=h objectiveOval(o,@date,o.acronym) %>
+                                  <%=h image_tag(objectiveStaticButton(o,@date), :size => "148x70")%>
                                 <% end %>
                               </div><!--span4-->
                               <% if i%3 == 0 %>
@@ -144,7 +144,7 @@
           <% @financiera.each do |f|%>  
             <% a = ObjectiveScore.find_by_objective_id_and_scoredate_id(f.id,@date.id)%>
             <td colspan="2"><%= link_to objectiveatdate_path(f.id,@date.id,6) do %>
-                  <%=h objectiveOval(f,@date,f.acronym) %></div>
+                  <%=h image_tag(objectiveStaticButton(f,@date), :size => "148x70")%></div>
                 <% end %></td>
             <td>%</td>
             <td><%=h a.score%></td>
@@ -190,7 +190,7 @@
           <% @procesos.each do |p|%>  
               <% a = ObjectiveScore.find_by_objective_id_and_scoredate_id(p.id,@date.id)%>
               <td colspan="2"><%= link_to objectiveatdate_path(p.id,@date.id,6) do %>
-                  <%=h objectiveOval(p,@date,p.acronym) %></div>
+                  <%=h image_tag(objectiveStaticButton(p,@date), :size => "148x70")%></div>
                 <% end %></td>
               <td>%</td>
               <td><%=h a.score %></td>

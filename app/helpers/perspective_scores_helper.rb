@@ -162,9 +162,9 @@ module PerspectiveScoresHelper
       r.each{|o|
         dif = o.col - colcounter
         dif.times{
-          lay = lay + '<div class="span3" align="center"><!--columnaVacia--></div>' 
+          lay = lay + '<div class="span2" align="center"><!--columnaVacia--></div>' 
         }
-        lay = lay + '<div class="span3" align="center">'
+        lay = lay + '<div class="span2" align="center">'
         a = link_to image_tag(objectiveStaticButton(o,date), :size => "148x70"), objectiveatdate_path(o.id,@date.id,6) 
         lay = lay + a + '</div><!--div para el link -->'
         colcounter = colcounter + dif + 1
@@ -205,15 +205,15 @@ module PerspectiveScoresHelper
       r.each{|ri|
         dif = ri.col - colcounter
         dif.times{
-          lay = lay + '<div class="span3" align="center"><!--columnaVacia--></div>' 
+          lay = lay + '<div class="span2" align="center"><!--columnaVacia--></div>' 
         }
         if ri.vectors.size > 0 && vectsize == 0 
           vectsize = ri.vectors.first.inprocess
           if vectsize == 2
-            backspan = '<div class="span6 alert alert-error">'
+            backspan = '<div class="span4 alert alert-error">'
           end
           if vectsize == 3
-            backspan = '<div class="span9 alert alert-error">'
+            backspan = '<div class="span6 alert alert-error">'
           end
           lay = lay + backspan
           invector = true
@@ -222,7 +222,7 @@ module PerspectiveScoresHelper
           vectcounter = vectcounter + 1
         end
         if !invector
-          lay = lay + '<div class="span3" align="center"><!--inicia link fuera-->'
+          lay = lay + '<div class="span2" align="center"><!--inicia link fuera-->'
         end
         if vectsize > 0
           if vectsize == 2

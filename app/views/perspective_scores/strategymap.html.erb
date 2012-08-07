@@ -23,18 +23,87 @@ a:active {
               <%=h perspectiveCoordinatesLayout(@financiera, @date)%>
             </td>
         </tr>
+        <td></td>
+        <td>
+          <div class="row-fluid">
+            <div class="span2 align="center">
+              <%= image_tag("triangulo.png", :size => "80x20")%>
+            </div>
+            <div class="span2 align="center">
+              <%= image_tag("triangulo.png", :size => "80x20")%>
+            </div>
+            <div class="span2 align="center">
+              <%= image_tag("triangulo.png", :size => "80x20")%>
+            </div>
+            <div class="span2 align="center">
+              <%= image_tag("triangulo.png", :size => "80x20")%>
+            </div>
+            <div class="span2 align="center">
+              <%= image_tag("triangulo.png", :size => "80x20")%>
+            </div>
+            <div class="span2 align="center">
+              <%= image_tag("triangulo.png", :size => "80x20")%>
+            </div>
+          </div>
+        </td>
         <tr>
         	<td rowspan="<%=h (@clientes.showableObjectives.size/4).ceil %>"><%= link_to image_tag("clientesy_btn.png"), showdashboard_path("perspective", "trend", 2, @date.id), :style=>'color:#FFFFFF;'%></td>
             <td>
               <%=h perspectiveCoordinatesLayout(@clientes, @date)%>
             </td>
         </tr>
+        <td></td>
+        <td>
+          <div class="row-fluid">
+            <div class="span2 align="center">
+              <%= image_tag("triangulo.png", :size => "80x20")%>
+            </div>
+            <div class="span2 align="center">
+              <%= image_tag("triangulo.png", :size => "80x20")%>
+            </div>
+            <div class="span2 align="center">
+              <%= image_tag("triangulo.png", :size => "80x20")%>
+            </div>
+            <div class="span2 align="center">
+              <%= image_tag("triangulo.png", :size => "80x20")%>
+            </div>
+            <div class="span2 align="center">
+              <%= image_tag("triangulo.png", :size => "80x20")%>
+            </div>
+            <div class="span2 align="center">
+              <%= image_tag("triangulo.png", :size => "80x20")%>
+            </div>
+          </div>
+        </td>
         <tr>
         	<td rowspan="<%=h (@procesos.showableObjectives.size/4).ceil %>"><%= link_to image_tag("procesos_btn.png"), showdashboard_path("perspective", "trend", 3, @date.id), :style=>'color:#FFFFFF;'%></td>
             <td>
               <%=h perspectiveCoordinatesVectorLayout(@procesos, @date)%>
             </td>
         </tr>
+        <td></td>
+        <td>
+          <div class="row-fluid">
+            <div class="span2 align="center">
+              <%= image_tag("triangulo.png", :size => "80x20")%>
+            </div>
+            <div class="span2 align="center">
+              <%= image_tag("triangulo.png", :size => "80x20")%>
+            </div>
+            <div class="span2 align="center">
+              <%= image_tag("triangulo.png", :size => "80x20")%>
+            </div>
+            <div class="span2 align="center">
+              <%= image_tag("triangulo.png", :size => "80x20")%>
+            </div>
+            <div class="span2 align="center">
+              <%= image_tag("triangulo.png", :size => "80x20")%>
+            </div>
+            <div class="span2 align="center">
+              <%= image_tag("triangulo.png", :size => "80x20")%>
+            </div>
+          </div>
+        </td>
         <tr>
         	<td rowspan="<%=h (@desarrollo.showableObjectives.size/4).ceil %>"><%= link_to image_tag("desarrollo_btn.png"), showdashboard_path("perspective", "trend", 4, @date.id), :style=>'color:#FFFFFF;'%></td>
             <td>

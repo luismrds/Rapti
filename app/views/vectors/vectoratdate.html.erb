@@ -143,9 +143,7 @@
       	  <td rowspan="<%=h @financiera.size + 1%>"><%= link_to image_tag("financiera_btn.png"), showdashboard_path("perspective", "current", 4, @date.id), :style=>'color:#FFFFFF;'%></td>
           <% @financiera.each do |f|%>  
             <% a = ObjectiveScore.find_by_objective_id_and_scoredate_id(f.id,@date.id)%>
-            <td colspan="2"><%= link_to objectiveatdate_path(f.id,@date.id,6) do %>
-                  <%=h image_tag(objectiveStaticButton(f,@date), :size => "148x70")%></div>
-                <% end %></td>
+            <td colspan="2"><%=h f.acronym %></td>
             <td>%</td>
             <td><%=h a.score%></td>
             <td><%=h a.goal%></td>
@@ -172,9 +170,7 @@
         	<td rowspan="<%=h @clientes.size%>"><%= link_to image_tag("clientes_btn.png"), showdashboard_path("perspective", "current", 4, @date.id), :style=>'color:#FFFFFF;'%></a></td>
           <% @clientes.each do |c|%>  
             <% a = ObjectiveScore.find_by_objective_id_and_scoredate_id(c.id,@date.id)%>
-            <td colspan="2"><%= link_to objectiveatdate_path(f.id,@date.id,6) do %>
-                  <%=h objectiveOval(c,@date,c.acronym) %></div>
-                <% end %></td>
+            <td colspan="2"><%=h c.acronym %></td>
             <td>%</td>
             <td><%=h a.score%></td>
             <td><%=h a.goal%></td>
@@ -189,9 +185,7 @@
         	<td rowspan="<%=h @filasprocesos%>"><%= link_to image_tag("procesos_btn.png"), showdashboard_path("perspective", "current", 4, @date.id), :style=>'color:#FFFFFF;'%></td>
           <% @procesos.each do |p|%>  
               <% a = ObjectiveScore.find_by_objective_id_and_scoredate_id(p.id,@date.id)%>
-              <td colspan="2"><%= link_to objectiveatdate_path(p.id,@date.id,6) do %>
-                  <%=h image_tag(objectiveStaticButton(p,@date), :size => "148x70")%></div>
-                <% end %></td>
+              <td colspan="2"><%=h p.acronym %></td>
               <td>%</td>
               <td><%=h a.score %></td>
               <td><%=h a.goal %></td>

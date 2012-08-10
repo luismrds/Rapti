@@ -2,15 +2,15 @@ module ObjectiveScoresHelper
 
 #Creates the instances in the ObjectiveScore Model
 #to be filled by the users
-    def fill_objective_score
-        objectives = Objective.all
-        dates = ScoreDate.all
-        objectives.each{|obj|
-            dates.each{|da|
-                ObjectiveScore.new(:objective_id => obj.id, :scoredate_id => da.id, :score => rand(100), :redfrom => obj.redfrom, :redto => obj.redto, :yellowfrom => obj.yellowfrom, :yellowto => obj.yellowto, :greenfrom => obj.greenfrom, :greento => obj.greento).save
-            }
-        }
-    end
+  def fill_objective_score
+      objectives = Objective.all
+      dates = ScoreDate.all
+      objectives.each{|obj|
+          dates.each{|da|
+              ObjectiveScore.new(:objective_id => obj.id, :scoredate_id => da.id, :score => rand(100), :redfrom => obj.redfrom, :redto => obj.redto, :yellowfrom => obj.yellowfrom, :yellowto => obj.yellowto, :greenfrom => obj.greenfrom, :greento => obj.greento).save
+          }
+      }
+  end
 
   def getLastNobjectiveScore(n, objective, date)
       dateObject = Date.new(date.year,date.month,1)        
@@ -71,6 +71,13 @@ module ObjectiveScoresHelper
     if score > ind.greenfrom #&& score <= ind.greento
       return 'btn btn-success'
     end
+  end
+
+  def calculateEveryObjectiveScore
+    ps = ObjectiveScore.all
+    ps.each{|p|
+      p.calculate
+    }
   end
 
   def calculate

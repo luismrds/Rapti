@@ -2,7 +2,7 @@ module IndicatorScoresHelper
     
 # Creates the instances in the IndicatorScores Model
 # to be filled by the users
-  def fill_indicator_score
+  def create_indicator_score
       indicators = Indicator.all
       dates = ScoreDate.all
       indicators.each{|ind|

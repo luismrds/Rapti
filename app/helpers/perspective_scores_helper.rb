@@ -40,6 +40,13 @@ module PerspectiveScoresHelper
     end
   end
 
+  def calculateEveryPerspectiveScore
+    ps = PerspectiveScore.all
+    ps.each{|p|
+      p.calculate
+    }
+  end   
+
   def calculate
     per = self.perspective
     date = self.scoredate
@@ -153,6 +160,9 @@ module PerspectiveScoresHelper
         rowcounter = rowcounter + 1 
         actr = []
         actr << o 
+        if o == perspective.showableObjectives.last
+          rows << actr
+        end
       end
     }
     colcounter = 1

@@ -66,10 +66,72 @@ a:active {
           </div>
           </div>
         </td>
+
         <tr>
         	<td rowspan="<%=h (@procesos.showableObjectives.size/4).ceil %>"><%= link_to image_tag("procesos_btn.png"), showdashboard_path("perspective", "trend", 3, @date.id), :style=>'color:#FFFFFF;'%></td>
             <td>
-              <%=h perspectiveCoordinatesVectorLayout(@procesos, @date)%>
+              <div class="span4 alert alert-error">
+                <div class="row-fluid">
+                  <div class="span6"></div><div class="span6">
+                    <%= link_to image_tag(objectiveStaticButton(Objective.find(11),@date), :size => "148x70"), objectiveatdate_path(11,@date.id,6) %>
+                  </div>
+                </div>
+                <div class="row-fluid">
+                  <div class="span6">
+                    <%= link_to image_tag(objectiveStaticButton(Objective.find(10),@date), :size => "148x70"), objectiveatdate_path(10,@date.id,6) %>
+                  </div>
+                </div>
+                <div class="row-fluid" align="center">
+                  <%= link_to Vector.find(1).name , vectoratdate_path(1,@date)%>
+                </div>
+
+
+
+              </div><!--alert error-->
+
+              <div class="span4 alert alert-error">
+                <div class="row-fluid">
+                  <div class="span6"></div><div class="span6">
+                    <%= link_to image_tag(objectiveStaticButton(Objective.find(13),@date), :size => "148x70"), objectiveatdate_path(11,@date.id,6) %>
+                  </div>
+                </div>
+                <div class="row-fluid">
+                  <div class="span6">
+                    <%= link_to image_tag(objectiveStaticButton(Objective.find(12),@date), :size => "148x70"), objectiveatdate_path(10,@date.id,6) %>
+                  </div>
+                <div class="row-fluid">
+                  <div class="span6"></div><div class="span6">
+                    <%= link_to image_tag(objectiveStaticButton(Objective.find(14),@date), :size => "148x70"), objectiveatdate_path(11,@date.id,6) %>
+                  </div>
+                </div>
+               </div>
+
+                <div class="row-fluid" align="center">
+                  <%= link_to Vector.find(2).name , vectoratdate_path(1,@date)%>
+                </div>
+              </div><!--alert error-->
+
+
+              <div class="span2 alert alert-error">
+                <div class="row-fluid" align="center">
+                    <%= link_to image_tag(objectiveStaticButton(Objective.find(15),@date), :size => "148x70"), objectiveatdate_path(11,@date.id,6) %>
+
+                </div>
+                <div class="row-fluid" align="center">
+                  <%= link_to Vector.find(3).name , vectoratdate_path(1,@date)%>
+                </div>
+              </div><!--alert error-->
+
+
+              <div class="span2 alert alert-error">
+
+                    <%= link_to image_tag(objectiveStaticButton(Objective.find(16),@date), :size => "148x70"), objectiveatdate_path(11,@date.id,6) %>
+
+                <div class="row-fluid" align="center">
+                  <%= link_to Vector.find(4).name , vectoratdate_path(1,@date)%>
+                </div>
+              </div><!--alert error-->
+
             </td>
         </tr>
         <td></td>

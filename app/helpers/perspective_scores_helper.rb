@@ -180,6 +180,7 @@ module PerspectiveScoresHelper
         colcounter = colcounter + dif + 1
       }
       lay = lay + '</div><!--div para el row -->'
+      lay = lay + '<div class="row-fluid" align = "center"> </br></div>'
     }
     return lay.html_safe
   end 

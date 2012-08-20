@@ -83,10 +83,10 @@ a:active {
 
     </br>
 
-
+<% if @currentsons.size > 0 %>
   <table class="table table-bordered" width="100%">
     <tr>
-      <th width="11%"><%= link_to "Indicador", showdashboard_path("indicator", "current", @indicator.id, @date.id), :style=>'color:#00489b;'%></th>
+      <th width="40%"><%= link_to "Indicador", showdashboard_path("indicator", "current", @indicator.id, @date.id), :style=>'color:#00489b;'%></th>
       <th title="Definicion de actual">Valor</th>
       <th title="Definicion de Meta">Meta</th>
       <th title="Definicion de Avance">Avance</th>
@@ -107,6 +107,7 @@ a:active {
       </tr>         
      <% end %>
   </table>
+<% end %>
 
 
 </div>

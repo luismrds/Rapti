@@ -8,7 +8,7 @@ module VectorsHelper
     }
     lay = ""
     lay = lay + '<tr>
-      	  <td rowspan="'+rows.to_s+'">'
+      	  <td style="vertical-align:middle" rowspan="'+rows.to_s+'">'
     
     a = link_to image_tag(objectives.first.perspective.title_image), showdashboard_path("objectives", "current", 4, @date.id), :style=>'color:#FFFFFF;'
 

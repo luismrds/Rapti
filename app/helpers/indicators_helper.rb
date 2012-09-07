@@ -2,9 +2,15 @@ module IndicatorsHelper
 
 include OperationsHelper
 
+# Para un indicador, dada una fecha, calcula su desempeno basandose en la 
+#   operacion a la que se le asocio. 
+
   def calculateIndicatorValue(dateid)
       return self.operation.calculateOperationValue(dateid) 
   end
+
+# Para un indicador, dada una fecha, calcula su desempeno basandose en la 
+#   operacion a la que se le asocio y se lo asigna. 
 
   def SetIndicatorValue(dateid)
     value = self.operation.calculateOperationValue(dateid)
@@ -12,6 +18,9 @@ include OperationsHelper
     ind.score = value 
     ind.save
   end
+
+# Calcula el valor de todos los indicadores que existan en todas las fechas
+#   en caso de que sean valores calculados. 
 
   def setAllIndicatorValue
     dates = ScoreDate.all
@@ -24,6 +33,9 @@ include OperationsHelper
       }
     }
   end 
+
+# Devuelve los ultimos N valores de desempeno del indicador 
+#   iniciando en el mes "date" hacia atras. 
 
   def getLastN(n, indicator, date)
     dateObject = Date.new(date.year,date.month,1)        
@@ -41,6 +53,7 @@ include OperationsHelper
     return scores 
   end
 
+=begin 
   def fill_em
     is = Indicator.all
     is.each{|o|
@@ -56,12 +69,7 @@ include OperationsHelper
       o.save
     }
   end
+=end 
 
-  def cleanIndicatorNoShow
-    noshow = Indicator.find_all_by_show(FALSE)
-    noshow.each{|n|
-      Indicator.delete(n)
-    }
-  end
 
 end

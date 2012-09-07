@@ -18,12 +18,16 @@ include ObjectiveScoresHelper
     }
   end
 
+# Calcula todos los desempenos de un objetivo 
+
   def calculateScores
     scores = self.objective_scores
     scores.each{|s|
       s.calculate
     }
   end
+
+# Calcula el desempeno de todos los objetivos 
 
   def calculateAllScores
     objs = Objective.all
@@ -32,12 +36,18 @@ include ObjectiveScoresHelper
     }
   end
 
+# Elimina los objetivos que no quieren ser mostrados 
+
   def cleanObjectivesNoShow
     noshow = Objective.find_all_by_show(FALSE)
     noshow.each{|n|
       Objective.delete(n)
     }
   end
+
+# Crea el codigo necesario para introducir en un ERB de modo que se 
+#   muestren el ovalo generado con CSS para un objetivo en una fecha
+#   tomando en cuenta su color de acuerdo a su desempeno. 
 
   def objectiveOval(obj,date,name)
     score = ObjectiveScore.find_by_objective_id_and_scoredate_id(obj.id,date.id).score
@@ -56,6 +66,11 @@ include ObjectiveScoresHelper
     end
   end
 
+# Crea el codigo necesario para introducir en un ERB de modo que se 
+#   muestren el ovalo generado con el boton que provee bootstrap
+#   para un objetivo en una fecha
+#   tomando en cuenta su color de acuerdo a su desempeno. 
+
   def objectiveBootstrapOval(obj,date)
     score = ObjectiveScore.find_by_objective_id_and_scoredate_id(obj.id,date.id).score
     #if score >= obj.redfrom && score < obj.redto
@@ -69,6 +84,11 @@ include ObjectiveScoresHelper
       return 'badge badge-success'
     end
   end
+
+# Crea el codigo necesario para introducir en un ERB de modo que se 
+#   muestren el ovalo como una imagen png
+#   para un objetivo en una fecha
+#   tomando en cuenta su color de acuerdo a su desempeno. 
 
   def objectiveStaticButton(obj,date)
     score = ObjectiveScore.find_by_objective_id_and_scoredate_id(obj.id,date.id).score

@@ -54,31 +54,7 @@ table:td{text-align:center !important;}
           </tr>
       </tbody>
   </table>
-<!--   <table width="100%">
-    <tr>
-      <th title="Definicion de actual">Valor</th>
-      <th title="Definicion de Meta">Meta</th>
-      <th title="Definicion de Avance">Avance</th>
-      <th title="Definicion de Base">Base</th>
-      <th title="Definicion de Comp">Comp.</th>
-    <tr>
-    <tr>
-      <td align = "center"><%= @currentobjective.score %></td>
-      <td align = "center"><%= @currentobjective.goal %></td>
-      <td align = "center"><%= @currentobjective.progress %></td>
-      <td align = "center"><%= @currentobjective.baseline %></td>
-      <td align = "center"><%= @currentobjective.growth %></td>
-    </tr> 
-  </table>
-</br>
-   <div class="row-fluid" align="left">        
-      <h3>Indicadores: (<%= link_to "Ver juntos", exploreobjectives_path() %> )</h3>
-        <OL TYPE="1">
-          <% @currentindicators.each do |ci|%>
-            <LI><p><%= link_to ci.indicator.name, indicatoratdate_path(ci.indicator_id,ci.scoredate_id), :class => indicatorscorestate(ci)%></p>
-          <% end %>
-        </OL>
-    </div> -->
+
 
   <table class="table table-bordered" width="100%">
     <tr>
@@ -94,7 +70,7 @@ table:td{text-align:center !important;}
 
     <% @currentindicators.each do |ci|%>
       <tr>
-        <td align = "center"><%= link_to ci.indicator.acronym, indicatoratdate_path(ci.indicator_id,ci.scoredate_id), :class => indicatorscorestate(ci), :style=>'color:#FFFFFF;'%></td>
+        <td><%= link_to ci.indicator.acronym, indicatoratdate_path(ci.indicator_id,ci.scoredate_id), :class => indicatorscorestate(ci), :style=>'color:#FFFFFF;'%></td>
         <td align = "center"><%= ci.score %></td>
         <td align = "center"><%= ci.goal %></td>
         <td align = "center"><%= ci.progress %></td>

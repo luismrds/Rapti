@@ -1,7 +1,7 @@
 module RawDataScoresHelper
 
-#Creates the instances in the RawDataScores Model
-#to be filled by the users
+# Crea las instancias de raw data que el usuario debera llenar.
+
   def create_raw_data_score
     datum = RawDatum.find_all_by_operation_id(nil)
     dates = ScoreDate.all

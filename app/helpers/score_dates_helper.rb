@@ -1,8 +1,12 @@
 module ScoreDatesHelper
 
+# Da la instancia de scoredate que representa el mes actual.
+
   def currentScoreDate
       return ScoreDate.find_by_month_and_year(Date.today.month,Date.today.year)
   end
+
+# Dado un scoredate, devuelve el nombre en texto del mes que representa 
 
   def scoredate_month_to_text(scoredate)
     month = scoredate.month
@@ -20,6 +24,8 @@ module ScoreDatesHelper
       }
     }
   end
+
+# Dado el numero de mes, devuelve el nombre en texto 
 
   def number_to_month(n)
     case n

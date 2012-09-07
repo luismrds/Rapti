@@ -123,7 +123,12 @@ a:active {
               <div class="span2 alert alert-error">
                 <div class="row-fluid" align="center">
                     <%= link_to image_tag(objectiveStaticButton(Objective.find(15),@date), :size => "148x70"), objectiveatdate_path(15,@date.id,6) %>
-
+<!-- aqui -->
+                </div>
+                <br />
+                <div class="row-fluid" align="center">
+                  <!--Insertar un vacio-->
+                  <%= image_tag("vacio.png", :size => "148x70") %>
                 </div>
                 <div class="row-fluid" align="center">
                   <%= link_to Vector.find(3).name , vectoratdate_path(3,@date)%>
@@ -135,7 +140,11 @@ a:active {
                 <div class="row-fluid" align="center">
                     <%= link_to image_tag(objectiveStaticButton(Objective.find(16),@date), :size => "148x70"), objectiveatdate_path(16,@date.id,6) %>
                 </div>
-
+                <br />
+                <div class="row-fluid" align="center">
+                  <!--Insertar un vacio-->
+                  <%= image_tag("vacio.png", :size => "148x70") %>
+                </div>
                 <div class="row-fluid" align="center">
                   <%= link_to Vector.find(4).name , vectoratdate_path(4,@date)%>
                 </div>
@@ -146,21 +155,22 @@ a:active {
         <td></td>
         <td>
           <div class="row-fluid">
-            <div class="span2" align="center">
-            </div>
-            <div class="span2" align="center">
-              <%= image_tag("triangulo.png", :size => "80x20")%>
-            </div>
+            <div class="span1" align="center"></div>
             <div class="span2" align="center">
               <%= image_tag("triangulo.png", :size => "80x20")%>
             </div>
+            <div class="span1" align="center"></div>
+            <div class="span1" align="center"></div>
             <div class="span2" align="center">
               <%= image_tag("triangulo.png", :size => "80x20")%>
             </div>
+            <div class="span1" align="center"></div>
             <div class="span2" align="center">
+              <%= image_tag("triangulo.png", :size => "80x20")%>
             </div>
-            <div class="span2 align="center">
-            </div>
+
+            <div class="span2" align = "center">
+              <%= image_tag("triangulo.png", :size => "80x20")%></div>
           </div>
         </td>
         <tr>

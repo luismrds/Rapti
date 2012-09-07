@@ -1,6 +1,8 @@
 Rails3BootstrapDeviseCancan::Application.routes.draw do
   
   match "vectors/vectoratdate/:vec/:dat" => "vectors#vectoratdate", :as => :vectoratdate
+  match "vectors/vectoratdateonlyobjectives/:vec/:dat" => "vectors#vectoratdateonlyobjectives", :as => :vectoratdateonlyobjectives
+  match "vectors/vectoratdatecomplete/:vec/:dat" => "vectors#vectoratdatecomplete", :as => :vectoratdatecomplete
   resources :vectors
 
   resources :operations

@@ -12,6 +12,9 @@ module PerspectiveScoresHelper
       }
   end
 
+# Define el estado del desempeno de un objetivo en una fecha especifica. Entiendase por estado, 
+#   en cual de los colores se encontraria el reloj. 
+
   def state(obj,date)
     score = ObjectiveScore.find_by_objective_id_and_scoredate_id(obj.id,date.id).score
     #if score >= obj.redfrom && score < obj.redto
@@ -25,6 +28,8 @@ module PerspectiveScoresHelper
       return 'btn btn-success'
     end
   end
+
+# El estado de una perspectiva en una fecha
 
   def mystate(per,date)
     score = PerspectiveScore.find_by_perspective_id_and_scoredate_id(per.id,date.id).score
@@ -40,12 +45,17 @@ module PerspectiveScoresHelper
     end
   end
 
+# Calcula el desempeno de todas las perspectivas en todas las fechas para las 
+#   cuales se ha creado un desempeno. 
+
   def calculateEveryPerspectiveScore
     ps = PerspectiveScore.all
     ps.each{|p|
       p.calculate
     }
   end   
+
+# Calcula el desempeno de de una perspectivescore.
 
   def calculate
     per = self.perspective
@@ -63,6 +73,8 @@ module PerspectiveScoresHelper
     self.score = value
     self.save
   end
+
+# Obtiene los ultimos N desempenos de una perspectiva empezando en la fecha especificada. 
 
   def getLastNperspectiveScore(n, perspective, date)
       dateObject = Date.new(date.year,date.month,1)        

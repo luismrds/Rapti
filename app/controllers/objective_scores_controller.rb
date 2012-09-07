@@ -83,6 +83,8 @@ class ObjectiveScoresController < ApplicationController
     end
   end
 
+# Prepara los datos necesarios para la visualizacion del desempeno de un 
+#   objetivo en una fecha especific
 
   def objectiveatdate
     @objective = Objective.find(params[:obj])

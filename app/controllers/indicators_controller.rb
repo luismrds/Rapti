@@ -90,7 +90,7 @@ include IndicatorsHelper
     end
   end
 
-#Releases a Indicator that does not influenciate it's "Father"
+# Dado un indicador elimina la relacion con su padre. 
   def emancipate
       father = Indicator.find(params[:father])
       son = Indicator.find(params[:son])

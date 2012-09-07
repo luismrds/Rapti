@@ -83,6 +83,8 @@ class VectorsController < ApplicationController
     end
   end
 
+# Dado un vector y una fecha, prepara los datos para visualizar su desempeno 
+
   def vectoratdate
     params[:date_id] ||= currentScoreDate.id
     @vector = Vector.find(params[:vec])
@@ -118,4 +120,78 @@ class VectorsController < ApplicationController
       end 
     }
   end
+
+  def vectoratdateonlyobjectives
+    params[:date_id] ||= currentScoreDate.id
+    @vector = Vector.find(params[:vec])
+    @date = ScoreDate.find(params[:dat])
+    @perspectives = []
+    @vector.objectives.each{|o|
+      if !@perspectives.include? o.perspective
+        @perspectives << o.perspective
+      end 
+    }
+    @objectives = @vector.objectives
+
+    @perspectives = Perspective.all
+    @financiera = []
+    @clientes = []
+    @procesos = []
+    @desarrollo = []
+    @filasprocesos = 0
+    @vector.objectives.each{|o|
+      if o.perspective_id == 1
+        @financiera << o
+      end 
+      if o.perspective_id == 2
+        @clientes << o 
+      end
+      if o.perspective_id == 3
+        @procesos << o  
+        @filasprocesos = @filasprocesos + 1
+        @filasprocesos = @filasprocesos + o.indicators.size
+      end 
+      if o.perspective_id == 4
+        @desarrollo << o 
+      end 
+    }
+  end
+
+  def vectoratdatecomplete
+    params[:date_id] ||= currentScoreDate.id
+    @vector = Vector.find(params[:vec])
+    @date = ScoreDate.find(params[:dat])
+    @perspectives = []
+    @vector.objectives.each{|o|
+      if !@perspectives.include? o.perspective
+        @perspectives << o.perspective
+      end 
+    }
+    @objectives = @vector.objectives
+
+    @perspectives = Perspective.all
+    @financiera = []
+    @clientes = []
+    @procesos = []
+    @desarrollo = []
+    @filasprocesos = 0
+    @vector.objectives.each{|o|
+      if o.perspective_id == 1
+        @financiera << o
+      end 
+      if o.perspective_id == 2
+        @clientes << o 
+      end
+      if o.perspective_id == 3
+        @procesos << o  
+        @filasprocesos = @filasprocesos + 1
+        @filasprocesos = @filasprocesos + o.indicators.size
+      end 
+      if o.perspective_id == 4
+        @desarrollo << o 
+      end 
+    }
+  end
+
+
 end

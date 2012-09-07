@@ -12,6 +12,8 @@ module ObjectiveScoresHelper
       }
   end
 
+# Obtiene los ultimos n desempenos del objetivo dado empesando en date
+
   def getLastNobjectiveScore(n, objective, date)
       dateObject = Date.new(date.year,date.month,1)        
       dates = []
@@ -73,12 +75,16 @@ module ObjectiveScoresHelper
     end
   end
 
+# Calcula el desempeno de todos los objectivescores existentes. 
+
   def calculateEveryObjectiveScore
     ps = ObjectiveScore.all
     ps.each{|p|
       p.calculate
     }
   end
+
+# Calcula el desempeno de un objectivescore basandose en sus indicadores 
 
   def calculate
     obj = self.objective
@@ -111,6 +117,8 @@ module ObjectiveScoresHelper
       }
     }
   end
+
+# Elimina los decimales de todos los objectivescores y los deja en 2 decimales. 
 
   def cut_decimals
     scores = ObjectiveScore.all

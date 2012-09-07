@@ -82,6 +82,8 @@ class PerspectiveScoresController < ApplicationController
     end
   end
 
+#Prepara los datos necesario para mostrar el mapa estrategico en una fecha especifica.
+
   def strategymap
     params[:date_id] ||= currentScoreDate.id
     @date = ScoreDate.find(params[:date_id])

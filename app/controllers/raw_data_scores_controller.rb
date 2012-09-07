@@ -80,14 +80,4 @@ class RawDataScoresController < ApplicationController
       format.json { head :no_content }
     end
   end
-
-  def prepmassiveInsertion
-    date = ScoreDate.find(params[:date_id])
-    @raw_data = RawDatum.find_all_by_operation_id(nil)  
-    @scores = []
-    @raw_data.each{|raw|
-        @scores << RawDataScore.find_by_rawdata_id_and_scoredate_id(raw.id,date.id)
-    }
-    
-  end
 end

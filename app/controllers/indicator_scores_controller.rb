@@ -85,6 +85,9 @@ class IndicatorScoresController < ApplicationController
     end
   end
 
+# Prepara los datos necesarios para la visualizacion del desempeno de un 
+#   indicador en una fecha especifica. 
+
   def indicatoratdate
     @indicator = Indicator.find(params[:ind])
     @date = ScoreDate.find(params[:date])

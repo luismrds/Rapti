@@ -35,12 +35,18 @@ module DemosHelper
     }
   end
 
+# Establece en todos los indicadores y para cada mes el valor 
+#   por defecto para su desempeno. 
+
   def fill_all_from_default
     ind = Indicator.all
     ind.each{|i|
       fill_from_default(i.id)
     }
   end  
+
+# Dado el id de un indicador, establece para todos los meses 
+#   existentes el desempeno en su valor por defecto. 
 
   def fill_from_default(indid)
     inds = IndicatorScore.find_all_by_indicator_id(indid)
@@ -59,6 +65,8 @@ module DemosHelper
     }
   end
 
+# Crea para todos los objetivos la medicion de su desempeno en todas las fechas existentes. 
+
   def create_objective_score
       objectives = Objective.all
       dates = ScoreDate.all
@@ -68,6 +76,9 @@ module DemosHelper
           }
       }
   end
+
+# Llena de manera creciente el desempeno de los objetivos empezando en un numero 
+#   aleatorio menor a 60 
 
   def fill_increasing_objectivescores
     objectives = Objective.all
@@ -89,6 +100,9 @@ module DemosHelper
       score = 60 
     }
   end
+
+# Llena los valores por defecto de todos los objetivos para mostrar 
+#   el reloj tipico 
 
   def fill_objectives_for_demo
     os = Objective.all

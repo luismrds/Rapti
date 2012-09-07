@@ -87,6 +87,9 @@ class ScoreDatesController < ApplicationController
     end
   end
 
+# Dada una fecha, prepara los datos para el formulario que permite especificar
+#   las metas de los objetivos 
+
   def setindicatorsgoals
     @score_date = ScoreDate.find(params[:id])
     #List all de indicators names that are about to be edited
@@ -96,6 +99,9 @@ class ScoreDatesController < ApplicationController
         @names << i.indicator.name
     }
   end
+
+# Dada una fecha, prepara los datos para el formulario que permite especificar
+#   el desempeno de los indicadores 
 
   def setindicatorsscores
     @score_date = ScoreDate.find(params[:id])
@@ -107,6 +113,9 @@ class ScoreDatesController < ApplicationController
     }
   end
 
+# Dada una fecha, prepara los datos para el formulario que permite especificar
+#   el desempeno de las perspectivas
+
   def setperspectivesscores
     @score_date = ScoreDate.find(params[:id])
     #List all de indicators names that are about to be edited
@@ -117,6 +126,9 @@ class ScoreDatesController < ApplicationController
     }
   end
 
+# Dada una fecha, prepara los datos para el formulario que permite especificar
+#   el desempeno de los objetivos
+
   def setobjectivesscores
     @score_date = ScoreDate.find(params[:id])
     #List all de indicators names that are about to be edited
@@ -126,6 +138,9 @@ class ScoreDatesController < ApplicationController
         @names << i.objective.name
     }
   end
+
+# Dada una fecha, prepara los datos para el formulario que permite especificar
+#   los valores para cada dato crudo. 
 
   def filloperands
     @score_date = ScoreDate.find(params[:id])

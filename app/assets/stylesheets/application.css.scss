@@ -60,7 +60,9 @@
 .darkborder td, .darkborder th { border-top:1px dotted #000 !important;}
 .table th{font-size:15px; color:#00489b;}
 
-.table td{vertical-align:middle;}
+.table td{vertical-align:middle;
+          font-size : 12px; 
+}
 .table th{text-align:center !important;}
 .table tdc{text-align:center;}
 .table tdl{text-align:left;}

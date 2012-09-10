@@ -31,7 +31,7 @@ module VectorsHelper
           ind = IndicatorScore.find_by_indicator_id_and_scoredate_id(i.id,date.id)
           link = link_to ind.indicator.acronym, indicatoratdate_path(ind.indicator_id,ind.scoredate_id,6), :class => indicatorscorestate(ind), :style=>'color:#FFFFFF;'
 
-          lay = lay + '<tr><td></td><td>' + link + '</td>'
+          lay = lay + '<tr><td colspan = "2">' + link + '</td>'
           lay = lay + '<td>' + i.unit + '</td>'
           lay = lay+ '<td>'+ ind.score.to_s + '</td>'
           lay = lay+ '<td>'+ ind.goal.to_s + '</td>'

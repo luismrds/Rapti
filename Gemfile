@@ -22,3 +22,4 @@ gem 'therubyracer'
 gem "bootstrap-sass", ">= 2.0.3"
 gem "google_visualr"
 gem "pg"
+gem 'ratchetio', '>= 0.1.2'

@@ -14,11 +14,44 @@ vertical-align:middle;
 
 <div class="row-fluid" align = "center">
   <%= link_to "Vista normal" , vectoratdate_path(@vector,@date) , :class => "btn" %>
-  <%= link_to "Solo objetivos" , vectoratdateonlyobjectives_path(@vector,@date) , :class => "btn" %>
+  <!--<%= link_to "Solo objetivos" , vectoratdateonlyobjectives_path(@vector,@date) , :class => "btn" %>-->
   <%= link_to "Todos los datos" , vectoratdatecomplete_path(@vector,@date) , :class => "btn" %>
 </div>
-
 <br>
+
+<table class="table table-bordered table-striped">        	
+  <thead>
+  	<tr>
+      	<th width="5%">&nbsp;</th>
+        <th width="95%" colspan = "2">Objetivos</th>
+        <th>Unidad</th>
+        <th>Valor</th>
+        <th>Meta</th>
+        <th>Avance</th>
+        <th>Base</th>
+        <th>Comp</th>
+     </tr>
+  </thead>
+  <tbody>
+    <% if @financiera.size > 0 %>
+      <%=h onlyObjeWithOvals(@financiera,@date) %>
+    <% end %>
+    <% if @clientes.size > 0 %>
+      <%=h onlyObjeWithOvals(@clientes,@date) %>
+    <% end %>
+    <% if @procesos.size > 0 %>
+      <%=h onlyObjeWithOvals(@procesos,@date) %>
+    <% end %>
+    <% if @desarrollo.size > 0 %>
+      <%=h onlyObjeWithOvals(@desarrollo,@date) %>
+    <% end %>
+  </tbody>
+</table>
+
+<!--
+
+
+
 
 <div class="row-fluid">
 	<div class="span4">
@@ -47,9 +80,9 @@ vertical-align:middle;
                                 <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
                                   <%=h image_tag(objectiveStaticButton(o,@date), :size => "148x70")%>
                                 <% end %>
-                              </div><!--span4-->
+                              </div>
                               <% if i%2 == 0 %>
-                                  </div> <!--fin row--></br>
+                                  </div> </br>
                                 <div class="row-fluid">
                               <% end %>
                           <% end %>
@@ -74,9 +107,9 @@ vertical-align:middle;
                                 <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
                                   <%=h image_tag(objectiveStaticButton(o,@date), :size => "148x70")%>
                                 <% end %>
-                              </div><!--span4-->
+                              </div>
                               <% if i%2 == 0 %>
-                                  </div> <!--fin row--></br>
+                                  </div> </br>
                                 <div class="row-fluid">
                               <% end %>
                           <% end %>
@@ -101,9 +134,9 @@ vertical-align:middle;
                                 <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
                                   <%=h image_tag(objectiveStaticButton(o,@date), :size => "148x70")%>
                                 <% end %>
-                              </div><!--span4-->
+                              </div>
                               <% if i%2 == 0 %>
-                                  </div> <!--fin row--></br>
+                                  </div> </br>
                                 <div class="row-fluid">
                               <% end %>
                           <% end %>
@@ -127,9 +160,9 @@ vertical-align:middle;
                                <%= link_to objectiveatdate_path(o.id,@date.id,6) do %>
                                   <%=h image_tag(objectiveStaticButton(o,@date), :size => "148x70")%>
                                 <% end %>
-                              </div><!--span4-->
+                              </div>
                               <% if i%3 == 0 %>
-                                  </div> <!--fin row--></br>
+                                  </div></br>
                                 <div class="row-fluid">
                               <% end %>
                           <% end %>
@@ -175,6 +208,8 @@ vertical-align:middle;
 
 </div>
 </div>
+
+-->
 
 <div class="row-fluid" align="center">
     

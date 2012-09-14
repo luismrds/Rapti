@@ -21,7 +21,8 @@ module VectorsHelper
       lay = lay + '<tr>'
       lay = lay + '<td colspan = "2">'
         a = ObjectiveScore.find_by_objective_id_and_scoredate_id(o.id,date.id)
-        lay = lay+ o.acronym.to_s + '</td>' + '<td>'+ "%" + '</td>'
+        link = link_to image_tag(circleColor(a), :size => "15x15"), objectiveatdate_path(o, date, 6), :style=>'color:#FFFFFF;'
+        lay = lay+ o.acronym.to_s + " " + link + '</td>' + '<td>'+ "%" + '</td>'
         lay = lay+ '<td>'+ a.score.to_s + '</td>'
         lay = lay+ '<td>'+ a.goal.to_s + '</td>'
         lay = lay+ '<td>'+ a.progress.to_s+ '</td>'

@@ -9,7 +9,7 @@ vertical-align:middle;
 
 
 
-<h2><%=h image_tag("bmo.png", :size => "100x70") %> Vector: <%=h @vector.name %> (<%=h scoredate_month_to_text(@date)%>/<%=h @date.year%>)</h2>
+<h2><%=h image_tag("bmo.png", :size => "100x70") %> Vector: <%=h @vector.name %> <font size="2"> (<%=h scoredate_month_to_text(@date)%>/<%=h @date.year%>)</h2>
 <br>
 
 <div class="row-fluid" align = "center">
@@ -146,7 +146,7 @@ vertical-align:middle;
 
 
   <div class="span8">
-    <table class="table table-bordered table-striped">        	
+    <table class="table table-bordered table-striped" cellpadding="1">        	
       <thead>
       	<tr>
           	<th width="5%"">&nbsp;</th>

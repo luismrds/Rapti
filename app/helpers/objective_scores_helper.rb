@@ -127,6 +127,20 @@ module ObjectiveScoresHelper
       s.save
     }
   end 
+
+  def circleColor(os)
+    score = os.score
+    #if score >= ind.redfrom && score < ind.redto
+    if score >= os.redfrom && score < os.redto
+      return 'circulo_rojo.png'
+    end
+    if score >= os.yellowfrom && score <= os.yellowto
+      return 'circulo_amarillo.png'
+    end
+    if score > os.greenfrom #&& score <= ind.greento
+      return 'circulo_verde.png'
+    end
+  end 
 end
 
 

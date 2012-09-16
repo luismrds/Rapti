@@ -10,9 +10,8 @@
       </ul>
     </div>
   <% end %>
-
-<h2>Para cada indicador indique su valor para el mes <%=h @score_date.month %> del anho <%=h @score_date.year %></h2>
-
+<% @date = @score_date%>
+<h2>Para cada indicador indique su valor <font size="2">(<%=h scoredate_month_to_text(@date)%>/<%=h @date.year%>)</font></h2>
     <% i=0 %>
 
   <%= f.fields_for :indicatorscores do |builder| %>
@@ -36,19 +35,25 @@
   </div>
 <% end %>
 
-<h2>Elija el mes del anho 2012</h2>
+<h2>Elija el mes</h2>
 
 <div class="row-fluid" align="center">
-    <%= link_to "Enero", setindicatorsscores_path(2)%>
-    <%= link_to "Febrero", setindicatorsscores_path(3)%>
-    <%= link_to "Marzo", setindicatorsscores_path(4)%>
-    <%= link_to "Abril", setindicatorsscores_path(5)%>
-    <%= link_to "Mayo", setindicatorsscores_path(1)%>
-    <%= link_to "Junio", setindicatorsscores_path(6)%>
-    <%= link_to "Julio", setindicatorsscores_path(7)%>
-    <%= link_to "Agosto", setindicatorsscores_path(8)%>
-    <%= link_to "Septiembre", setindicatorsscores_path(9)%>
-    <%= link_to "Octubre", setindicatorsscores_path(10)%>
-    <%= link_to "Noviembre", setindicatorsscores_path(11)%>
-    <%= link_to "Diciembre", setindicatorsscores_path(12)%>
+    <% if ScoreDate.find_by_year_and_month(@date.year - 1,12) %>
+      <%= link_to @date.year - 1, setindicatorsscores_path(ScoreDate.find_by_year_and_month(@date.year - 1,12).id)%>
+        <<
+    <% end %>
+    <%= link_to "Enero", setindicatorsscores_path(ScoreDate.find_by_year_and_month(@date.year,1).id)%>
+    <%= link_to "Febrero", setindicatorsscores_path(ScoreDate.find_by_year_and_month(@date.year,2).id)%>
+    <%= link_to "Marzo", setindicatorsscores_path(ScoreDate.find_by_year_and_month(@date.year,3).id)%>
+    <%= link_to "Abril", setindicatorsscores_path(ScoreDate.find_by_year_and_month(@date.year,4).id)%>
+    <%= link_to "Mayo", setindicatorsscores_path(ScoreDate.find_by_year_and_month(@date.year,5).id)%>
+    <%= link_to "Junio", setindicatorsscores_path(ScoreDate.find_by_year_and_month(@date.year,6).id)%>
+    <%= link_to "Julio", setindicatorsscores_path(ScoreDate.find_by_year_and_month(@date.year,7).id)%>
+    <%= link_to "Agosto", setindicatorsscores_path(ScoreDate.find_by_year_and_month(@date.year,8).id)%>
+    <%= link_to "Septiembre", setindicatorsscores_path(ScoreDate.find_by_year_and_month(@date.year,9).id)%>
+    <%= link_to "Octubre", setindicatorsscores_path(ScoreDate.find_by_year_and_month(@date.year,10).id)%>
+    <%= link_to "Noviembre", setindicatorsscores_path(ScoreDate.find_by_year_and_month(@date.year,11).id)%>
+    <%= link_to "Diciembre", setindicatorsscores_path(ScoreDate.find_by_year_and_month(@date.year,12).id)%>
+      >>
+    <%= link_to @date.year + 1, setindicatorsscores_path(ScoreDate.find_by_year_and_month(@date.year + 1,1).id)%>
 </div>

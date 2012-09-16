@@ -28,6 +28,8 @@ Rails3BootstrapDeviseCancan::Application.routes.draw do
   resources :perspective_scores
 
   match "score_dates/setindicatorsgoals/:id" => "score_dates#setindicatorsgoals", :as => :setindicatorsgoals
+  match "score_dates/setindicatorsgrowth/:id" => "score_dates#setindicatorsgrowth", :as => :setindicatorsgrowth
+  match "score_dates/setindicatorsbase/:id" => "score_dates#setindicatorsbase", :as => :setindicatorsbase
   match "score_dates/filloperands/:id" => "score_dates#filloperands", :as => :filloperands
   match "score_dates/setindicatorsscores/:id" => "score_dates#setindicatorsscores", :as => :setindicatorsscores
   match "score_dates/setperspectivesscores/:id" => "score_dates#setperspectivesscores", :as => :setperspectivesscores

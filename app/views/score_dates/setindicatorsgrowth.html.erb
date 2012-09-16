@@ -1,0 +1,55 @@
+<%= form_for(@score_date) do |f| %>
+  <% if @score_date.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@score_date.errors.count, "error") %> prohibited this score_date from being saved:</h2>
+
+      <ul>
+      <% @score_date.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<h2>Para cada indicador indique su crecimiento <font size="2">(<%=h scoredate_month_to_text(@score_date)%>/<%=h @score_date.year%>)</font></h2>
+
+    <% i=0 %>
+
+  <%= f.fields_for :indicatorscores do |builder| %>
+   <% if i%3 == 0 %>
+        <div class="row-fluid">
+    <% end %>
+
+    <div class="span4">    
+    <%= builder.label :indicatorscores_id, @names[i] %>
+    <% i = i+1 %>
+    <%= builder.number_field :growth %>
+   </div><!-- fin span -->
+    <% if i%3 == 0 %>
+        </div> <!--fin row-->
+<div class="row-fluid">
+    <% end %>
+  <% end %>
+</div>
+  <div class="actions">
+    <%= f.submit "Establecer metas"%>
+  </div>
+
+<% end %>
+
+<h2>Elija el mes del anho 2012</h2>
+
+<div class="row-fluid" align="center">
+    <%= link_to "Enero", setindicatorsgrowth_path(2)%>
+    <%= link_to "Febrero", setindicatorsgrowth_path(3)%>
+    <%= link_to "Marzo", setindicatorsgrowth_path(4)%>
+    <%= link_to "Abril", setindicatorsgrowth_path(5)%>
+    <%= link_to "Mayo", setindicatorsgrowth_path(1)%>
+    <%= link_to "Junio", setindicatorsgrowth_path(6)%>
+    <%= link_to "Julio", setindicatorsgrowth_path(7)%>
+    <%= link_to "Agosto", setindicatorsgrowth_path(8)%>
+    <%= link_to "Septiembre", setindicatorsgrowth_path(9)%>
+    <%= link_to "Octubre", setindicatorsgrowth_path(10)%>
+    <%= link_to "Noviembre", setindicatorsgrowth_path(11)%>
+    <%= link_to "Diciembre", setindicatorsgrowth_path(12)%>
+</div>

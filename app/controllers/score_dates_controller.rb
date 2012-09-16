@@ -114,6 +114,19 @@ class ScoreDatesController < ApplicationController
   end
 
 # Dada una fecha, prepara los datos para el formulario que permite especificar
+#   el crecimiento de los indicadores 
+
+  def setindicatorsgrowth
+    @score_date = ScoreDate.find(params[:id])
+    #List all de indicators names that are about to be edited
+    indicatorscores = @score_date.indicatorscores
+    @names = []
+    indicatorscores.each{|i|
+        @names << i.indicator.name
+    }
+  end
+
+# Dada una fecha, prepara los datos para el formulario que permite especificar
 #   el desempeno de las perspectivas
 
   def setperspectivesscores

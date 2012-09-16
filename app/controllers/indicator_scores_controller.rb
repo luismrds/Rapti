@@ -92,7 +92,7 @@ class IndicatorScoresController < ApplicationController
     @indicator = Indicator.find(params[:ind])
     @date = ScoreDate.find(params[:date])
     @trend = params[:trend]
-    @sons = @indicator.sons
+    @sons = @indicator.sons.order("name")
     @currentsons = []
     @sons.each{|i|
       @currentsons << IndicatorScore.find_by_indicator_id_and_scoredate_id(i.id, params[:date])

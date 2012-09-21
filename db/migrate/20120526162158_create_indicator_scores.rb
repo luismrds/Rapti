@@ -13,6 +13,7 @@ class CreateIndicatorScores < ActiveRecord::Migration
       t.float :greento
       t.float :baseline
       t.float :growth
+      t.float :progress
 
       t.timestamps
     end

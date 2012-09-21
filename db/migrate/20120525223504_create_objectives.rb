@@ -19,7 +19,8 @@ class CreateObjectives < ActiveRecord::Migration
       t.string :acronym
       t.boolean :show, :default => true
       t.string :greenButton
-      t.string :redbutton
+      t.string :yellowButton
+      t.string :redButton
       t.integer :col
       t.integer :row 
 

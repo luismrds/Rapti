@@ -72,7 +72,7 @@ module DemosHelper
       dates = ScoreDate.all
       objectives.each{|obj|
           dates.each{|da|
-              ObjectiveScore.new(:objective_id => obj.id, :scoredate_id => da.id, :score => rand(100), :redfrom => obj.redfrom, :redto => obj.redto, :yellowfrom => obj.yellowfrom, :yellowto => obj.yellowto, :greenfrom => obj.greenfrom, :greento => obj.greento).save
+              ObjectiveScore.new(:objective_id => obj.id, :scoredate_id => da.id, :score => rand(100), :redfrom => 0, :redto => 25, :yellowfrom => 25, :yellowto => 75, :greenfrom => 75, :greento => 100).save
           }
       }
   end

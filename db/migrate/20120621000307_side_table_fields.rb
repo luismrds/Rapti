@@ -1,6 +1,6 @@
 class SideTableFields < ActiveRecord::Migration
   def up
-    add_column :objectives, :progress, :float, :default => nil
+=begin    add_column :objectives, :progress, :float, :default => nil
     add_column :objectives, :baseline, :float, :default => nil
     add_column :objectives, :growth, :float, :default => nil    
     add_column :objectives, :goal, :float, :default => nil
@@ -18,7 +18,7 @@ class SideTableFields < ActiveRecord::Migration
     add_column :indicator_scores, :progress, :float, :default => nil
     add_column :indicator_scores, :baseline, :float, :default => nil
     add_column :indicator_scores, :growth, :float, :default => nil
-
+=end
   end
 
   def down

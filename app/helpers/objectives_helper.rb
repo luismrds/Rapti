@@ -93,13 +93,13 @@ include ObjectiveScoresHelper
   def objectiveStaticButton(obj,date)
     score = ObjectiveScore.find_by_objective_id_and_scoredate_id(obj.id,date.id).score
     #if score >= obj.redfrom && score < obj.redto
-    if score < obj.redto
+    if score < 25 #score < obj.redto
       return obj.redButton
     end
-    if score >= obj.yellowfrom && score <= obj.yellowto
+    if score >= 25 && score <= 75 #score >= obj.yellowfrom && score <= obj.yellowto
       return obj.yellowButton
     end
-    if score > obj.greenfrom #&& score <= obj.greento
+    if score > 100 #score > obj.greenfrom #&& score <= obj.greento
       return obj.greenButton
     end
   end

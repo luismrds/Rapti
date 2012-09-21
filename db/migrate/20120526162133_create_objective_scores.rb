@@ -10,6 +10,10 @@ class CreateObjectiveScores < ActiveRecord::Migration
       t.float :yellowto
       t.float :greenfrom
       t.float :greento
+      t.float :progress
+      t.float :baseline
+      t.float :growth
+      t.float :goal
 
       t.timestamps
     end

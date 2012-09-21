@@ -10,6 +10,7 @@ class CreatePerspectiveScores < ActiveRecord::Migration
       t.float :yellowto
       t.float :greenfrom
       t.float :greento
+      t.float :goal
 
       t.timestamps
     end

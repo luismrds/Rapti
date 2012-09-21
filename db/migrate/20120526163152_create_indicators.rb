@@ -12,6 +12,14 @@ class CreateIndicators < ActiveRecord::Migration
       t.float :yellowto
       t.float :greenfrom
       t.float :greento
+      t.float :progress
+      t.float :baseline
+      t.float :growth
+      t.string :acronym
+      t.string :unit
+      t.string :formula
+      t.boolean :show, :default => true
+
 
       t.timestamps
     end

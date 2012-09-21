@@ -9,7 +9,8 @@ class CreatePerspectives < ActiveRecord::Migration
       t.float :yellowfrom
       t.float :yellowto
       t.float :greenfrom
-      t.float :greento      
+      t.float :greento
+      t.string :title_image      
       
 
       t.timestamps

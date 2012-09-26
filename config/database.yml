@@ -4,14 +4,14 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 development:
-#  adapter: postgresql
-#  username: bmo
-#  password: 3x3cc4 # from psql setup, see Postgresql
-#  database: cloudbmo
-  adapter: sqlite3
-  database: db/developmentNetix.sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: postgresql
+  username: bmo
+  password: 3x3cc4 # from psql setup, see Postgresql
+  database: cloudbmo
+#  adapter: sqlite3
+#  database: db/developmentNetix.sqlite3
+#  pool: 5
+#  timeout: 5000
 
 
 # Warning: The database defined as "test" will be erased and

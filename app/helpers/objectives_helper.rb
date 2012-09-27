@@ -99,7 +99,7 @@ include ObjectiveScoresHelper
     if score >= 25 && score <= 75 #score >= obj.yellowfrom && score <= obj.yellowto
       return obj.yellowButton
     end
-    if score > 100 #score > obj.greenfrom #&& score <= obj.greento
+    if score > 75 #score > obj.greenfrom #&& score <= obj.greento
       return obj.greenButton
     end
   end

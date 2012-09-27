@@ -156,7 +156,7 @@ module PerspectiveScoresHelper
     return lay.html_safe
   end 
 
-  def perspectiveCoordinatesLayout(perspective, date)
+  def perspectiveCoordinatesLayout(perspective, date, size)
     lay = ""
     rowcounter = 1
     rows = []
@@ -187,7 +187,7 @@ module PerspectiveScoresHelper
           lay = lay + '<div class="span2" align="center"><!--columnaVacia--></div>' 
         }
         lay = lay + '<div class="span2" align="center">'
-        a = link_to image_tag(objectiveStaticButton(o,date)), objectiveatdate_path(o.id,@date.id,6)
+        a = link_to image_tag(objectiveStaticButton(o,date), :size => size), objectiveatdate_path(o.id,@date.id,6)
         lay = lay + a + '</div><!--div para el link -->'
         colcounter = colcounter + dif + 1
       }

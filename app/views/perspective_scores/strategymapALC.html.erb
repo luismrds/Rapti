@@ -83,7 +83,7 @@ a:active {
                 <table border="1" align="center">
                 <tr>
                 <td>
-                  <div class="row-fluid">
+                  <div class="row-fluid" align="center">
                     <%= link_to image_tag(objectiveStaticButton(Objective.find(11),@date), :size => size), objectiveatdate_path(11,@date.id,6) %>
                     <%= link_to image_tag(objectiveStaticButton(Objective.find(10),@date), :size => size), objectiveatdate_path(10,@date.id,6) %>
                   </div>
@@ -94,34 +94,34 @@ a:active {
 
 
                 <td>
-                  <div class="row-fluid">
+                  <div class="row-fluid" align="center">
                       <%= link_to image_tag(objectiveStaticButton(Objective.find(12),@date), :size => size), objectiveatdate_path(12,@date.id,6) %>
                       <%= link_to image_tag(objectiveStaticButton(Objective.find(13),@date), :size => size), objectiveatdate_path(13,@date.id,6) %>
                   </div>
-                  <div class="row-fluid">
+                  <div class="row-fluid" align="center">
                       <%= link_to image_tag(objectiveStaticButton(Objective.find(14),@date), :size => size), objectiveatdate_path(14,@date.id,6) %>
                   </div>
-                  <div class="row-fluid" align="center">
+                  <div class="row-fluid" align="center" vertical-align = "bottom">
                     <font size="1"><%= link_to Vector.find(2).name , vectoratdate_path(2,@date)%></font>
                   </div>
                 </td>
 
 
                 <td>
-                  <div class="row-fluid">
+                  <div class="row-fluid" align="center">
                     <%= link_to image_tag(objectiveStaticButton(Objective.find(15),@date), :size => size), objectiveatdate_path(15,@date.id,6) %>
                   </div>
-                  <div class="row-fluid" align="center">
+                  <div class="row-fluid" align="center" vertical-align = "bottom">
                     <font size="1"><%= link_to Vector.find(3).name , vectoratdate_path(3,@date)%></font>
                   </div>
                 </td>
 
 
                 <td>
-                  <div class="row-fluid">
-                    <%= link_to image_tag(objectiveStaticButton(Objective.find(16),@date), :size => size), objectiveatdate_path(14,@date.id,6) %>
-                  </div>
                   <div class="row-fluid" align="center">
+                    <div align="center"><%= link_to image_tag(objectiveStaticButton(Objective.find(16),@date), :size => size), objectiveatdate_path(16,@date.id,6) %></div>
+                  </div>
+                  <div class="row-fluid" align="center" vertical-align = "bottom">
                     <font size="1"><%= link_to Vector.find(4).name , vectoratdate_path(4,@date)%></font>
                   </div>
                 </td>

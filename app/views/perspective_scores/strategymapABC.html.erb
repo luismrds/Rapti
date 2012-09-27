@@ -78,13 +78,13 @@ a:active {
         <tr>
         	<td rowspan="<%=h (@procesos.showableObjectives.size/4).ceil %>"><%= link_to image_tag("procesos_btn.png"), showdashboard_path("perspective", "trend", 3, @date.id), :style=>'color:#FFFFFF;'%></td>
             <td>
-              
+<% size = "194x130"%>              
                 <table border="1" align="center">
                 <tr>
                 <td>
                   <div class="row-fluid">
-                    <%= link_to image_tag(objectiveStaticButton(Objective.find(12),@date), :size => "194x130"), objectiveatdate_path(11,@date.id,6) %>
-                    <%= link_to image_tag(objectiveStaticButton(Objective.find(13),@date), :size => "194x130"), objectiveatdate_path(11,@date.id,6) %>
+                    <%= link_to image_tag(objectiveStaticButton(Objective.find(12),@date), :size => size), objectiveatdate_path(12,@date.id,6) %>
+                    <%= link_to image_tag(objectiveStaticButton(Objective.find(13),@date), :size => size), objectiveatdate_path(13,@date.id,6) %>
                   </div>
                   <div class="row-fluid" align="center">
                     <font size="1"><%= link_to Vector.find(1).name , vectoratdate_path(1,@date)%></font>
@@ -92,7 +92,7 @@ a:active {
                 </td>
                 <td>
                   <div class="row-fluid">
-                    <%= link_to image_tag(objectiveStaticButton(Objective.find(16),@date), :size => "194x130"), objectiveatdate_path(11,@date.id,6) %>
+                    <%= link_to image_tag(objectiveStaticButton(Objective.find(16),@date), :size => size), objectiveatdate_path(16,@date.id,6) %>
 
                   </div>
                   <div class="row-fluid" align="center">
@@ -101,7 +101,7 @@ a:active {
                 </td>
                 <td>
                   <div class="row-fluid">
-                    <%= link_to image_tag(objectiveStaticButton(Objective.find(22),@date), :size => "194x130"), objectiveatdate_path(11,@date.id,6) %>
+                    <%= link_to image_tag(objectiveStaticButton(Objective.find(22),@date), :size => size), objectiveatdate_path(22,@date.id,6) %>
 
                   </div>
                   <div class="row-fluid" align="center">

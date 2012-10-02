@@ -56,120 +56,102 @@ a:active {
         <td>
           <div class="row-fluid">
             <div class="span1" align="center"></div>
-            <div class="span2" align="center">
+            <div class="span1" align="center"></div>
+            <div class="span1" align="center"></div>
+            <div class="span1" align="center">
               <%= image_tag("triangulo.png", :size => "80x20")%>
             </div>
             <div class="span1" align="center"></div>
             <div class="span1" align="center"></div>
-            <div class="span2" align="center">
+            <div class="span1 align="center">
               <%= image_tag("triangulo.png", :size => "80x20")%>
             </div>
             <div class="span1" align="center"></div>
-            <div class="span2" align="center">
+            <div class="span1" align="center"></div>
+            <div class="span1" align="center">
               <%= image_tag("triangulo.png", :size => "80x20")%>
             </div>
-
-            <div class="span2" align = "center">
-              <%= image_tag("triangulo.png", :size => "80x20")%></div>
+            <div class="span1" align = "center"></div>
           </div>
         </td>
-
+<% size = "136x91"%>
         <tr>
         	<td rowspan="<%=h (@procesos.showableObjectives.size/4).ceil %>"><%= link_to image_tag("procesos_btn.png"), showdashboard_path("perspective", "trend", 3, @date.id), :style=>'color:#FFFFFF;'%></td>
             <td>
-              <div class="span4 alert alert-error">
-                <div class="row-fluid">
-                  <div class="span6"></div><div class="span6">
-                    <%= link_to image_tag(objectiveStaticButton(Objective.find(11),@date)), objectiveatdate_path(11,@date.id,6) %>
+              
+                <table border="1" align="center">
+                <tr>
+                <td>
+                  <div class="row-fluid">
+                    <%= link_to image_tag(objectiveStaticButton(Objective.find(11),@date), :size => size), objectiveatdate_path(11,@date.id,6) %>
+                    <%= link_to image_tag(objectiveStaticButton(Objective.find(10),@date), :size => size), objectiveatdate_path(10,@date.id,6) %>
                   </div>
-                </div>
-<div class="row-fluid" align = "center"> </br></div>
-                <div class="row-fluid">
-                  <div class="span6">
-                    <%= link_to image_tag(objectiveStaticButton(Objective.find(10),@date)), objectiveatdate_path(10,@date.id,6) %>
+                  <div class="row-fluid" align="center">
+                    <font size="1"><%= link_to Vector.find(1).name , vectoratdate_path(1,@date)%></font>
                   </div>
-                </div>
-                <div class="row-fluid" align="center">
-                  <font size="1"><%= link_to Vector.find(1).name , vectoratdate_path(1,@date)%></font>
-                </div>
+                </td>
 
-              </div><!--alert error-->
 
-              <div class="span4 alert alert-error">
-                <div class="row-fluid">
-                  <div class="span6"></div>
-                    <div class="span6">
-                      <%= link_to image_tag(objectiveStaticButton(Objective.find(13),@date), :size => "148x70"), objectiveatdate_path(13,@date.id,6) %>
-                    </div>
-                </div><!-- primer row -->
-<div class="row-fluid" align = "center"> </br></div>
-                <div class="row-fluid">
-                  <div class="span6">
-                    <%= link_to image_tag(objectiveStaticButton(Objective.find(14),@date), :size => "148x70"), objectiveatdate_path(14,@date.id,6) %>
-                  </div>                  
-                  <div class="span6">
-                    <%= link_to image_tag(objectiveStaticButton(Objective.find(12),@date), :size => "148x70"), objectiveatdate_path(12,@date.id,6) %>
+                <td>
+                  <div class="row-fluid">
+                      <%= link_to image_tag(objectiveStaticButton(Objective.find(12),@date), :size => size), objectiveatdate_path(12,@date.id,6) %>
+                      <%= link_to image_tag(objectiveStaticButton(Objective.find(13),@date), :size => size), objectiveatdate_path(13,@date.id,6) %>
                   </div>
-
-               </div><!--row fluid-->
-
-                <div class="row-fluid" align="center">
-                  <font size="1"><%= link_to Vector.find(2).name , vectoratdate_path(2,@date)%></font>
-                </div>
-              </div><!--alert error-->
-
-
-              <div class="span2 alert alert-error">
-                <div class="row-fluid" align="center">
-                    <%= link_to image_tag(objectiveStaticButton(Objective.find(15),@date), :size => "148x70"), objectiveatdate_path(15,@date.id,6) %>
-
-                </div><!-- 1er row -->
-                <br />
-                <div class="row" align="center">
-                  <!--Insertar un vacio-->
-                  <%= image_tag("vacio.png", :size => "148x70") %>
-                </div> <!-- 2do row -->
-                <div class="row-fluid" align="center">
-                  <font size="1"><%= link_to Vector.find(3).name , vectoratdate_path(3,@date)%></font>
-                </div><!-- 3er row -->
-              </div><!--alert error-->
+                  <div class="row-fluid">
+                      <%= link_to image_tag(objectiveStaticButton(Objective.find(14),@date), :size => size), objectiveatdate_path(14,@date.id,6) %>
+                  </div>
+                  <div class="row-fluid" align="center">
+                    <font size="1"><%= link_to Vector.find(2).name , vectoratdate_path(2,@date)%></font>
+                  </div>
+                </td>
 
 
-              <div class="span2 alert alert-error">
-                <div class="row-fluid" align="center">
-                    <%= link_to image_tag(objectiveStaticButton(Objective.find(16),@date), :size => "148x70"), objectiveatdate_path(16,@date.id,6) %>
-                </div>
-                <br />
-                <div class="row-fluid" align="center">
-                  <!--Insertar un vacio-->
-                  <%= image_tag("vacio.png", :size => "148x70") %>
-                </div>
-                <div class="row-fluid" align="center">
-                  <font size="1"><%= link_to Vector.find(4).name , vectoratdate_path(4,@date)%></font>
-                </div>
-              </div><!--alert error-->
+                <td>
+                  <div class="row-fluid">
+                    <%= link_to image_tag(objectiveStaticButton(Objective.find(15),@date), :size => size), objectiveatdate_path(15,@date.id,6) %>
+                  </div>
+                  <div class="row-fluid" align="center">
+                    <font size="1"><%= link_to Vector.find(3).name , vectoratdate_path(3,@date)%></font>
+                  </div>
+                </td>
 
+
+                <td>
+                  <div class="row-fluid">
+                    <%= link_to image_tag(objectiveStaticButton(Objective.find(16),@date), :size => size), objectiveatdate_path(14,@date.id,6) %>
+                  </div>
+                  <div class="row-fluid" align="center">
+                    <font size="1"><%= link_to Vector.find(4).name , vectoratdate_path(4,@date)%></font>
+                  </div>
+                </td>
+
+
+                </tr>
+                </table>
+              </div>
             </td>
+
         </tr>
         <td></td>
         <td>
           <div class="row-fluid">
             <div class="span1" align="center"></div>
-            <div class="span2" align="center">
+            <div class="span1" align="center"></div>
+            <div class="span1" align="center"></div>
+            <div class="span1" align="center">
               <%= image_tag("triangulo.png", :size => "80x20")%>
             </div>
             <div class="span1" align="center"></div>
             <div class="span1" align="center"></div>
-            <div class="span2" align="center">
+            <div class="span1 align="center">
               <%= image_tag("triangulo.png", :size => "80x20")%>
             </div>
             <div class="span1" align="center"></div>
-            <div class="span2" align="center">
+            <div class="span1" align="center"></div>
+            <div class="span1" align="center">
               <%= image_tag("triangulo.png", :size => "80x20")%>
             </div>
-
-            <div class="span2" align = "center">
-              <%= image_tag("triangulo.png", :size => "80x20")%></div>
+            <div class="span1" align = "center"></div>
           </div>
         </td>
         <tr>
@@ -184,8 +166,10 @@ a:active {
 </div>
 
 <div class="row-fluid" align="center">
+  <% if ScoreDate.find_by_year_and_month(@date.year - 1,12) %>
     <%= link_to @date.year - 1, thestrategymap_path(ScoreDate.find_by_year_and_month(@date.year - 1,12).id)%>
       <<
+  <% end %>
     <%= link_to "Enero", thestrategymap_path(ScoreDate.find_by_year_and_month(@date.year,1).id)%>
     <%= link_to "Febrero", thestrategymap_path(ScoreDate.find_by_year_and_month(@date.year,2).id)%>
     <%= link_to "Marzo", thestrategymap_path(ScoreDate.find_by_year_and_month(@date.year,3).id)%>

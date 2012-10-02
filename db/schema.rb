@@ -29,15 +29,15 @@ ActiveRecord::Schema.define(:version => 20120625052345) do
     t.float    "yellowto"
     t.float    "greenfrom"
     t.float    "greento"
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
-    t.float    "progress"
     t.float    "baseline"
     t.float    "growth"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "indicators", :force => true do |t|
     t.string   "name"
+    t.string   "acronym"
     t.float    "weight"
     t.integer  "objective_id"
     t.integer  "operation_id"
@@ -47,11 +47,14 @@ ActiveRecord::Schema.define(:version => 20120625052345) do
     t.float    "yellowto"
     t.float    "greenfrom"
     t.float    "greento"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
     t.float    "progress"
     t.float    "baseline"
     t.float    "growth"
+    t.string   "unit"
+    t.string   "formula"
+    t.boolean  "show",         :default => true
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   create_table "indicators_objectives", :id => false, :force => true do |t|
@@ -69,16 +72,17 @@ ActiveRecord::Schema.define(:version => 20120625052345) do
     t.float    "yellowto"
     t.float    "greenfrom"
     t.float    "greento"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
     t.float    "progress"
     t.float    "baseline"
     t.float    "growth"
     t.float    "goal"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "objectives", :force => true do |t|
     t.string   "name"
+    t.string   "acronym"
     t.float    "weight"
     t.float    "score"
     t.integer  "perspective_id"
@@ -88,20 +92,26 @@ ActiveRecord::Schema.define(:version => 20120625052345) do
     t.float    "yellowto"
     t.float    "greenfrom"
     t.float    "greento"
-    t.datetime "created_at",     :null => false
-    t.datetime "updated_at",     :null => false
     t.float    "progress"
     t.float    "baseline"
     t.float    "growth"
+    t.string   "measurement"
+    t.boolean  "show",           :default => true
+    t.string   "greenButton"
+    t.string   "redbutton"
+    t.integer  "col"
+    t.integer  "row"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
   end
 
   create_table "operations", :force => true do |t|
     t.string   "name"
-    t.string   "operator",      :limit => 1
-    t.integer  "firstoperand"
-    t.integer  "secondoperand"
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.string   "operator",         :limit => 1
+    t.integer  "firstoperand_id"
+    t.integer  "secondoperand_id"
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "perspective_scores", :force => true do |t|
@@ -114,6 +124,7 @@ ActiveRecord::Schema.define(:version => 20120625052345) do
     t.float    "yellowto"
     t.float    "greenfrom"
     t.float    "greento"
+    t.float    "goal"
     t.datetime "created_at",     :null => false
     t.datetime "updated_at",     :null => false
   end
@@ -127,12 +138,14 @@ ActiveRecord::Schema.define(:version => 20120625052345) do
     t.float    "yellowto"
     t.float    "greenfrom"
     t.float    "greento"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "title_image"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "raw_data", :force => true do |t|
     t.string   "name"
+    t.string   "hint"
     t.integer  "operation_id"
     t.float    "default_value", :default => 1.0
     t.datetime "created_at",                     :null => false

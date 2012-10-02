@@ -1,4 +1,4 @@
-<h2>Dashboard de<%=h @tc %> (<%=h scoredate_month_to_text(@sc)%>/<%=h @sc.year%>) </h2>
+<h2>Dashboard de<%=h @tc %> <font size="2">(<%=h scoredate_month_to_text(@sc)%>/<%=h @sc.year%>) </font></h2>
 <% if @type == "current" %>
   <h3><%= link_to "Ver tendencias", showdashboard_path(@category, "trend", @individual.id, @sc.id)%></h3>
 <% end %>
@@ -28,9 +28,31 @@
       </div><!--span4-->
       <% i = i + 1%>
       <% if i%3 == 0 %>
-          </div><!--row-->
+          </div><!--row--><br>
           <div class="row-fluid">
       <% end %>
 
     <% end %>
   </div>
+<br>
+<div class="row-fluid" align="center">
+  <% if ScoreDate.find_by_year_and_month(@sc.year - 1,12) %>
+    <%= link_to @sc.year - 1, showdashboard_path(@category, @type, @individual, ScoreDate.find_by_year_and_month(@sc.year - 1,12).id)%>
+      <<
+  <% end %>
+    <%= link_to "Enero", showdashboard_path(@category, @type, @individual, ScoreDate.find_by_year_and_month(@sc.year,1).id)%>
+    <%= link_to "Febrero", showdashboard_path(@category, @type, @individual, ScoreDate.find_by_year_and_month(@sc.year,2).id)%>
+    <%= link_to "Marzo", showdashboard_path(@category, @type, @individual, ScoreDate.find_by_year_and_month(@sc.year,3).id)%>
+    <%= link_to "Abril", showdashboard_path(@category, @type, @individual, ScoreDate.find_by_year_and_month(@sc.year,4).id)%>
+    <%= link_to "Mayo", showdashboard_path(@category, @type, @individual, ScoreDate.find_by_year_and_month(@sc.year,5).id)%>
+    <%= link_to "Junio", showdashboard_path(@category, @type, @individual, ScoreDate.find_by_year_and_month(@sc.year,6).id)%>
+    <%= link_to "Julio", showdashboard_path(@category, @type, @individual, ScoreDate.find_by_year_and_month(@sc.year,7).id)%>
+    <%= link_to "Agosto", showdashboard_path(@category, @type, @individual, ScoreDate.find_by_year_and_month(@sc.year,8).id)%>
+    <%= link_to "Septiembre", showdashboard_path(@category, @type, @individual, ScoreDate.find_by_year_and_month(@sc.year,9).id)%>
+    <%= link_to "Octubre", showdashboard_path(@category, @type, @individual, ScoreDate.find_by_year_and_month(@sc.year,10).id)%>
+    <%= link_to "Noviembre", showdashboard_path(@category, @type, @individual, ScoreDate.find_by_year_and_month(@sc.year,11).id)%>
+    <%= link_to "Diciembre", showdashboard_path(@category, @type, @individual, ScoreDate.find_by_year_and_month(@sc.year,12).id)%>
+      >>
+    <%= link_to @sc.year + 1, showdashboard_path(@category, @type, @individual, ScoreDate.find_by_year_and_month(@sc.year + 1,1).id)%>
+</div>
+

@@ -11,7 +11,8 @@
     </div>
   <% end %>
 
-<h2>Para cada indicador indique su base <font size="2">(<%=h scoredate_month_to_text(@score_date)%>/<%=h @score_date.year%>)</font></h2>
+<% @date = @score_date%>
+<h2>Para cada indicador indique su base <font size="2">(<%=h scoredate_month_to_text(@date)%>/<%=h @date.year%>)</font></h2>
 
     <% i=0 %>
 
@@ -23,7 +24,7 @@
     <div class="span4">    
     <%= builder.label :indicatorscores_id, @names[i] %>
     <% i = i+1 %>
-    <%= builder.number_field :base %>
+    <%= builder.number_field :baseline %>
    </div><!-- fin span -->
     <% if i%3 == 0 %>
         </div> <!--fin row-->
@@ -37,7 +38,7 @@
 
 <% end %>
 
-<h2>Elija el mes del anho 2012</h2>
+<h2>Elija el mes del año <%=h @date.year %></h2>
 
 <div class="row-fluid" align="center">
     <% if ScoreDate.find_by_year_and_month(@date.year - 1,12) %>

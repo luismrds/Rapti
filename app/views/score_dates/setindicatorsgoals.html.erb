@@ -11,7 +11,8 @@
     </div>
   <% end %>
 
-<h2>Para cada indicador indique su meta <font size="2">(<%=h scoredate_month_to_text(@score_date)%>/<%=h @score_date.year%>)</font></h2>
+<% @date = @score_date %>
+<h2>Para cada indicador indique su meta <font size="2">(<%=h number_to_month(@date.month)%>/<%=h @date.year%>)</font></h2>
 
     <% i=0 %>
 
@@ -37,19 +38,29 @@
 
 <% end %>
 
-<h2>Elija el mes del anho 2012</h2>
 
+<h3>Elija el mes del año <%= @date.year %> </h3> 
 <div class="row-fluid" align="center">
-    <%= link_to "Enero", setindicatorsgoals_path(2)%>
-    <%= link_to "Febrero", setindicatorsgoals_path(3)%>
-    <%= link_to "Marzo", setindicatorsgoals_path(4)%>
-    <%= link_to "Abril", setindicatorsgoals_path(5)%>
-    <%= link_to "Mayo", setindicatorsgoals_path(1)%>
-    <%= link_to "Junio", setindicatorsgoals_path(6)%>
-    <%= link_to "Julio", setindicatorsgoals_path(7)%>
-    <%= link_to "Agosto", setindicatorsgoals_path(8)%>
-    <%= link_to "Septiembre", setindicatorsgoals_path(9)%>
-    <%= link_to "Octubre", setindicatorsgoals_path(10)%>
-    <%= link_to "Noviembre", setindicatorsgoals_path(11)%>
-    <%= link_to "Diciembre", setindicatorsgoals_path(12)%>
+	<% if ScoreDate.find_by_year_and_month(@date.year - 1,12) %>
+      <%= link_to @date.year - 1, setindicatorsgoals_path(ScoreDate.find_by_year_and_month(@date.year - 1,12).id)%>
+    <<
+    <% end %>
+	
+    <%= link_to "Enero", setindicatorsgoals_path(ScoreDate.find_by_year_and_month(@date.year,1).id)%>
+    <%= link_to "Febrero", setindicatorsgoals_path(ScoreDate.find_by_year_and_month(@date.year,2).id)%>
+    <%= link_to "Marzo", setindicatorsgoals_path(ScoreDate.find_by_year_and_month(@date.year,3).id)%>
+    <%= link_to "Abril", setindicatorsgoals_path(ScoreDate.find_by_year_and_month(@date.year,4).id)%>
+    <%= link_to "Mayo", setindicatorsgoals_path(ScoreDate.find_by_year_and_month(@date.year,5).id)%>
+    <%= link_to "Junio", setindicatorsgoals_path(ScoreDate.find_by_year_and_month(@date.year,6).id)%>
+    <%= link_to "Julio", setindicatorsgoals_path(ScoreDate.find_by_year_and_month(@date.year,7).id)%>
+    <%= link_to "Agosto", setindicatorsgoals_path(ScoreDate.find_by_year_and_month(@date.year,8).id)%>
+    <%= link_to "Septiembre", setindicatorsgoals_path(ScoreDate.find_by_year_and_month(@date.year,9).id)%>
+    <%= link_to "Octubre", setindicatorsgoals_path(ScoreDate.find_by_year_and_month(@date.year,10).id)%>
+    <%= link_to "Noviembre", setindicatorsgoals_path(ScoreDate.find_by_year_and_month(@date.year,11).id)%>
+    <%= link_to "Diciembre", setindicatorsgoals_path(ScoreDate.find_by_year_and_month(@date.year,12).id)%>
+
+	<% if ScoreDate.find_by_year_and_month(@date.year + 1,1) %>
+	>>
+      <%= link_to @date.year + 1, setindicatorsgoals_path(ScoreDate.find_by_year_and_month(@date.year + 1,1).id)%>
+    <% end %>
 </div>

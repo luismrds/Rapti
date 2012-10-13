@@ -126,6 +126,17 @@ class ScoreDatesController < ApplicationController
     }
   end
 
+  def setindicatorsbase
+    @score_date = ScoreDate.find(params[:id])
+    indicatorscores = @score_date.indicatorscores
+    @names = []
+    indicatorscores.each{|i|
+        @names << i.indicator.name
+    }
+  end
+    
+
+
 # Dada una fecha, prepara los datos para el formulario que permite especificar
 #   el desempeno de las perspectivas
 
@@ -151,6 +162,10 @@ class ScoreDatesController < ApplicationController
         @names << i.objective.name
     }
   end
+
+
+  
+
 
 # Dada una fecha, prepara los datos para el formulario que permite especificar
 #   los valores para cada dato crudo. 

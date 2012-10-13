@@ -35,7 +35,7 @@
   </div>
 <% end %>
 
-<h2>Elija el mes</h2>
+<h2>Elija el mes del año <%=h @date.year %></h2>
 
 <div class="row-fluid" align="center">
     <% if ScoreDate.find_by_year_and_month(@date.year - 1,12) %>
@@ -54,6 +54,9 @@
     <%= link_to "Octubre", setindicatorsscores_path(ScoreDate.find_by_year_and_month(@date.year,10).id)%>
     <%= link_to "Noviembre", setindicatorsscores_path(ScoreDate.find_by_year_and_month(@date.year,11).id)%>
     <%= link_to "Diciembre", setindicatorsscores_path(ScoreDate.find_by_year_and_month(@date.year,12).id)%>
-      >>
-    <%= link_to @date.year + 1, setindicatorsscores_path(ScoreDate.find_by_year_and_month(@date.year + 1,1).id)%>
+     
+	<% if ScoreDate.find_by_year_and_month(@date.year + 1, 1) %> 
+		>>
+    	<%= link_to @date.year + 1, setindicatorsscores_path(ScoreDate.find_by_year_and_month(@date.year+1, 1).id)%>
+    <% end %>
 </div>

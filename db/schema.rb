@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20120625052345) do
     t.float    "greento"
     t.float    "baseline"
     t.float    "growth"
+    t.float    "progress"
     t.datetime "created_at",                    :null => false
     t.datetime "updated_at",                    :null => false
   end
@@ -98,7 +99,8 @@ ActiveRecord::Schema.define(:version => 20120625052345) do
     t.string   "measurement"
     t.boolean  "show",           :default => true
     t.string   "greenButton"
-    t.string   "redbutton"
+    t.string   "yellowButton"
+    t.string   "redButton"
     t.integer  "col"
     t.integer  "row"
     t.datetime "created_at",                       :null => false

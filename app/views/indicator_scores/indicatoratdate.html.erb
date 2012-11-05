@@ -54,19 +54,19 @@ a:active {
         <td align = "center"> - </td>
       <% end %>
 
-      <% if @currentindicator.indicator.progress %>
+      <% if @currentindicator.progress %>
         <td align = "center"><%= @currentindicator.progress.round(2) %></td>
       <% else %>
         <td align = "center"> - </td>
       <% end %>
 
-      <% if @currentindicator.indicator.baseline %>
+      <% if @currentindicator.baseline %>
         <td align = "center"><%= @currentindicator.baseline.round(2) %></td>
       <% else %>
         <td align = "center"> - </td>
       <% end %>
 
-      <% if @currentindicator.indicator.growth %>
+      <% if @currentindicator.growth %>
         <td align = "center"><%= @currentindicator.growth.round(2) %></td>
       <% else %>
         <td align = "center"> - </td>
@@ -131,8 +131,10 @@ a:active {
 </div>
 
 <div class="row-fluid" align="center">
-    <%= link_to @date.year - 1, indicatoratdate_path(@indicator, ScoreDate.find_by_year_and_month(@date.year - 1,12).id)%>
-      <<
+	<% if ScoreDate.find_by_year_and_month(@date.year - 1,12) %>
+    	<%= link_to @date.year - 1, indicatoratdate_path(@indicator, ScoreDate.find_by_year_and_month(@date.year - 1,12).id)%>
+      	<<
+	<% end %>
     <%= link_to "Enero", indicatoratdate_path(@indicator, ScoreDate.find_by_year_and_month(@date.year,1).id)%>
     <%= link_to "Febrero", indicatoratdate_path(@indicator, ScoreDate.find_by_year_and_month(@date.year,2).id)%>
     <%= link_to "Marzo", indicatoratdate_path(@indicator, ScoreDate.find_by_year_and_month(@date.year,3).id)%>
@@ -145,6 +147,8 @@ a:active {
     <%= link_to "Octubre", indicatoratdate_path(@indicator, ScoreDate.find_by_year_and_month(@date.year,10).id)%>
     <%= link_to "Noviembre", indicatoratdate_path(@indicator, ScoreDate.find_by_year_and_month(@date.year,11).id)%>
     <%= link_to "Diciembre", indicatoratdate_path(@indicator, ScoreDate.find_by_year_and_month(@date.year,12).id)%>
-      >>
-    <%= link_to @date.year + 1, indicatoratdate_path(@indicator, ScoreDate.find_by_year_and_month(@date.year + 1,1).id)%>
+	<% if ScoreDate.find_by_year_and_month(@date.year + 1, 1) %>
+		>>
+    	<%= link_to @date.year + 1, indicatoratdate_path(@indicator, ScoreDate.find_by_year_and_month(@date.year + 1,1).id)%>
+	<% end %>
 </div>

@@ -12,7 +12,7 @@ module ObjectiveScoresHelper
       }
   end
 
-# Obtiene los ultimos n desempenos del objetivo dado empesando en date
+# Obtiene los ultimos n desempenos del objetivo dado empezando en date
 
   def getLastNobjectiveScore(n, objective, date)
       dateObject = Date.new(date.year,date.month,1)        

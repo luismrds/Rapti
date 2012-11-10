@@ -106,8 +106,26 @@ class IndicatorScoresController < ApplicationController
       max = @currentindicator.redto
       min = @currentindicator.greenfrom
     end
+    
+=begin
+    #calculamos el valor del indicador
+    @score = 0 #Es el valor del score del indicador params[:ind]
+    if !@currentsons.empty?
+      @currentsons.each{|cs|
+        s = cs.score
+        weight = cs.indicator.weight
+        w = weight/100
+        resul = s*w
+        @score = @score + resul   
+      }
+    else
+      @score = IndicatorScore.find_by_indicator_id_and_scoredate_id(params[:ind], params[:date]).score
+    end
+    
+    @currentindicator.score = @score
+=end
 
-    @chart = produceGauge("", @currentindicator.score, 220, 220, @currentindicator.redfrom, @currentindicator.redto, @currentindicator.yellowfrom, @currentindicator.yellowto, @currentindicator.greenfrom, @currentindicator.greento, 5, min, max)
+    @chart = produceGauge("", @currentindicator.score , 220, 220, @currentindicator.redfrom, @currentindicator.redto, @currentindicator.yellowfrom, @currentindicator.yellowto, @currentindicator.greenfrom, @currentindicator.greento, 5, min, max)
 
 #    @lastsix = getLastNobjectiveScore(6, @objective, @date)
 

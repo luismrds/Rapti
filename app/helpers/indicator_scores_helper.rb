@@ -31,6 +31,22 @@ module IndicatorScoresHelper
       o.save
     }
   end
+  
+  # Fill the Indicator Scores just for impulsor-i and subImpulsor-j
+  def fill_pis
+    pis = Indicator.all
+    #pis = Indicator.find_by_sql("select * from indicators where id<44")
+    pis.each{ |pi|
+      pi.indicator_scores.each{ |pind|
+        valor = rand(100) + rand(-2..10)
+        pind.score = valor
+        pind.progress = valor
+        pind.save
+      }
+      pi.save
+    }
+  end
+
 
   def fill_all_from_default
     ind = Indicator.all

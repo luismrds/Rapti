@@ -84,9 +84,27 @@ module ObjectiveScoresHelper
     }
   end
 
+  # Fill the Indicator Scores just for impulsor-i and subImpulsor-j
+   def fill_objs
+     pis = Objective.all
+     #pis = Indicator.find_by_sql("select * from indicators where id<44")
+     pis.each{ |pi|
+       pi.objective_scores.each{ |pind|
+         valor = rand(100) + rand(-2..10)
+         pind.score = valor
+         pind.progress = valor
+         pind.save
+       }
+       pi.save
+     }
+   end
+
+
+
+
 # Calcula el desempeno de un objectivescore basandose en sus indicadores 
 
-  def calculate
+  def calculate_objscore
     obj = self.objective
     date = self.scoredate
     indicators = obj.indicators

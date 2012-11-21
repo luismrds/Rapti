@@ -73,6 +73,19 @@ module PerspectiveScoresHelper
     self.score = value
     self.save
   end
+  
+  
+  
+  #AUXILIAR: usado por un momento para mostrar el desempeno en el dashboard de una perspectivescore
+  def fill_perspectivescore
+   perspectivess = PerspectiveScore.all
+   perspectivess.each{|p|
+     valor = rand(90) + rand(-2..10)
+     p.score = valor
+     p.save 
+   }
+  end
+  
 
 # Obtiene los ultimos N desempenos de una perspectiva empezando en la fecha especificada. 
 

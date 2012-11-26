@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: score_dates
+#
+#  id         :integer          not null, primary key
+#  month      :integer
+#  year       :integer
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#
+
 class ScoreDate < ActiveRecord::Base
 
   has_many :rawdatascores, :class_name => 'RawDataScore', :foreign_key => "scoredate_id"

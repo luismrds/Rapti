@@ -1,3 +1,29 @@
+# == Schema Information
+#
+# Table name: indicators
+#
+#  id           :integer          not null, primary key
+#  name         :string(255)
+#  acronym      :string(255)
+#  weight       :float
+#  objective_id :integer
+#  operation_id :integer
+#  redfrom      :float
+#  redto        :float
+#  yellowfrom   :float
+#  yellowto     :float
+#  greenfrom    :float
+#  greento      :float
+#  progress     :float
+#  baseline     :float
+#  growth       :float
+#  unit         :string(255)
+#  formula      :string(255)
+#  show         :boolean          default(TRUE)
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
 class Indicator < ActiveRecord::Base
   attr_accessible :name, :objective_ids, :weight, :operation_id, :objective_id, :unit, :formula, :acronym
 

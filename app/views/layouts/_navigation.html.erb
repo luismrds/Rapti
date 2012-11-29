@@ -1,5 +1,3 @@
-
-
 <%= link_to "BMO", root_path, :class => 'brand' %>
 <ul class="nav">
   
@@ -58,7 +56,8 @@
        <%= link_to "Introducir Datos", setindicatorsscores_path(1)%>
        <%= link_to "Establecer metas", setindicatorsgoals_path(1)%>  
     </ul>
-  </li> --> 
+  </li> 
+--> 
 
   <li>
     <%= link_to "Definir valores", filloperands_path(1)%>
@@ -71,18 +70,15 @@
   </li>
   <li>
     <%= link_to 'Crear Usuario', new_user_registration_path %>
-  </li>
-
-
-  
-    <li>
+  </li>  
+  <li>
     <%= link_to 'Cerrar sesion', destroy_user_session_path, :method=>'delete' %>        
-    </li>
-  <% else %>
+  </li>
+<% else %> <!-- User not login-->
     <li>
     <%= link_to 'Iniciar sesion', new_user_session_path %>  
     </li>
-  <% end %>
+<% end %>
   <% if user_signed_in? %>
     <li>
     <%= link_to 'Editar cuenta', edit_user_registration_path %>

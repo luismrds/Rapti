@@ -2,24 +2,72 @@
 <ul class="nav">
   
 <% if user_signed_in? %>
-  <li>
-    <%= link_to "Mapa Estrategico", strategymap_path()%>      
-  </li>
-  <li>
-    <%= link_to "Vector", vectoratdate_path(1,6)%>      
-  </li>
+	<li>
+		<%= link_to "Ver Mapa Estratégico", strategymap_path()%>      
+	</li>
+	<li>
+	    <%= link_to "Vector", vectoratdate_path(1,6)%>      
+	</li>
+	
+	<% if current_user.has_role? :admin %>
+		<li class="dropdown">
+	    	<a class="dropdown-toggle" data-toggle="dropdown">Indicadores<b class="caret"></b></a>
+	    		<ul class="dropdown-menu">
+	      			<li><%= link_to "Scores", setindicatorsscores_path(currentScoreDate.id)%></li>
+	      			<li><%= link_to "Metas", setindicatorsgoals_path(currentScoreDate.id)%></li>
+	      			<li><%= link_to "Crecimiento", setindicatorsgrowth_path(currentScoreDate.id)%></li>
+	      			<li><%= link_to "Base", setindicatorsbase_path(currentScoreDate.id)%></li>
+	    		</ul>
+		</li>
+		<li>
+	    	<%= link_to "Definir valores", filloperands_path(1)%>
+	  	</li>
+		<li>
+	    	<%= link_to "Operaciones", operations_path%>
+	  	</li>
+		<li>
+		    <%= link_to "Datos", raw_data_path%>
+		</li>
+		<li class="dropdown">
+	    	<a class="dropdown-toggle" data-toggle="dropdown">Administración<b class="caret"></b></a>
+	    		<ul class="dropdown-menu">
+	      			
+	      			<li><%= link_to 'Crear usuario', new_user_registration_path %></li>
+	      			<li><%= link_to 'Listar usuarios', users_path %></li>
+	    		</ul>
+	    
+	<% elsif current_user.has_role? :aforador %>
+		<li class="dropdown">
+	    	<a class="dropdown-toggle" data-toggle="dropdown">Indicadores<b class="caret"></b></a>
+	    		<ul class="dropdown-menu">
+	      			<li><%= link_to "Scores", setindicatorsscores_path(currentScoreDate.id)%></li>
+	      			<li><%= link_to "Metas", setindicatorsgoals_path(currentScoreDate.id)%></li>
+	      			<li><%= link_to "Crecimiento", setindicatorsgrowth_path(currentScoreDate.id)%></li>
+	      			<li><%= link_to "Base", setindicatorsbase_path(currentScoreDate.id)%></li>
+	    		</ul>
+		</li>
+		<li>
+	    	<%= link_to "Definir valores", filloperands_path(1)%>
+	  	</li>
+		<li>
+	    	<%= link_to "Operaciones", operations_path%>
+	  	</li>
+		<li>
+		    <%= link_to "Datos", raw_data_path%>
+		</li>
+	<% else%> <!-- Es un cliente logeado -->
 
-  <li class="dropdown">
-    <a class="dropdown-toggle" data-toggle="dropdown">Indicadores<b class="caret"></b></a>
-    <ul class="dropdown-menu">
-      <li><%= link_to "Scores", setindicatorsscores_path(currentScoreDate.id)%></li>
-      <li><%= link_to "Metas", setindicatorsgoals_path(currentScoreDate.id)%></li>
-      <li><%= link_to "Crecimiento", setindicatorsgrowth_path(currentScoreDate.id)%></li>
-      <li><%= link_to "Base", setindicatorsbase_path(currentScoreDate.id)%></li>
-    </ul>
-  </li>
+	
+	<% end %>
 
-
+<% else %> <!-- User not login-->
+	<li>
+		
+		<%= link_to 'Iniciar sesión', new_user_session_path %>  
+	</li>
+<% end %>
+ 
+</ul>
 <!--
   <li class="dropdown">
     <a href="#"
@@ -59,36 +107,25 @@
   </li> 
 --> 
 
-  <li>
-    <%= link_to "Definir valores", filloperands_path(1)%>
-  </li>
-  <li>
-    <%= link_to "Operaciones", operations_path%>
-  </li>
-  <li>
-    <%= link_to "Datos", raw_data_path%>
-  </li>
-  <li>
-    <%= link_to 'Crear Usuario', new_user_registration_path %>
-  </li>  
-  <li>
-    <%= link_to 'Cerrar sesion', destroy_user_session_path, :method=>'delete' %>        
-  </li>
-<% else %> <!-- User not login-->
-    <li>
-    <%= link_to 'Iniciar sesion', new_user_session_path %>  
-    </li>
+<% if user_signed_in? %>
+	
+	<ul class="nav pull-right">
+		<li class="dropdown">
+	    	<a class="dropdown-toggle" data-toggle="dropdown" id="logout"><i class="icon-user icon-white"></i> 
+				<%= current_user.name %><span class="caret"></span></a>
+	    		<ul class="dropdown-menu">
+	      			<li><%= link_to "Editar perfil", edit_user_registration_path %></li>
+	      			<li>
+						<%= link_to "Cerrar sesión", destroy_user_session_path, :method => 'delete' %> 
+					</li> 
+	    		</ul>
+		</li>
+		<li>
+		          
+		</li>
+	</ul>
+	
 <% end %>
-  <% if user_signed_in? %>
-    <li>
-    <%= link_to 'Editar cuenta', edit_user_registration_path %>
-    </li>
-    <% if current_user.has_role? :admin %>
-      <li>
-      <%= link_to 'Administracion', users_path %>
-      </li>
-    <% end %>
-  <% else %>
 
-  <% end %>
-</ul>
+
+

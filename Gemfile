@@ -22,9 +22,10 @@ gem "cancan", ">= 1.6.7"
 gem "rolify", ">= 3.1.0"
 gem 'execjs'
 gem 'therubyracer'
-gem "bootstrap-sass", "~>2.0.3"
+gem "bootstrap-sass", "~>2.0.4"
 gem "google_visualr"
 gem "pg"
 gem 'ratchetio', '>= 0.1.2'
 gem "parseexcel", "~> 0.5.2" 
 gem "xpath", "~> 1.0.0"
+gem 'simple_form', '~> 2.0.4'

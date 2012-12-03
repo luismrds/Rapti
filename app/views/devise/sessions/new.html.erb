@@ -14,9 +14,9 @@
 				<div></div>
   			<% if devise_mapping.rememberable? -%>
     			<%= f.check_box :remember_me %> <%= f.label :remember_me, "Recordarme" %>
-  			<% end -%>
+  			<% end -%></br>
 
-  			<%= f.submit "Iniciar sesión", class: "btn" %>
+  			<%= f.submit "Iniciar sesión", class: "btn btn-primary" %>
 		<% end %>
 
 		<%= render :partial => "devise/shared/links" %>

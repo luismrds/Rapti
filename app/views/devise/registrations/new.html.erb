@@ -1,20 +1,47 @@
-<h2>Crea usuario</h2>
+<script>
+$(document).ready(function(){
+	
+	$("#rol").change(obtenerRol);
+});
 
-<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+function obtenerRol(){
+	var selected = $("#rol option:selected");
+	var output = "";
+	if(selected.val() != 0){
+		output = "Rol es " + selected.text();
+	}
+ }
+
+$("#output").html(output)	
+
+</script>
+
+
+<h2>Crear usuario</h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :post }) do |f| %>
   <%= devise_error_messages! %>
-<p><%= f.label :name, "Nombre" %><br />
+</br>
+<p><%= f.label :name, "Nombre" %>
 <%= f.text_field :name %></p>
 
-  <div><%= f.label :email, "Correo" %><br />
-  <%= f.email_field :email %></div>
+  <div><%= f.label :email, "Correo electrónico" %>
+  <%= f.email_field :email %></div>  
+  
+  <div id="rol"><%= f.label :role_ids, "Rol" %>
+  <!-- Select para el rol-->
+  <%= collection_select(:user, :role_ids, Role.all, :id, :name) %> 
+  </div>
+  
+	<div id="output"></div>
 
-  <div><%= f.label :password, "Clave" %><br />
+  <div><%= f.label :password, "Clave" %>
   <%= f.password_field :password %></div>
 
-  <div><%= f.label :password_confirmation, "Repita su clave" %><br />
-  <%= f.password_field :password_confirmation %></div>
+  <div><%= f.label :password_confirmation, "Repita su clave" %>
+  <%= f.password_field :password_confirmation %></div></br>
 
-  <div><%= f.submit "Crear" %></div>
-<% end %>
+  <div><%= f.submit "Crear" , class: "btn btn-primary" %></div>
+<% end %> </br>
 
-<%= render :partial => "devise/shared/links" %>
+<%= link_to "Volver", :back %>

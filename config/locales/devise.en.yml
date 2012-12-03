@@ -13,17 +13,20 @@ en:
 
   devise:
     failure:
-      already_authenticated: 'You are already signed in.'
+      already_authenticated: 'Ya ha iniciado sesión.'
       unauthenticated: 'Debe iniciar sesion para ingresar en esta parte.'#'You need to sign in or sign up before continuing.'
       unconfirmed: 'You have to confirm your account before continuing.'
       locked: 'Your account is locked.'
-      invalid: 'Invalid email or password.'
+      invalid: 'Correo o clave inválido.'
       invalid_token: 'Invalid authentication token.'
       timeout: 'Your session expired, please sign in again to continue.'
       inactive: 'Your account was not activated yet.'
     sessions:
-      signed_in: 'Sesion iniciada correctamente.'
-      signed_out: 'Cerro su sesion de manera exitosa.'
+        user:
+            signed_in: "Sesion iniciada correctamente."
+            signed_out: 'Sesión cerrada exitosamente.'
+        admin:
+            signed_in: "Bienvenido Administrador. Sesión iniciada correctamente."
     passwords:
       send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
       updated: 'Your password was changed successfully. You are now signed in.'

@@ -4,7 +4,7 @@
 
 -- Dumped from database version 9.1.4
 -- Dumped by pg_dump version 9.1.4
--- Started on 2012-11-10 16:51:05 VET
+-- Started on 2012-12-03 20:07:54 VET
 
 SET statement_timeout = 0;
 SET client_encoding = 'UTF8';
@@ -21,7 +21,7 @@ CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
 
 
 --
--- TOC entry 2286 (class 0 OID 0)
+-- TOC entry 2287 (class 0 OID 0)
 -- Dependencies: 192
 -- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
 --
@@ -94,7 +94,7 @@ CREATE SEQUENCE indicator_scores_id_seq
 ALTER TABLE public.indicator_scores_id_seq OWNER TO bmo;
 
 --
--- TOC entry 2287 (class 0 OID 0)
+-- TOC entry 2288 (class 0 OID 0)
 -- Dependencies: 177
 -- Name: indicator_scores_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bmo
 --
@@ -103,7 +103,7 @@ ALTER SEQUENCE indicator_scores_id_seq OWNED BY indicator_scores.id;
 
 
 --
--- TOC entry 2288 (class 0 OID 0)
+-- TOC entry 2289 (class 0 OID 0)
 -- Dependencies: 177
 -- Name: indicator_scores_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bmo
 --
@@ -160,7 +160,7 @@ CREATE SEQUENCE indicators_id_seq
 ALTER TABLE public.indicators_id_seq OWNER TO bmo;
 
 --
--- TOC entry 2289 (class 0 OID 0)
+-- TOC entry 2290 (class 0 OID 0)
 -- Dependencies: 179
 -- Name: indicators_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bmo
 --
@@ -169,7 +169,7 @@ ALTER SEQUENCE indicators_id_seq OWNED BY indicators.id;
 
 
 --
--- TOC entry 2290 (class 0 OID 0)
+-- TOC entry 2291 (class 0 OID 0)
 -- Dependencies: 179
 -- Name: indicators_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bmo
 --
@@ -236,7 +236,7 @@ CREATE SEQUENCE objective_scores_id_seq
 ALTER TABLE public.objective_scores_id_seq OWNER TO bmo;
 
 --
--- TOC entry 2291 (class 0 OID 0)
+-- TOC entry 2292 (class 0 OID 0)
 -- Dependencies: 175
 -- Name: objective_scores_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bmo
 --
@@ -245,12 +245,12 @@ ALTER SEQUENCE objective_scores_id_seq OWNED BY objective_scores.id;
 
 
 --
--- TOC entry 2292 (class 0 OID 0)
+-- TOC entry 2293 (class 0 OID 0)
 -- Dependencies: 175
 -- Name: objective_scores_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bmo
 --
 
-SELECT pg_catalog.setval('objective_scores_id_seq', 500, true);
+SELECT pg_catalog.setval('objective_scores_id_seq', 504, true);
 
 
 --
@@ -306,7 +306,7 @@ CREATE SEQUENCE objectives_id_seq
 ALTER TABLE public.objectives_id_seq OWNER TO bmo;
 
 --
--- TOC entry 2293 (class 0 OID 0)
+-- TOC entry 2294 (class 0 OID 0)
 -- Dependencies: 169
 -- Name: objectives_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bmo
 --
@@ -315,7 +315,7 @@ ALTER SEQUENCE objectives_id_seq OWNED BY objectives.id;
 
 
 --
--- TOC entry 2294 (class 0 OID 0)
+-- TOC entry 2295 (class 0 OID 0)
 -- Dependencies: 169
 -- Name: objectives_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bmo
 --
@@ -359,7 +359,7 @@ CREATE SEQUENCE operations_id_seq
 ALTER TABLE public.operations_id_seq OWNER TO bmo;
 
 --
--- TOC entry 2295 (class 0 OID 0)
+-- TOC entry 2296 (class 0 OID 0)
 -- Dependencies: 187
 -- Name: operations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bmo
 --
@@ -368,7 +368,7 @@ ALTER SEQUENCE operations_id_seq OWNED BY operations.id;
 
 
 --
--- TOC entry 2296 (class 0 OID 0)
+-- TOC entry 2297 (class 0 OID 0)
 -- Dependencies: 187
 -- Name: operations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bmo
 --
@@ -418,7 +418,7 @@ CREATE SEQUENCE perspective_scores_id_seq
 ALTER TABLE public.perspective_scores_id_seq OWNER TO bmo;
 
 --
--- TOC entry 2297 (class 0 OID 0)
+-- TOC entry 2298 (class 0 OID 0)
 -- Dependencies: 173
 -- Name: perspective_scores_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bmo
 --
@@ -427,7 +427,7 @@ ALTER SEQUENCE perspective_scores_id_seq OWNED BY perspective_scores.id;
 
 
 --
--- TOC entry 2298 (class 0 OID 0)
+-- TOC entry 2299 (class 0 OID 0)
 -- Dependencies: 173
 -- Name: perspective_scores_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bmo
 --
@@ -476,7 +476,7 @@ CREATE SEQUENCE perspectives_id_seq
 ALTER TABLE public.perspectives_id_seq OWNER TO bmo;
 
 --
--- TOC entry 2299 (class 0 OID 0)
+-- TOC entry 2300 (class 0 OID 0)
 -- Dependencies: 167
 -- Name: perspectives_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bmo
 --
@@ -485,12 +485,12 @@ ALTER SEQUENCE perspectives_id_seq OWNED BY perspectives.id;
 
 
 --
--- TOC entry 2300 (class 0 OID 0)
+-- TOC entry 2301 (class 0 OID 0)
 -- Dependencies: 167
 -- Name: perspectives_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bmo
 --
 
-SELECT pg_catalog.setval('perspectives_id_seq', 4, true);
+SELECT pg_catalog.setval('perspectives_id_seq', 5, true);
 
 
 --
@@ -529,7 +529,7 @@ CREATE SEQUENCE raw_data_id_seq
 ALTER TABLE public.raw_data_id_seq OWNER TO bmo;
 
 --
--- TOC entry 2301 (class 0 OID 0)
+-- TOC entry 2302 (class 0 OID 0)
 -- Dependencies: 183
 -- Name: raw_data_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bmo
 --
@@ -538,7 +538,7 @@ ALTER SEQUENCE raw_data_id_seq OWNED BY raw_data.id;
 
 
 --
--- TOC entry 2302 (class 0 OID 0)
+-- TOC entry 2303 (class 0 OID 0)
 -- Dependencies: 183
 -- Name: raw_data_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bmo
 --
@@ -581,7 +581,7 @@ CREATE SEQUENCE raw_data_scores_id_seq
 ALTER TABLE public.raw_data_scores_id_seq OWNER TO bmo;
 
 --
--- TOC entry 2303 (class 0 OID 0)
+-- TOC entry 2304 (class 0 OID 0)
 -- Dependencies: 185
 -- Name: raw_data_scores_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bmo
 --
@@ -590,7 +590,7 @@ ALTER SEQUENCE raw_data_scores_id_seq OWNED BY raw_data_scores.id;
 
 
 --
--- TOC entry 2304 (class 0 OID 0)
+-- TOC entry 2305 (class 0 OID 0)
 -- Dependencies: 185
 -- Name: raw_data_scores_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bmo
 --
@@ -633,7 +633,7 @@ CREATE SEQUENCE roles_id_seq
 ALTER TABLE public.roles_id_seq OWNER TO bmo;
 
 --
--- TOC entry 2305 (class 0 OID 0)
+-- TOC entry 2306 (class 0 OID 0)
 -- Dependencies: 164
 -- Name: roles_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bmo
 --
@@ -642,12 +642,12 @@ ALTER SEQUENCE roles_id_seq OWNED BY roles.id;
 
 
 --
--- TOC entry 2306 (class 0 OID 0)
+-- TOC entry 2307 (class 0 OID 0)
 -- Dependencies: 164
 -- Name: roles_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bmo
 --
 
-SELECT pg_catalog.setval('roles_id_seq', 1, false);
+SELECT pg_catalog.setval('roles_id_seq', 5, true);
 
 
 --
@@ -697,7 +697,7 @@ CREATE SEQUENCE score_dates_id_seq
 ALTER TABLE public.score_dates_id_seq OWNER TO bmo;
 
 --
--- TOC entry 2307 (class 0 OID 0)
+-- TOC entry 2308 (class 0 OID 0)
 -- Dependencies: 171
 -- Name: score_dates_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bmo
 --
@@ -706,7 +706,7 @@ ALTER SEQUENCE score_dates_id_seq OWNED BY score_dates.id;
 
 
 --
--- TOC entry 2308 (class 0 OID 0)
+-- TOC entry 2309 (class 0 OID 0)
 -- Dependencies: 171
 -- Name: score_dates_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bmo
 --
@@ -757,7 +757,7 @@ CREATE SEQUENCE users_id_seq
 ALTER TABLE public.users_id_seq OWNER TO bmo;
 
 --
--- TOC entry 2309 (class 0 OID 0)
+-- TOC entry 2310 (class 0 OID 0)
 -- Dependencies: 162
 -- Name: users_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bmo
 --
@@ -766,12 +766,12 @@ ALTER SEQUENCE users_id_seq OWNED BY users.id;
 
 
 --
--- TOC entry 2310 (class 0 OID 0)
+-- TOC entry 2311 (class 0 OID 0)
 -- Dependencies: 162
 -- Name: users_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bmo
 --
 
-SELECT pg_catalog.setval('users_id_seq', 2, true);
+SELECT pg_catalog.setval('users_id_seq', 15, true);
 
 
 --
@@ -821,7 +821,7 @@ CREATE SEQUENCE vectors_id_seq
 ALTER TABLE public.vectors_id_seq OWNER TO bmo;
 
 --
--- TOC entry 2311 (class 0 OID 0)
+-- TOC entry 2312 (class 0 OID 0)
 -- Dependencies: 189
 -- Name: vectors_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: bmo
 --
@@ -830,12 +830,12 @@ ALTER SEQUENCE vectors_id_seq OWNED BY vectors.id;
 
 
 --
--- TOC entry 2312 (class 0 OID 0)
+-- TOC entry 2313 (class 0 OID 0)
 -- Dependencies: 189
 -- Name: vectors_id_seq; Type: SEQUENCE SET; Schema: public; Owner: bmo
 --
 
-SELECT pg_catalog.setval('vectors_id_seq', 4, true);
+SELECT pg_catalog.setval('vectors_id_seq', 6, true);
 
 
 --
@@ -3062,106 +3062,106 @@ INSERT INTO objectives (id, name, acronym, weight, score, perspective_id, redfro
 -- Data for Name: perspective_scores; Type: TABLE DATA; Schema: public; Owner: bmo
 --
 
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (50, 2, 25, 84, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.164608', '2012-08-09 19:59:55.164608');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (2, 1, 2, 61.0000000000000071, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.502932', '2012-08-09 20:00:17.188445');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (3, 1, 3, 62, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.521842', '2012-08-09 20:00:17.206905');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (4, 1, 4, 63.0000000000000071, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.53249', '2012-08-09 20:00:17.238898');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (5, 1, 5, 64, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.551195', '2012-08-09 20:00:17.270312');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (6, 1, 6, 65, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.563231', '2012-08-09 20:00:17.302801');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (7, 1, 7, 66, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.578114', '2012-08-09 20:00:17.343281');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (8, 1, 8, 67, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.595438', '2012-08-09 20:00:17.363531');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (9, 1, 9, 68, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.60852', '2012-08-09 20:00:17.390671');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (10, 1, 10, 69, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.622009', '2012-08-09 20:00:17.408906');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (11, 1, 11, 70, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.642193', '2012-08-09 20:00:17.432654');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (12, 1, 12, 71, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.655075', '2012-08-09 20:00:17.449662');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (13, 1, 13, 72, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.675422', '2012-08-09 20:00:17.475409');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (14, 1, 14, 73, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.685211', '2012-08-09 20:00:17.506471');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (15, 1, 15, 74, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.696713', '2012-08-09 20:00:17.540556');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (16, 1, 16, 75, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.710717', '2012-08-09 20:00:17.564855');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (17, 1, 17, 76, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.730271', '2012-08-09 20:00:17.598064');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (18, 1, 18, 77, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.739495', '2012-08-09 20:00:17.621039');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (19, 1, 19, 78, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.753495', '2012-08-09 20:00:17.654561');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (20, 1, 20, 79, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.76544', '2012-08-09 20:00:17.701754');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (21, 1, 21, 80, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.786824', '2012-08-09 20:00:17.720314');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (22, 1, 22, 81, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.799721', '2012-08-09 20:00:17.749848');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (23, 1, 23, 82.0000000000000142, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.817634', '2012-08-09 20:00:17.77737');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (24, 1, 24, 83, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.83171', '2012-08-09 20:00:17.810922');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (25, 1, 25, 84, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.842008', '2012-08-09 20:00:17.831172');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (26, 2, 1, 60, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.855436', '2012-08-09 20:00:17.86413');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (27, 2, 2, 61, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.875994', '2012-08-09 20:00:17.884497');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (28, 2, 3, 62, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.88637', '2012-08-09 20:00:17.923999');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (30, 2, 5, 64, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.908792', '2012-08-09 20:00:17.97558');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (31, 2, 6, 65, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.921635', '2012-08-09 20:00:18.012989');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (32, 2, 7, 66, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.940752', '2012-08-09 20:00:18.040644');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (33, 2, 8, 67, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.950646', '2012-08-09 20:00:18.069855');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (34, 2, 9, 68, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.964383', '2012-08-09 20:00:18.096014');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (35, 2, 10, 69, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.975691', '2012-08-09 20:00:18.120192');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (36, 2, 11, 70, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.984391', '2012-08-09 20:00:18.147439');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (37, 2, 12, 71, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.996504', '2012-08-09 20:00:18.196166');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (38, 2, 13, 72, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.007149', '2012-08-09 20:00:18.216223');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (39, 2, 14, 73, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.019772', '2012-08-09 20:00:18.248123');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (40, 2, 15, 74, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.032611', '2012-08-09 20:00:18.282104');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (41, 2, 16, 75, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.054194', '2012-08-09 20:00:18.31269');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (42, 2, 17, 76, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.064365', '2012-08-09 20:00:18.328376');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (43, 2, 18, 77, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.074585', '2012-08-09 20:00:18.358228');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (44, 2, 19, 78, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.083905', '2012-08-09 20:00:18.398153');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (45, 2, 20, 79, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.09973', '2012-08-09 20:00:18.421102');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (46, 2, 21, 80, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.120368', '2012-08-09 20:00:18.439629');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (47, 2, 22, 81, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.133178', '2012-08-09 20:00:18.493308');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (48, 2, 23, 82, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.141251', '2012-08-09 20:00:18.518871');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (49, 2, 24, 83, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.152126', '2012-08-09 20:00:18.541652');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (51, 3, 1, 59.3999999999999986, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.175323', '2012-08-09 20:00:18.613467');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (52, 3, 2, 60.3900000000000006, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.188113', '2012-08-09 20:00:18.659571');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (53, 3, 3, 61.3800000000000026, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.195936', '2012-08-09 20:00:18.698768');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (54, 3, 4, 62.3700000000000045, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.209134', '2012-08-09 20:00:18.730016');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (55, 3, 5, 63.3600000000000065, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.220388', '2012-08-09 20:00:18.757571');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (56, 3, 6, 64.3500000000000085, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.231104', '2012-08-09 20:00:18.813387');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (57, 3, 7, 65.3400000000000034, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.244442', '2012-08-09 20:00:18.854338');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (58, 3, 8, 66.3300000000000125, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.265104', '2012-08-09 20:00:18.877708');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (59, 3, 9, 67.3200000000000074, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.275747', '2012-08-09 20:00:18.942237');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (60, 3, 10, 68.3099999999999881, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.286486', '2012-08-09 20:00:18.981623');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (62, 3, 12, 70.2900000000000063, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.306169', '2012-08-09 20:00:19.068689');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (63, 3, 13, 71.2800000000000011, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.319875', '2012-08-09 20:00:19.08555');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (64, 3, 14, 72.269999999999996, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.333844', '2012-08-09 20:00:19.121432');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (65, 3, 15, 73.2600000000000051, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.339957', '2012-08-09 20:00:19.143493');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (77, 4, 2, 61, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.497803', '2012-08-09 19:59:55.497803');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (1, 1, 1, 60, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.444829', '2012-08-09 20:00:17.157489');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (29, 2, 4, 63, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.898281', '2012-08-09 20:00:17.946607');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (61, 3, 11, 69.2999999999999972, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.297814', '2012-08-09 20:00:19.015866');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (66, 3, 16, 74.25, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.350795', '2012-08-09 20:00:19.170587');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (67, 3, 17, 75.2400000000000091, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.36468', '2012-08-09 20:00:19.206117');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (68, 3, 18, 76.230000000000004, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.375766', '2012-08-09 20:00:19.233339');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (69, 3, 19, 77.2200000000000131, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.397895', '2012-08-09 20:00:19.260909');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (70, 3, 20, 78.2099999999999937, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.418422', '2012-08-09 20:00:19.296153');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (71, 3, 21, 79.2000000000000028, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.428459', '2012-08-09 20:00:19.347112');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (72, 3, 22, 80.1900000000000119, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.442202', '2012-08-09 20:00:19.398745');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (73, 3, 23, 81.1800000000000068, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.454557', '2012-08-09 20:00:19.421509');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (74, 3, 24, 82.1700000000000159, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.464088', '2012-08-09 20:00:19.451319');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (75, 3, 25, 83.1600000000000108, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.473364', '2012-08-09 20:00:19.476119');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (76, 4, 1, 60, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.486164', '2012-08-09 20:00:19.506517');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (78, 4, 3, 62, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.510596', '2012-08-09 20:00:19.568736');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (79, 4, 4, 63, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.533562', '2012-08-09 20:00:19.585405');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (80, 4, 5, 64, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.554815', '2012-08-09 20:00:19.60733');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (81, 4, 6, 65, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.565907', '2012-08-09 20:00:19.632584');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (82, 4, 7, 66, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.585441', '2012-08-09 20:00:19.658467');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (83, 4, 8, 67, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.59788', '2012-08-09 20:00:19.689208');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (84, 4, 9, 68, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.606934', '2012-08-09 20:00:19.701135');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (85, 4, 10, 69, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.61852', '2012-08-09 20:00:19.719647');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (86, 4, 11, 70, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.632839', '2012-08-09 20:00:19.735743');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (87, 4, 12, 71, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.662403', '2012-08-09 20:00:19.749349');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (88, 4, 13, 72, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.673438', '2012-08-09 20:00:19.794608');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (89, 4, 14, 73, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.685369', '2012-08-09 20:00:19.818892');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (90, 4, 15, 74, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.698655', '2012-08-09 20:00:19.855484');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (91, 4, 16, 75, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.708966', '2012-08-09 20:00:19.880343');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (92, 4, 17, 76, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.722555', '2012-08-09 20:00:19.895533');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (93, 4, 18, 77, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.74021', '2012-08-09 20:00:19.958023');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (94, 4, 19, 78, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.754007', '2012-08-09 20:00:19.971983');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (95, 4, 20, 79, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.762234', '2012-08-09 20:00:20.00073');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (96, 4, 21, 80, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.775416', '2012-08-09 20:00:20.017514');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (97, 4, 22, 81, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.788826', '2012-08-09 20:00:20.046432');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (98, 4, 23, 82, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.797038', '2012-08-09 20:00:20.078119');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (99, 4, 24, 83, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.807549', '2012-08-09 20:00:20.090962');
-INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (100, 4, 25, 84, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.81832', '2012-08-09 20:00:20.11541');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (5, 1, 5, 48, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.551195', '2012-11-21 20:37:07.942013');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (6, 1, 6, 32, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.563231', '2012-11-21 20:37:07.944645');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (7, 1, 7, 68, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.578114', '2012-11-21 20:37:07.946908');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (8, 1, 8, 79, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.595438', '2012-11-21 20:37:07.951171');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (9, 1, 9, 84, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.60852', '2012-11-21 20:37:07.953903');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (11, 1, 11, 42, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.642193', '2012-11-21 20:37:07.956977');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (12, 1, 12, 76, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.655075', '2012-11-21 20:37:07.959548');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (13, 1, 13, 68, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.675422', '2012-11-21 20:37:07.961843');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (14, 1, 14, 56, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.685211', '2012-11-21 20:37:07.964062');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (15, 1, 15, 41, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.696713', '2012-11-21 20:37:07.966505');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (16, 1, 16, 82, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.710717', '2012-11-21 20:37:07.969278');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (17, 1, 17, 51, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.730271', '2012-11-21 20:37:07.9717');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (18, 1, 18, 20, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.739495', '2012-11-21 20:37:07.974977');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (19, 1, 19, 90, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.753495', '2012-11-21 20:37:07.97748');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (20, 1, 20, 62, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.76544', '2012-11-21 20:37:07.979876');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (21, 1, 21, 30, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.786824', '2012-11-21 20:37:07.982244');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (22, 1, 22, 85, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.799721', '2012-11-21 20:37:07.984422');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (23, 1, 23, 68, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.817634', '2012-11-21 20:37:07.986932');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (24, 1, 24, 76, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.83171', '2012-11-21 20:37:07.989757');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (25, 1, 25, 32, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.842008', '2012-11-21 20:37:07.992752');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (26, 2, 1, 24, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.855436', '2012-11-21 20:37:07.995066');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (27, 2, 2, 6, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.875994', '2012-11-21 20:37:07.997303');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (28, 2, 3, 77, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.88637', '2012-11-21 20:37:07.999575');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (30, 2, 5, 90, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.908792', '2012-11-21 20:37:08.001663');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (31, 2, 6, 22, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.921635', '2012-11-21 20:37:08.004451');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (33, 2, 8, 11, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.950646', '2012-11-21 20:37:08.007437');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (34, 2, 9, -2, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.964383', '2012-11-21 20:37:08.010037');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (35, 2, 10, 50, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.975691', '2012-11-21 20:37:08.012156');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (36, 2, 11, 57, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.984391', '2012-11-21 20:37:08.014323');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (37, 2, 12, 56, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.996504', '2012-11-21 20:37:08.016396');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (39, 2, 14, 86, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.019772', '2012-11-21 20:37:08.020207');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (38, 2, 13, 7, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.007149', '2012-11-21 20:36:04.711933');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (40, 2, 15, 26, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.032611', '2012-11-21 20:37:08.022711');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (41, 2, 16, 21, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.054194', '2012-11-21 20:37:08.025271');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (42, 2, 17, 36, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.064365', '2012-11-21 20:37:08.027568');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (43, 2, 18, 30, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.074585', '2012-11-21 20:37:08.030142');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (44, 2, 19, 20, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.083905', '2012-11-21 20:37:08.032532');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (46, 2, 21, 73, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.120368', '2012-11-21 20:37:08.034848');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (45, 2, 20, 15, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.09973', '2012-11-21 20:37:08.03693');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (47, 2, 22, 29, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.133178', '2012-11-21 20:37:08.039269');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (48, 2, 23, 8, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.141251', '2012-11-21 20:37:08.041903');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (49, 2, 24, 47, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.152126', '2012-11-21 20:37:08.043988');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (51, 3, 1, 73, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.175323', '2012-11-21 20:37:08.0464');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (52, 3, 2, 25, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.188113', '2012-11-21 20:37:08.048935');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (53, 3, 3, 54, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.195936', '2012-11-21 20:37:08.051219');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (54, 3, 4, 71, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.209134', '2012-11-21 20:37:08.053302');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (55, 3, 5, 5, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.220388', '2012-11-21 20:37:08.055513');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (56, 3, 6, 35, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.231104', '2012-11-21 20:37:08.05762');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (57, 3, 7, 17, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.244442', '2012-11-21 20:37:08.059971');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (58, 3, 8, 6, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.265104', '2012-11-21 20:37:08.062292');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (59, 3, 9, 38, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.275747', '2012-11-21 20:37:08.06471');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (60, 3, 10, 36, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.286486', '2012-11-21 20:37:08.066846');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (62, 3, 12, 19, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.306169', '2012-11-21 20:37:08.069041');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (63, 3, 13, 72, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.319875', '2012-11-21 20:37:08.071107');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (64, 3, 14, 25, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.333844', '2012-11-21 20:37:08.073475');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (77, 4, 2, 27, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.497803', '2012-11-21 20:37:08.076298');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (29, 2, 4, 33, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.898281', '2012-11-21 20:37:08.078863');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (1, 1, 1, 22, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.444829', '2012-11-21 20:37:08.081207');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (2, 1, 2, 74, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.502932', '2012-11-21 20:37:08.083247');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (4, 1, 4, 63, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.53249', '2012-11-21 20:37:07.937548');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (10, 1, 10, 86, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.622009', '2012-11-21 20:37:08.085311');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (3, 1, 3, 92, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.521842', '2012-11-21 20:37:08.087445');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (79, 4, 4, 9, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.533562', '2012-11-21 20:37:08.121251');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (50, 2, 25, 90, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.164608', '2012-11-21 20:37:08.123555');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (32, 2, 7, 37, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:54.940752', '2012-11-21 20:37:08.125873');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (65, 3, 15, 10, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.339957', '2012-11-21 20:37:08.128122');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (61, 3, 11, 85, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.297814', '2012-11-21 20:37:08.130269');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (66, 3, 16, 69, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.350795', '2012-11-21 20:37:08.132584');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (67, 3, 17, 62, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.36468', '2012-11-21 20:37:08.13466');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (68, 3, 18, 19, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.375766', '2012-11-21 20:37:08.136689');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (69, 3, 19, 7, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.397895', '2012-11-21 20:37:08.138733');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (75, 3, 25, 86, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.473364', '2012-11-21 20:37:08.140754');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (76, 4, 1, 57, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.486164', '2012-11-21 20:37:08.142746');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (78, 4, 3, 72, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.510596', '2012-11-21 20:37:08.144837');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (70, 3, 20, 3, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.418422', '2012-11-21 20:37:08.090224');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (71, 3, 21, 37, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.428459', '2012-11-21 20:37:08.092742');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (72, 3, 22, 50, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.442202', '2012-11-21 20:37:08.095898');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (73, 3, 23, 36, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.454557', '2012-11-21 20:37:08.098129');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (74, 3, 24, 55, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.464088', '2012-11-21 20:37:08.100377');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (80, 4, 5, 20, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.554815', '2012-11-21 20:37:08.147107');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (94, 4, 19, 24, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.754007', '2012-11-21 20:37:08.102551');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (95, 4, 20, 14, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.762234', '2012-11-21 20:37:08.104965');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (96, 4, 21, 16, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.775416', '2012-11-21 20:37:08.107627');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (97, 4, 22, 60, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.788826', '2012-11-21 20:37:08.109951');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (98, 4, 23, 84, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.797038', '2012-11-21 20:37:08.112055');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (99, 4, 24, 77, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.807549', '2012-11-21 20:37:08.11427');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (100, 4, 25, 69, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.81832', '2012-11-21 20:37:08.116614');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (84, 4, 9, 69, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.606934', '2012-11-21 20:37:08.118772');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (81, 4, 6, 85, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.565907', '2012-11-21 20:37:08.149702');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (82, 4, 7, 82, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.585441', '2012-11-21 20:37:08.152138');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (83, 4, 8, 44, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.59788', '2012-11-21 20:37:08.154211');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (85, 4, 10, 65, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.61852', '2012-11-21 20:37:08.156221');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (86, 4, 11, 68, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.632839', '2012-11-21 20:37:08.178481');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (87, 4, 12, 45, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.662403', '2012-11-21 20:37:08.180887');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (88, 4, 13, 58, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.673438', '2012-11-21 20:37:08.183331');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (89, 4, 14, 36, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.685369', '2012-11-21 20:37:08.185736');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (90, 4, 15, 20, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.698655', '2012-11-21 20:37:08.187853');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (91, 4, 16, 25, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.708966', '2012-11-21 20:37:08.190128');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (92, 4, 17, 3, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.722555', '2012-11-21 20:37:08.192892');
+INSERT INTO perspective_scores (id, perspective_id, scoredate_id, score, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, goal, created_at, updated_at) VALUES (93, 4, 18, 13, 0, 25, 25, 75, 75, 100, NULL, '2012-08-09 19:59:55.74021', '2012-11-21 20:37:08.196397');
 
 
 --
@@ -3174,6 +3174,7 @@ INSERT INTO perspectives (id, name, weight, redfrom, redto, yellowfrom, yellowto
 INSERT INTO perspectives (id, name, weight, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, title_image, created_at, updated_at) VALUES (2, 'Clientes', 25, 0, 25, 25, 75, 75, 100, 'clientesy_btn.png', '2012-06-20 20:04:08.879663', '2012-06-20 20:04:08.879663');
 INSERT INTO perspectives (id, name, weight, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, title_image, created_at, updated_at) VALUES (3, 'Procesos Internos', 25, 0, 25, 25, 75, 75, 100, 'procesos_btn.png', '2012-06-20 20:04:32.346182', '2012-06-20 20:04:32.346182');
 INSERT INTO perspectives (id, name, weight, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, title_image, created_at, updated_at) VALUES (4, 'Desarrollo y Crecimiento', 25, 0, 25, 25, 75, 75, 100, 'desarrollo_btn.png', '2012-06-20 20:04:46.095596', '2012-06-20 20:05:05.400619');
+INSERT INTO perspectives (id, name, weight, redfrom, redto, yellowfrom, yellowto, greenfrom, greento, title_image, created_at, updated_at) VALUES (5, 'nueva', 45, 0, 10, 10, 20, 20, 30, NULL, '2012-11-13 20:43:04.956172', '2012-11-13 20:43:04.956172');
 
 
 --
@@ -3198,6 +3199,9 @@ INSERT INTO perspectives (id, name, weight, redfrom, redto, yellowfrom, yellowto
 -- Data for Name: roles; Type: TABLE DATA; Schema: public; Owner: bmo
 --
 
+INSERT INTO roles (id, name, resource_id, resource_type, created_at, updated_at) VALUES (2, 'admin', NULL, NULL, '2012-11-30 00:47:12.835922', '2012-11-30 00:47:12.835922');
+INSERT INTO roles (id, name, resource_id, resource_type, created_at, updated_at) VALUES (4, 'aforador', NULL, NULL, '2012-11-30 03:03:13.402908', '2012-11-30 03:03:13.402908');
+INSERT INTO roles (id, name, resource_id, resource_type, created_at, updated_at) VALUES (5, 'cliente', NULL, NULL, '2012-11-30 03:04:07.922744', '2012-11-30 03:04:07.922744');
 
 
 --
@@ -3265,8 +3269,11 @@ INSERT INTO score_dates (id, month, year, created_at, updated_at) VALUES (25, 1,
 -- Data for Name: users; Type: TABLE DATA; Schema: public; Owner: bmo
 --
 
-INSERT INTO users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, created_at, updated_at, name) VALUES (1, 'luis.rodriguez@execca.net', '$2a$10$2rpwYeAwalUtSCT.PSBqn.N1Z3Jn8dyDhyBUIlHqoMPqS.mo62r7G', 'sbY6aXeDsNeLtxxpejs2', '2012-06-27 17:56:08.442298', NULL, 3, '2012-06-27 18:35:36.2793', '2012-06-27 17:56:42.275347', '127.0.0.1', '127.0.0.1', '2012-06-27 16:34:39.457875', '2012-06-27 18:35:36.280196', 'Luis Miguel Rodriguez');
-INSERT INTO users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, created_at, updated_at, name) VALUES (2, 'demo@execca.net', '$2a$10$rvKO5VfharSzCGmHQqdefOaLCZHz6Rl3Fiv6lyzIHQUNvr6VEUMpO', NULL, NULL, NULL, 113, '2012-11-03 16:33:23.375029', '2012-10-30 03:04:29.11363', '127.0.0.1', '127.0.0.1', '2012-06-28 02:01:11.947529', '2012-11-03 16:33:23.376147', 'demo');
+INSERT INTO users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, created_at, updated_at, name) VALUES (11, 'cliente1@cliente.com', '$2a$10$7fBBfW4kww8JKoPpMTTfSuqDqtNWZu0cCgvOxE5S7kKgvfZauDp4W', NULL, NULL, NULL, 2, '2012-12-03 19:54:13.743979', '2012-11-30 06:44:07.519073', '127.0.0.1', '127.0.0.1', '2012-11-30 06:42:27.088', '2012-12-03 19:55:15.749275', 'cliente1');
+INSERT INTO users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, created_at, updated_at, name) VALUES (14, 'aforador2@execca.net', '$2a$10$1NzmskEsNW3rqkEk.gBp/emep9/a4FWB1MArH5hQB55er8xzdzNSu', NULL, NULL, NULL, 8, '2012-12-03 19:57:21.070879', '2012-12-03 19:55:33.435737', '127.0.0.1', '127.0.0.1', '2012-12-01 08:15:13.525144', '2012-12-03 19:57:45.915046', 'aforador2');
+INSERT INTO users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, created_at, updated_at, name) VALUES (2, 'demo@execca.net', '$2a$10$rvKO5VfharSzCGmHQqdefOaLCZHz6Rl3Fiv6lyzIHQUNvr6VEUMpO', NULL, NULL, NULL, 153, '2012-12-03 22:59:33.227454', '2012-12-03 20:06:20.613337', '127.0.0.1', '127.0.0.1', '2012-06-28 02:01:11.947529', '2012-12-03 22:59:33.228139', 'demo');
+INSERT INTO users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, created_at, updated_at, name) VALUES (8, 'aforador@execca.net', '$2a$10$yhnLOZhu8Nmb.ex1fnc40.Ve74P0CVt0utLkrtVjhs4X.TpQAPpjK', NULL, NULL, NULL, 9, '2012-12-03 23:02:12.038298', '2012-12-03 21:08:30.316789', '127.0.0.1', '127.0.0.1', '2012-11-30 03:02:52.423536', '2012-12-03 23:03:12.592322', 'aforador');
+INSERT INTO users (id, email, encrypted_password, reset_password_token, reset_password_sent_at, remember_created_at, sign_in_count, current_sign_in_at, last_sign_in_at, current_sign_in_ip, last_sign_in_ip, created_at, updated_at, name) VALUES (15, 'admin@execca.net', '$2a$10$9J34NFSK36lV3S/dXC1c0eAvO9et6l70C7VEizdm9dMfoalWufn3a', NULL, NULL, NULL, 7, '2012-12-03 23:58:47.921571', '2012-12-03 23:03:21.853716', '127.0.0.1', '127.0.0.1', '2012-12-03 20:03:33.36529', '2012-12-03 23:58:47.922351', 'Administrador');
 
 
 --
@@ -3275,6 +3282,11 @@ INSERT INTO users (id, email, encrypted_password, reset_password_token, reset_pa
 -- Data for Name: users_roles; Type: TABLE DATA; Schema: public; Owner: bmo
 --
 
+INSERT INTO users_roles (user_id, role_id) VALUES (14, 4);
+INSERT INTO users_roles (user_id, role_id) VALUES (15, 2);
+INSERT INTO users_roles (user_id, role_id) VALUES (11, 5);
+INSERT INTO users_roles (user_id, role_id) VALUES (2, 5);
+INSERT INTO users_roles (user_id, role_id) VALUES (8, 4);
 
 
 --
@@ -3529,7 +3541,19 @@ CREATE INDEX index_users_roles_on_user_id_and_role_id ON users_roles USING btree
 CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (version);
 
 
--- Completed on 2012-11-10 16:51:05 VET
+--
+-- TOC entry 2286 (class 0 OID 0)
+-- Dependencies: 6
+-- Name: public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO PUBLIC;
+
+
+-- Completed on 2012-12-03 20:07:55 VET
 
 --
 -- PostgreSQL database dump complete

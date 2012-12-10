@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+<% @date = @score_date %>
 <h2>Establezca los valores (<%=h scoredate_month_to_text(@score_date)%>/<%=h @score_date.year%>)</h2>
 
     <% i=0 %>
@@ -34,13 +35,15 @@
 </div>
   </br>
   <div class="row-fluid">
-    <p aling="center"><%= f.submit "Establecer valores" %></p>
+    <p aling="center"><%= f.submit "Establecer valores", class: "btn" %></p>
   </div>
 
 <% end %>
 
 <div class="row-fluid" align="center">
-    <%= link_to @score_date.year - 1, filloperands_path(ScoreDate.find_by_year_and_month(@score_date.year - 1,12).id)%>
+	<% if ScoreDate.find_by_year_and_month(@date.year - 1,12) %>
+    	<%= link_to @score_date.year - 1, filloperands_path(ScoreDate.find_by_year_and_month(@score_date.year - 1,12).id)%>
+	<% end %>
       <<
     <%= link_to "Enero", filloperands_path(ScoreDate.find_by_year_and_month(@score_date.year,1).id)%>
     <%= link_to "Febrero", filloperands_path(ScoreDate.find_by_year_and_month(@score_date.year,2).id)%>

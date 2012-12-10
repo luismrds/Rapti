@@ -1,7 +1,18 @@
 // Set the correct sprite paths
 $iconSpritePath: asset-url('glyphicons-halflings.png', image);
 $iconWhiteSpritePath: asset-url('glyphicons-halflings-white.png', image);
+
+$navbarBackground:                #064A93 ;
+$navbarBackgroundHighlight:       #064A93 ;
+$navbarLinkColor:                 #ffffff ;
+
 @import "bootstrap";
-body { padding-top: 60px; }
 @import "bootstrap-responsive";
 
+body { padding-top: 60px; }
+
+.navbar .nav li.dropdown .dropdown-toggle .caret,
+.navbar .nav li.dropdown.open .caret {
+  border-top-color: #ffffff;
+  border-bottom-color: #ffffff;
+}

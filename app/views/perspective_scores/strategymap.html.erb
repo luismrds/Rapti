@@ -183,7 +183,9 @@ a:active {
     <%= link_to "Octubre", thestrategymap_path(ScoreDate.find_by_year_and_month(@date.year,10).id)%>
     <%= link_to "Noviembre", thestrategymap_path(ScoreDate.find_by_year_and_month(@date.year,11).id)%>
     <%= link_to "Diciembre", thestrategymap_path(ScoreDate.find_by_year_and_month(@date.year,12).id)%>
-      >>
-    <%= link_to @date.year + 1, thestrategymap_path(ScoreDate.find_by_year_and_month(@date.year + 1,1).id)%>
+	<% if ScoreDate.find_by_year_and_month(@date.year+1,12) %>
+      	>>
+    	<%= link_to @date.year + 1, thestrategymap_path(ScoreDate.find_by_year_and_month(@date.year + 1,1).id)%>
+	<% end %>
 </div>
 

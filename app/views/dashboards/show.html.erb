@@ -52,7 +52,10 @@
     <%= link_to "Octubre", showdashboard_path(@category, @type, @individual, ScoreDate.find_by_year_and_month(@sc.year,10).id)%>
     <%= link_to "Noviembre", showdashboard_path(@category, @type, @individual, ScoreDate.find_by_year_and_month(@sc.year,11).id)%>
     <%= link_to "Diciembre", showdashboard_path(@category, @type, @individual, ScoreDate.find_by_year_and_month(@sc.year,12).id)%>
+
+	<% if ScoreDate.find_by_year_and_month(@sc.year + 1,1) %>
       >>
     <%= link_to @sc.year + 1, showdashboard_path(@category, @type, @individual, ScoreDate.find_by_year_and_month(@sc.year + 1,1).id)%>
+	<% end %>
 </div>
 

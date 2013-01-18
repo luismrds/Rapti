@@ -120,7 +120,10 @@ table:td{text-align:center !important;}
     <%= link_to "Octubre", objectiveatdate_path(@objective, ScoreDate.find_by_year_and_month(@date.year,10).id)%>
     <%= link_to "Noviembre", objectiveatdate_path(@objective, ScoreDate.find_by_year_and_month(@date.year,11).id)%>
     <%= link_to "Diciembre", objectiveatdate_path(@objective, ScoreDate.find_by_year_and_month(@date.year,12).id)%>
+
+	<% if ScoreDate.find_by_year_and_month(@date.year + 1,1) %>
       >>
-    <%= link_to @date.year + 1, objectiveatdate_path(@objective, ScoreDate.find_by_year_and_month(@date.year + 1,1).id)%>
+ <%= link_to @date.year + 1, objectiveatdate_path(@objective, ScoreDate.find_by_year_and_month(@date.year + 1,1).id)%>
+	<% end %>
 </div>
 

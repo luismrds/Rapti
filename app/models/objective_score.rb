@@ -21,7 +21,7 @@
 #
 
 class ObjectiveScore < ActiveRecord::Base
-  attr_accessible :date_id, :objective_id, :score, :scoredate_id, :redfrom, :redto, :yellowfrom, :yellowto, :greenfrom, :greento
+  attr_accessible :date_id, :objective_id, :score, :scoredate_id, :redfrom, :redto, :yellowfrom, :yellowto, :greenfrom, :greento, :progress, :baseline, :goal
 
 
   belongs_to :objective

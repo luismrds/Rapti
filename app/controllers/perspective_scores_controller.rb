@@ -87,6 +87,7 @@ class PerspectiveScoresController < ApplicationController
   def strategymap
     params[:date_id] ||= currentScoreDate.id
     @date = ScoreDate.find(params[:date_id])
+    #@date = ScoreDate.find(25)
     @trend = "6"
     @perspectives = Perspective.all
     @financiera = Perspective.find(1)

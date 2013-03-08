@@ -161,7 +161,18 @@ module ObjectiveScoresHelper
   end 
 end
 
-
+  def nuevos_meses
+    for i in 1..20
+      for j in 26..36
+        valor = rand(1..95)
+        p = ObjectiveScore.new(:objective_id => i, :scoredate_id => j, :score => valor, :redfrom => 0, 
+          :redto => 25, :yellowfrom => 25, :yellowto=> 75, :greenfrom => 75, :greento => 100, 
+          :progress => valor, :baseline => 60, :goal => 75)
+        p.save
+      end
+    end
+  end
+        
 
 
 

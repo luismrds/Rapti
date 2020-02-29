@@ -129,7 +129,7 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (~> 0.14.6)
-    rake (10.0.2)
+    rake (13.0.1)
     ratchetio (0.4.7)
     rdoc (3.12)
       json (~> 1.4)
